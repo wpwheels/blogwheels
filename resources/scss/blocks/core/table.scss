@@ -1,0 +1,104 @@
+////
+/// Table block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// Fixes inconsistent default `thead` and `tfoot` alignment.
+.wp-block-table thead tr {
+	text-align: left;
+}
+
+.wp-block-table :is(tr, th, td, tbody) {
+	border-width: 0;
+}
+
+// `theme.json` border support for tables is horribly broken, so we're just
+// inheriting everything here.
+.wp-block-table.has-border-color :is(thead, tfoot, tr th, tr td) {
+	border-color: inherit;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// Make WP's default borders smaller.
+.wp-block-table thead {
+	border-bottom: 1px solid;
+	border-color: inherit;
+}
+
+.wp-block-table tfoot,
+.wp-block-table tbody tr:where(:not(:first-child)) {
+	border-top: 1px solid;
+	border-color: inherit;
+}
+
+// Less prominent bold for headers.
+.wp-block-table :where(th) {
+	font-weight: 600;
+}
+
+.wp-block-table :is(th, td) {
+	padding: var(--wp--preset--spacing--minus-1) var(--wp--preset--spacing--base);
+}
+
+///
+/// Allow styling `thead` from `theme.json`.
+///
+.wp-block-table thead {
+	font-family: var(--wp--custom--elements--thead--font-family, inherit);
+	font-style: var(--wp--custom--elements--thead--font-style, inherit);
+	font-weight: var(--wp--custom--elements--thead--font-weight, 600);
+	line-height: var(--wp--custom--elements--thead--line-height, inherit);
+	font-size: var(--wp--custom--elements--thead--font-size, inherit);
+	color: var(--wp--custom--elements--thead--color, currentColor);
+	background: var(--wp--custom--elements--thead--background, transparent);
+}
+
+///
+/// Allow styling `tfoot` from `theme.json`.
+///
+.wp-block-table tfoot {
+	font-family: var(--wp--custom--elements--tfoot--font-family, inherit);
+	font-style: var(--wp--custom--elements--tfoot--font-style, inherit);
+	font-weight: var(--wp--custom--elements--tfoot--font-weight, 600);
+	line-height: var(--wp--custom--elements--tfoot--line-height, inherit);
+	font-size: var(--wp--custom--elements--tfoot--font-size, inherit);
+	color: var(--wp--custom--elements--tfoot--color, currentColor);
+	background: var(--wp--custom--elements--tfoot--background, transparent);
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Core `stripes` style adjustments. Styling via `theme.json` appends CSS to
+/// the table instead of the wrapper. Also allows customization of stripe row
+/// variables, such as color and background.
+///
+.wp-block-table.is-style-stripes {
+	border: none;
+
+	tbody tr {
+		border: none;
+	}
+
+	tbody tr:nth-child(odd) {
+		background: transparent;
+	}
+
+	thead tr,
+	tbody tr:nth-child(even),
+	tbody:has(tr:last-child:nth-child(odd)) + tfoot tr {
+		color: var(--wp--custom--stripes--stripe-color, inherit);
+		background: var(--wp--custom--stripes--stripe-background, transparent);
+	}
+}

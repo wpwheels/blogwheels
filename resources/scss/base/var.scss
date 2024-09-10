@@ -1,0 +1,30 @@
+////
+/// CSS custom properties (variables).
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+///
+/// We disable WordPress' default font and spacing in favor of our own. But
+/// because users may have used these sizes in the past, we map them to the
+/// theme's custom sizes.
+///
+body {
+	// Ensure that black and white colors are always defined.
+	--wp--preset--color--black: #000000;
+	--wp--preset--color--white: #ffffff;
+
+	--wp--preset--font-size--small: var(--wp--preset--font-size--xs);
+	--wp--preset--font-size--medium: var(--wp--preset--font-size--md);
+	--wp--preset--font-size--large: var(--wp--preset--font-size--2-xl);
+	--wp--preset--font-size--x-large: var(--wp--preset--font-size--3-xl);
+
+	--wp--preset--spacing--20: var(--wp--preset--spacing--minus-2);
+	--wp--preset--spacing--30: var(--wp--preset--spacing--minus-1);
+	--wp--preset--spacing--40: var(--wp--preset--spacing--base);
+	--wp--preset--spacing--50: var(--wp--preset--spacing--plus-1);
+	--wp--preset--spacing--60: var(--wp--preset--spacing--plus-3);
+	--wp--preset--spacing--70: var(--wp--preset--spacing--plus-4);
+	--wp--preset--spacing--80: var(--wp--preset--spacing--plus-6);
+}

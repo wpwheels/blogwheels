@@ -1,0 +1,38 @@
+////
+/// Template Part block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// Removes any margins from the first element in the template part.
+.wp-block-template-part > * {
+	margin-top: 0;
+}
+
+///
+/// Header overlay template part.
+///
+.wp-block-template-part.site-header-overlay {
+	.wp-block-blockwheels-breadcrumbs {
+		border: none;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

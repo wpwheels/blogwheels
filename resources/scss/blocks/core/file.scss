@@ -1,0 +1,110 @@
+////
+/// File block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/icon";
+@use "../../tools/inline-icon";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Add border box sizing to the block file.
+///
+/// Note: The editor has an extra wrapper that doesn't exist in the front-end,
+/// so we also need to target `*__content-wrapper`.
+///
+.wp-block-file,
+.wp-block-file__content-wrapper {
+	box-sizing: border-box;
+}
+
+///
+/// Zero out the hard-coded resizable container margin in the editor.
+///
+.wp-block-file .components-resizable-box__container {
+	margin: 0;
+}
+
+///
+/// Zero out WP's bottom spacing on embedded media (test with PDF).
+///
+.wp-block-file__embed {
+	margin-bottom: 0;
+}
+
+///
+/// Overwrite WP's hard-coded font-size so that it inherits from its parent.
+///
+/// Note: it's impossible to set this via `theme.json`.
+///
+.wp-block-file:not(.wp-element-button) {
+	font-size: inherit;
+}
+
+///
+/// Core sets the opacity on these states for the file button for some crazy
+/// reason or another. 🤪 It sets some other things too, but those can be easily
+/// overwritten via `theme.json`.
+///
+.wp-block-file__button {
+	&:active,
+	&:focus,
+	&:hover,
+	&:visited {
+		opacity: 1;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Uses flexbox for the File block for better control over the layout.
+///
+/// Note: The editor has an extra wrapper that doesn't exist in the front-end, so
+/// we also need to target `*__content-wrapper`.
+///
+.wp-block-file,
+.wp-block-file__content-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--wp--style--block-gap);
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The icon style prefixes the block download button with an icon.
+///
+.wp-block-file.is-style-icon {
+	&:where(:not(:has(.wp-block-file__button))) {
+		a {
+			@include inline-icon.prefix(icon.get-url("download"));
+		}
+	}
+
+	.wp-block-file__button {
+		@include inline-icon.prefix(icon.get-url("download"));
+	}
+}
+
+///
+/// The plain style removes custom styling from the block.
+///
+.wp-block-file.is-style-plain,
+.editor-styles-wrapper .wp-block-file.is-style-plain {
+	border: none;
+	background: none;
+	box-shadow: none;
+	outline: none;
+}

@@ -1,0 +1,85 @@
+////
+/// Pullquote block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Zero out default browser spacing.
+///
+.wp-block-pullquote blockquote {
+	margin: 0;
+	padding: 0;
+}
+
+///
+/// Faux `blockGap` support.
+///
+:where(.wp-block-pullquote blockquote > *) {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+:where(.wp-block-pullquote blockquote > * + *) {
+	margin-top: var(--wp--custom--gap, var(--wp--style--block-gap));
+}
+
+///
+/// Cite doesn't have a standalone block-level wrapper, so it should be a block
+/// element itself.
+///
+.wp-block-pullquote blockquote > cite {
+	display: block;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Adds text balancing and quotes.
+///
+.wp-block-pullquote blockquote {
+	text-wrap: balance;
+
+	// This sets stylistic quotes used on the wrapper element, not the
+	// quotes used for the content itself.
+	&::before,
+	&::after,
+	p::before,
+	p::after {
+		quotes: "“" "”";
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The mark top style adds a quotation mark above the quote.
+///
+.wp-block-pullquote.is-style-mark-top,
+.editor-styles-wrapper .wp-block-pullquote.is-style-mark-top {
+	padding: 0;
+	border: none;
+}
+
+.wp-block-pullquote.is-style-mark-top blockquote {
+	padding: 1em 0 0;
+	display: flex;
+	flex-direction: column;
+
+	&::before {
+		content: open-quote;
+		color: currentColor;
+		font-size: 4em;
+		line-height: 0.25;
+		font-weight: 700;
+	}
+}

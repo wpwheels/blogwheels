@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/theme.json",
+	"version": 3,
+	"title": "Style 3",
+	"slug": "section-3",
+	"blockTypes": [
+		"core/column",
+		"core/columns",
+		"core/comment-content",
+		"core/comment-template",
+		"core/comments",
+		"core/group",
+		"core/media-text",
+		"core/post-comments-form",
+		"core/query"
+	],
+	"styles": {
+		"css": "--wp--custom--color--action: var(--wp--preset--color--primary-700);\n--wp--custom--color--muted: var(--wp--preset--color--neutral-500);\n--wp--custom--global--fill--background: var(--wp--preset--color--primary-700);\n--wp--custom--global--fill--hover-background: var(--wp--preset--color--primary-950);",
+		"color": {
+			"background": "var:preset|color|neutral-50",
+			"text": "var:preset|color|contrast"
+		},
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|plus-3",
+				"bottom": "var:preset|spacing|plus-3",
+				"left": "var:preset|spacing|plus-3",
+				"right": "var:preset|spacing|plus-3"
+			}
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|primary-700"
+				}
+			}
+		},
+		"blocks": {
+			"core/post-title": {
+				"elements": {
+					"link": {
+						"color": {
+							"text": "inherit"
+						}
+					}
+				}
+			}
+		}
+	}
+}

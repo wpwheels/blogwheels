@@ -1,0 +1,38 @@
+////
+/// Term Description block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Faux `blockGap` support.
+///
+/// The addition of targeting the `<p>` tag is because of an attempted fix that
+/// broke this further because it didn't account for multi-paragraph descriptions.
+/// @link https://github.com/WordPress/gutenberg/pull/51137
+///
+.wp-block-term-description > :is(*, p) {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wp-block-term-description > * + :is(*, p) {
+	margin-block-start: var(--wp--custom--gap, var(--wp--style--block-gap));
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// No customizations...
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

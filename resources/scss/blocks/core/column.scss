@@ -1,0 +1,34 @@
+////
+/// Column block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// `border-box` for the win! 🏆
+///
+.wp-block-column {
+	box-sizing: border-box;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Ensures that `cqi` values are based on their container, not the viewport.
+///
+.wp-block-column {
+	container-type: inline-size;
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

@@ -1,0 +1,175 @@
+////
+/// Post Comments Form block CSS.
+///
+/// Note: The comment form input wrappers do not have any classes in the editor:
+/// e.g., `<p class="comment-form-comment">` is simply `<p>`. But they are
+/// correct on the front end.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/form";
+@use "../../tools/icon";
+@use "../../tools/inline-icon";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Faux `blockGap` support.
+///
+/// Note: In the editor, WordPress wraps the respond title and form in a
+/// separate `<div class="comment-respond">`. On the front end, this class is
+/// output as part of the block class.
+///
+.wp-block-post-comments-form > *,
+.editor-styles-wrapper .comment-respond > * {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wp-block-post-comments-form > * + *,
+.editor-styles-wrapper .comment-respond > * + * {
+	margin-block-start: var(--wp--custom--gap, var(--wp--preset--spacing--base));
+}
+
+///
+/// Add top margin when the block is nested inside the comment template. This is
+/// the case when replying to a comment.
+///
+.wp-block-comment-template .wp-block-post-comments-form {
+	margin-top: var(--wp--style--block-gap);
+}
+
+///
+/// Fixes misaligned checkbox and label when the label wraps two or more lines.
+/// This is because core uses centered alignment.
+///
+.wp-block-post-comments-form .comment-form-cookies-consent {
+	align-items: baseline;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Adjust the reply title so that it looks a little when replying to a comment.
+///
+.wp-block-post-comments-form .comment-reply-title {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--base);
+
+	small {
+		margin: 0;
+		font-size: var(--wp--preset--font-size--sm);
+		font-weight: 400;
+		text-transform: none;
+	}
+}
+
+///
+/// Creates a grid display for the comment form.
+///
+.wp-block-post-comments-form .comment-form {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--wp--custom--gap, var(--wp--preset--spacing--base));
+
+	// By default, all items span the full width of the grid.
+	> * {
+		margin: 0;
+		grid-column: 1/-1;
+	}
+
+	// Aligns the author and email fields into a single row.
+	@media (min-width: 40rem) {
+		.comment-form-author {
+			grid-column: 1/1;
+		}
+		.comment-form-email {
+			grid-column: 2/2;
+		}
+	}
+}
+
+///
+/// Comment "logged in as" message styling. This is not a block in core (as of
+/// WP 6.5) and cannot be customized directly via the interface. So we need to
+/// connect it to `theme.json` styling.
+///
+.logged-in-as,
+.comment-notes {
+	font-family: var(--wp--custom--comment-notes--font-family, inherit);
+	font-size: var(--wp--custom--comment-notes--font-size, inherit);
+	font-weight: var(--wp--custom--comment-notes--font-weight, inherit);
+	line-height: var(--wp--custom--comment-notes--line-height, inherit);
+	color: var(
+		--wp--custom--comment-notes--color,
+		var(--wp--custom--color--muted, currentColor)
+	);
+}
+
+///
+/// Comment form "required" color.
+///
+.wp-block-post-comments-form .required {
+	color: var(
+		--wp--custom--required--color,
+		var(--wp--custom--color--muted, inherit)
+	);
+}
+
+///
+/// Import label styling. We must specifically target the default field labels
+/// to overrule some core styles (like label margins).
+///
+.wp-block-post-comments-form label,
+.wp-block-post-comments-form .comment-form-author label,
+.wp-block-post-comments-form .comment-form-email label,
+.wp-block-post-comments-form .comment-form-url label {
+	@include form.label();
+}
+
+///
+/// Import form input styling.
+///
+.wp-block-post-comments-form input:not([type="submit"]):not([type="checkbox"]),
+.wp-block-post-comments-form textarea {
+	@include form.input();
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Adds icons to the various form elements.
+///
+.wp-block-post-comments-form.is-style-icons,
+.wp-block-post-comments-form.has-icons {
+	.comment-form-comment,
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		label {
+			@include inline-icon.prefix(icon.get-url("comment"));
+		}
+	}
+
+	.comment-form-author label::before {
+		@include inline-icon.modify(icon.get-url("user"));
+	}
+
+	.comment-form-email label::before {
+		@include inline-icon.modify(icon.get-url("mail"));
+	}
+
+	.comment-form-url label::before {
+		@include inline-icon.modify(icon.get-url("link"));
+	}
+}

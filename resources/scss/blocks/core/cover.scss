@@ -1,0 +1,113 @@
+////
+/// Cover block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Add default padding to the Cover block and to the inner container when it has
+/// global padding.
+///
+.wp-block-cover,
+.wp-block-cover:where(:not([style*="padding"]))
+	.wp-block-cover__inner-container.has-global-padding {
+	padding: var(--wp--style--block-gap);
+}
+
+///
+/// Remove the padding from the Cover block when the inner container has global
+/// padding. Paired with the above rule. 👆
+///
+.wp-block-cover:has(.wp-block-cover__inner-container.has-global-padding) {
+	padding: 0;
+}
+
+///
+/// If the Cover block has explicit left/right padding, disable the global
+/// padding set on the inner container.
+///
+.wp-block-cover:where([style*="padding-left"])
+	.wp-block-cover__inner-container.has-global-padding {
+	padding-left: 0;
+}
+
+.wp-block-cover:where([style*="padding-right"])
+	.wp-block-cover__inner-container.has-global-padding {
+	padding-right: 0;
+}
+
+///
+/// If a cover block has a nav menu in it that is opened, give it a high z-index
+/// to ensure the menu pops over the WordPress toolbar.
+///
+.wp-block-cover:has(.is-menu-open) {
+	z-index: 999999;
+}
+
+///
+/// Add darker background color when the Cover block image has a placeholder,
+/// such as when it's connected to the featured image in the Site Editor.
+/// By default, it's impossible to read light text on top of it.
+///
+.is-dark-theme .wp-block-cover__image--placeholder-image.has-illustration {
+	background-color: var(--wp--preset--color--black, #000);
+}
+
+///
+/// Resets the background attachment when a Cover block has a parallax
+/// background. This is because the image is never shown correctly in this
+/// context, particularly its position.
+///
+.block-editor-block-preview__content-iframe {
+	.wp-block-cover.has-parallax,
+	// Account for image/video inner elements with class.
+	[class*=wp-block-cover].has-parallax {
+		background-attachment: initial;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Add a default text shadow to Headings inside the Cover.
+///
+:where(.wp-block-cover .wp-block-heading) {
+	text-shadow: var(--wp--custom--text-shadow--sm);
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The global border style adds the theme's/variation's global border and
+/// shadow styles to the Cover block.
+///
+/// @link      https://github.com/WordPress/gutenberg/pull/57908
+/// @wordpress 6.6
+/// @todo      Move to `theme.json`-based style variations in WordPress 6.6.
+///
+.wp-block-cover.is-style-global-border,
+.editor-styles-wrapper .wp-block-cover.is-style-global-border {
+	overflow: hidden;
+}
+
+///
+/// Stretches items inside of a Cover block and justifies the space between.
+///
+.wp-block-cover.is-style-stretch {
+	align-items: stretch;
+
+	.wp-block-cover__inner-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+}

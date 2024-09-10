@@ -1,0 +1,53 @@
+////
+/// Editor stylesheet for the list markers component.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// Use the WordPress variables module.
+// @link https://github.com/WordPress/gutenberg/tree/trunk/packages/base-styles
+@use "~@wordpress/base-styles/variables" as wp;
+
+.blockwheels-list-marker-selector__list {
+	margin-left: 0;
+	padding-left: wp.$grid-unit-20;
+
+	li {
+		list-style-type: none;
+		padding-left: wp.$grid-unit-20;
+		color: inherit;
+
+		&::marker {
+			color: inherit;
+		}
+	}
+
+	&.has-marker-disc li {
+		list-style-type: disc;
+	}
+	&.has-marker-circle li {
+		list-style-type: circle;
+	}
+	&.has-marker-square li {
+		list-style-type: square;
+	}
+	&.has-marker-decimal li {
+		list-style-type: decimal;
+	}
+	&.has-marker-leading-zero li {
+		list-style-type: decimal-leading-zero;
+	}
+	&.has-marker-lower-alpha li {
+		list-style-type: lower-alpha;
+	}
+	&.has-marker-upper-alpha li {
+		list-style-type: upper-alpha;
+	}
+	&.has-marker-lower-roman li {
+		list-style-type: lower-roman;
+	}
+	&.has-marker-upper-roman li {
+		list-style-type: upper-roman;
+	}
+}

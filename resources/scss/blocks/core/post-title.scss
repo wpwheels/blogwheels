@@ -1,0 +1,30 @@
+////
+/// Post Title block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Fixes margins in the editor.
+///
+.edit-post-visual-editor__post-title-wrapper,
+.is-root-container.wp-block-post-content {
+	margin-top: var(--wp--style--block-gap) !important;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// No customizations...
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

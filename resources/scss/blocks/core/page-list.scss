@@ -1,0 +1,47 @@
+////
+/// Page List block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/list";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Import base list styling.
+///
+.wp-block-page-list {
+	@include list.flow();
+
+	&__item__link {
+		margin-right: 0.25ch;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Horizontal list style.
+///
+ul.wp-block-page-list.is-style-horizontal {
+	@include list.horizontal();
+}
+
+///
+/// The pull style "pulls" the list back to be flush with the text.
+///
+.wp-block-page-list.is-style-pull {
+	padding-left: 1em;
+}

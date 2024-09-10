@@ -1,0 +1,24 @@
+////
+/// Primary theme stylesheet, which is used for both the front end and the
+/// editor. Note that it is named `screen` instead of `style` because
+/// `wp-scripts` renames that file to `style-index`. But, it's also an
+/// easy way to differentiate it from `print`, which I'll totally add one
+/// day. I promise.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// Base/Defaults.
+@use "base/var";
+@use "base/root";
+@use "base/elements";
+@use "base/forms";
+
+// Utilities.
+@use "utilities/helpers";
+@use "utilities/lightbox";
+@use "utilities/list-markers";
+@use "utilities/rich-text";
+@use "utilities/text-shadow";
+@use "utilities/typography";

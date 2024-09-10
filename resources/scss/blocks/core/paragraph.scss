@@ -1,0 +1,116 @@
+////
+/// Paragraph block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// `border-box` for the win! 🏆
+///
+p {
+	box-sizing: border-box;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Text-shadow support that can be set in `theme.json`.
+///
+p {
+	text-shadow: var(--wp--custom--text-shadow, none);
+}
+
+///
+/// Override WP's drop-cap implementation with modern solution. Browser support
+/// is pretty robust for `initial-letter`, but there are limitations. And Firefox
+/// doesn't support it at all.
+///
+/// @link https://caniuse.com/css-initial-letter
+///
+.has-drop-cap:not(:focus)::first-letter {
+	// Revert core's implementation.
+	float: none;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	text-transform: none;
+
+	// Re-add support for browsers that support `initial-letter`.
+	@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+		-webkit-initial-letter: 3;
+		initial-letter: 3;
+		float: none;
+		margin: 0;
+		padding-right: var(--wp--preset--spacing--minus-2);
+		font: inherit; // reset.
+		font-variant: normal;
+
+		font-family: var(--wp--custom--drop-cap--font-family, inherit);
+		font-style: var(--wp--custom--drop-cap--font-style, normal);
+		font-weight: var(--wp--custom--drop-cap--font-weight, 700);
+	}
+}
+
+///
+/// Image metadata paragraphs for use with the Block Bindings API. Eventually,
+/// we'll be able to remove this when the Group block supports bindings. Right
+/// now, we're stuck with a custom class in the Paragraph block and nested
+/// `<span>` elements.
+///
+.media-data {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+
+	// Only justify with space-between if we have the inner elements. This
+	// is to avoid the right alignment of the placeholder text in the editor.
+	&:has(.media-data__label, .media-data__content) {
+		justify-content: space-between;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The indent style simply indents the paragraph. `text-indent` is not
+/// currently supported in `theme.json`.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/55225
+///
+p.is-style-indent {
+	text-indent: var(--wp--preset--spacing--plus-4);
+
+	&.has-drop-cap {
+		text-indent: var(--wp--preset--spacing--plus-2);
+	}
+}
+
+///
+/// The lead-in style bolds the first line of a paragraph (and gives it small-
+/// caps if supported).
+///
+p.is-style-lead-in::first-line {
+	font-weight: 700;
+
+	// Only use small-caps if the current font supports them.
+	font-synthesis: none;
+	font-variant: small-caps;
+}
+
+///
+/// The lede style increases the size and weight of the text.
+///
+p.is-style-lede {
+	font-weight: 500;
+	font-size: var(--wp--preset--font-size--lg);
+	line-height: var(--wp--custom--line-height--lg);
+}

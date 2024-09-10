@@ -1,0 +1,55 @@
+////
+/// Post Content block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/list";
+@use "../../tools/prose";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Paginated post links via `wp_link_pages()` and the `core/nextpage` block.
+/// There is no way to style this via `theme.json`.
+///
+/// This is technically a fix for the `core/nextpage` block, but its block
+/// stylesheet doesn't get enqueued via `wp_enqueue_block_style()`, so it's
+/// easiest to simply drop it in here since it's only shown alongside the Post
+/// Content block.
+///
+.post-nav-links {
+	gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+// -----------------------------------------------------------------------------
+// Block style customizations.
+// -----------------------------------------------------------------------------
+
+// Prose styling. Ideally, this would be a block style named `.is-style-prose`
+// that could be added anywhere. What this does is override element styling for
+// a more enjoyable reading experience of long-form content. However, the post
+// editor does not yet recognize and output the block style class when its
+// applied in the template.
+
+.wp-block-post-content {
+	@include prose.prose();
+}
+
+:where(.wp-block-post-content) {
+	:where(ul, ol) {
+		@include list.flow();
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

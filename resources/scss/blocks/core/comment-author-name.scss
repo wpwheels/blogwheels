@@ -1,0 +1,32 @@
+////
+/// Comment Author Name block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/icon.scss";
+@use "../../tools/inline-icon";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// No customizations...
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Icon style.
+///
+.wp-block-comment-author-name.is-style-icon {
+	@include inline-icon.prefix(icon.get-url("user"));
+}

@@ -1,0 +1,74 @@
+////
+/// Archives block CSS.
+///
+/// Core does this really crazy thing in the editor and adds a wrapping "block"
+/// container named `.wp-block-archives` around the `.wp-block-archives/-list`
+/// block. So, we're having to target this for both the front-end and editor in
+/// different ways. 🤦‍♀️
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/list";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Include the base list style.
+///
+ul.wp-block-archives-list,
+:where(.wp-block-archives ul.wp-block-archives-list) {
+	@include list.flow();
+
+	li a {
+		margin-right: 0.25ch;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Horizontal list style.
+///
+.wp-block-archives.is-style-horizontal .wp-block-archives-list,
+.wp-block-archives-list.is-style-horizontal {
+	@include list.horizontal();
+}
+
+///
+/// The pull style "pulls" the list back to be flush with the text.
+///
+.wp-block-archives.is-style-pull {
+	padding-left: 1em;
+
+	.wp-block-archives {
+		padding-left: 0;
+	}
+}
+
+///
+/// The spread list style adds space between the link and post count.
+///
+.wp-block-archives.is-style-spread .wp-block-archives-list,
+.wp-block-archives-list.is-style-spread {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-archives.is-style-spread .wp-block-archives__content {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-between;
+}

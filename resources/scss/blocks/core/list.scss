@@ -1,0 +1,61 @@
+////
+/// List block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/list";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Include the base list style.
+///
+.wp-block-list:where(ul, ol),
+ul,
+ol {
+	@include list.flow();
+}
+
+ol li::marker {
+	font-size: 0.875em;
+}
+
+li::marker {
+	color: var(
+		--wp--custom--marker--color,
+		var(--wp--custom--elements--marker--color)
+	);
+}
+
+[class*="has-text-color-"] li::marker {
+	color: inherit;
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The pull style "pulls" the list back to be flush with the text.
+///
+:is(ul, ol).is-style-pull {
+	padding-left: 1em;
+}
+
+///
+/// Horizontal list style.
+///
+:is(ul, ol).is-style-horizontal,
+.wp-block-list.is-style-horizontal {
+	@include list.horizontal();
+}

@@ -1,0 +1,65 @@
+////
+/// Media & Text block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// Use the WordPress breakpoints module.
+// @link https://github.com/WordPress/gutenberg/tree/trunk/packages/base-styles
+@use "~@wordpress/base-styles/breakpoints" as wp;
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Adds a default block gap to the Media & Text block and removes WordPress'
+/// arbitrary, hardcoded padding from the content area, which breaks both
+/// vertical and horizontal rhythm.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/49406
+///
+.wp-block-media-text {
+	gap: var(--wp--preset--spacing--plus-5);
+
+	.wp-block-media-text__content {
+		padding: 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// By default, Media & Text uses the Core `$break-small` to stack on mobile.
+/// This is far too late for most scenarios, so we're breaking on medium.
+///
+@media (max-width: wp.$break-medium) {
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100% !important;
+		.wp-block-media-text__media {
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.wp-block-media-text__content {
+			grid-column: 1;
+			grid-row: 2;
+		}
+	}
+}
+
+///
+/// Ensures that `cqi` values are based on their container, not the viewport.
+///
+.wp-block-media-text,
+.wp-block-media-text__content {
+	container-type: inline-size;
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

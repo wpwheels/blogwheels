@@ -1,0 +1,41 @@
+////
+/// Color variation utility classes.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+///
+/// A custom class for handling blocks that should have the global border by
+/// default in the design. Currently, WordPress doesn't support border presets,
+/// so there's no way to add these on generic sections.
+///
+:root :where(.has-global-border) {
+	overflow: hidden;
+	border-color: var(--wp--custom--global--border--color, transparent);
+	border-style: var(--wp--custom--global--border--style, solid);
+	border-width: var(--wp--custom--global--border--width, 0);
+	border-radius: var(--wp--custom--global--border--radius, 0);
+	box-shadow: var(--wp--custom--global--shadow, none);
+}
+
+:where(:not(.has-global-padding)) > [class*="wp-block"].alignfull,
+.has-global-border.alignfull,
+.wp-block-post-featured-image.alignfull img,
+.wp-block-image.alignfull img {
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+}
+
+svg.wp-smiley {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}

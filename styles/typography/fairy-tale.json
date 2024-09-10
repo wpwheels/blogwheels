@@ -1,0 +1,191 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Fairy Tale",
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "'Elsie Swash Caps', system-ui",
+					"slug": "primary",
+					"name": "Primary (Elsie Swash Caps)",
+					"fontFace": [
+						{
+							"fontFamily": "Elsie Swash Caps",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./public/fonts/elsie/elsie-swash-caps.woff2" ]
+						},
+						{
+							"fontFamily": "Elsie Swash Caps",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./public/fonts/elsie/elsie-swash-caps-900.woff2" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "Lora, Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif",
+					"slug": "secondary",
+					"name": "Secondary (Roboto Slab)",
+					"fontFace": [
+						{
+							"fontFamily": "Lora",
+							"fontWeight": "400 700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [
+								"file:./public/fonts/lora/lora.woff2"
+							]
+						},
+						{
+							"fontFamily": "Lora",
+							"fontWeight": "400 700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [
+								"file:./public/fonts/lora/lora-italic.woff2"
+							]
+						}
+					]
+				},
+				{
+					"fontFamily": "ui-monospace, 'Fira Code', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace",
+					"slug": "mono",
+					"name": "Monospace"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary"
+				}
+			},
+			"caption": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|primary",
+					"fontSize": "var:preset|font-size|sm",
+					"fontStyle": "normal",
+					"textTransform": "none"
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontWeight": "400",
+					"textTransform": "none"
+				}
+			},
+			"h1": {
+				"typography": {
+					"fontWeight": "400"
+				}
+			}
+		},
+		"blocks": {
+			"core/comments-title": {
+				"typography": {
+					"fontSize": "var:preset|font-size|xl",
+					"lineHeight": "var:preset|line-height|xl"
+				}
+			},
+			"core/gallery": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|primary",
+					"fontSize": "var:preset|font-size|sm",
+					"fontStyle": "normal",
+					"textTransform": "none"
+				}
+			},
+			"core/image": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|primary",
+					"fontSize": "var:preset|font-size|sm",
+					"fontStyle": "normal",
+					"textTransform": "none"
+				}
+			},
+			"core/navigation": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary",
+					"fontSize": "var:preset|font-size|xs"
+				}
+			},
+			"core/post-comments-form": {
+				"elements": {
+					"h3": {
+						"typography": {
+							"fontSize": "var:preset|font-size|xl",
+							"lineHeight": "var:preset|line-height|xl"
+						}
+					}
+				}
+			},
+			"core/pullquote": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|primary",
+					"fontStyle": "normal",
+					"fontWeight": "400"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontFamily": "var:preset|font-family|secondary",
+							"fontStyle": "normal",
+							"fontWeight": "300"
+						}
+					}
+				}
+			},
+			"core/query-pagination": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary",
+					"fontSize": "var:preset|font-size|sm",
+					"fontWeight": "500",
+					"lineHeight": "var:custom|line-height|sm"
+				}
+			},
+			"core/quote": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary"
+				},
+				"elements": {
+					"cite": {
+						"typography": {
+							"fontFamily": "var:preset|font-family|secondary",
+							"fontSize": "0.9375em",
+							"fontStyle": "normal"
+						}
+					}
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|primary",
+					"fontSize": "var:preset|font-size|lg",
+					"fontStyle": "normal",
+					"fontWeight": "900",
+					"letterSpacing": "0",
+					"textTransform": "none"
+				}
+			},
+			"core/verse": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary",
+					"fontSize": "inherit",
+					"fontStyle": "normal"
+				}
+			},
+			"blockwheels/breadcrumbs": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|secondary",
+					"fontSize": "var:preset|font-size|xs"
+				}
+			}
+		}
+	}
+}

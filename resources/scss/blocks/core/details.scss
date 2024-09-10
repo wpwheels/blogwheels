@@ -1,0 +1,139 @@
+////
+/// Details block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// No fixes...
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Provides a nicer base design to the block. The core block has two elements:
+/// `<details>` and a nested `<summary>`. It will also have other nested blocks.
+/// There is no way to customize the summary element from `theme.json`.
+///
+.wp-block-details {
+	transition: all 0.5s ease-in-out;
+	overflow: hidden; // <summary> background can bleed over rounded corners.
+
+	// Ensures that `cqi` values are based on their container, not the viewport.
+	container-type: inline-size;
+
+	// Pad the bottom when details element is open.
+	&[open] {
+		padding-bottom: var(--wp--style--block-gap);
+	}
+
+	// Custom styles for the summary.
+	summary {
+		transition: all 0.5s ease-in-out;
+		box-sizing: border-box;
+		padding: var(--wp--preset--spacing--base) var(--wp--style--block-gap);
+
+		background: var(--wp--custom--elements--summary--background, transparent);
+		color: var(--wp--custom--elements--summary--color, currentColor);
+		font-family: var(--wp--custom--elements--summary--font-family, inherit);
+		font-style: var(--wp--custom--elements--summary--font-style, inherit);
+		font-weight: var(--wp--custom--elements--summary--font-weight, inherit);
+		line-height: var(--wp--custom--elements--summary--line-height, inherit);
+		font-size: var(--wp--custom--elements--summary--font-size, inherit);
+	}
+
+	&[open] summary,
+	summary:hover,
+	summary:focus {
+		background: var(--wp--custom--elements--summary--hover-background);
+	}
+
+	// Disable the default browser marker and add a custom one.
+	summary::marker {
+		content: none;
+	}
+
+	summary::after {
+		content: var(--wp--custom--marker--content, "+");
+		color: var(
+			--wp--custom--marker--color,
+			var(--wp--custom--elements--marker--color)
+		);
+		float: right;
+		text-align: right;
+		font-style: normal;
+	}
+
+	&[open] summary::after {
+		content: var(--wp--custom--marker--content-open, "-");
+	}
+
+	// The original block had a wrapper element around nested blocks after
+	// the summary. However, this was removed, so we must target anything
+	// that's not the summary with left/right margin.
+	> :where(:not(summary)) {
+		margin-left: var(--wp--style--block-gap);
+		margin-right: var(--wp--style--block-gap);
+	}
+}
+
+///
+/// Handle nested code blocks by removing spacing on the inside of the details
+/// content area.
+///
+.wp-block-details:has(
+		summary + .wp-block-code:last-child,
+		summary + .wp-block-code-wrap:last-child
+	),
+.wp-block-details:has(summary + .wp-block-code + .block-list-appender) {
+	padding: 0;
+
+	.wp-block-code {
+		margin: 0;
+		border: none;
+		box-shadow: none;
+		outline: none;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The plain style removes custom styling from the block.
+///
+.wp-block-details.is-style-plain,
+.editor-styles-wrapper .wp-block-file.is-style-details {
+	color: inherit;
+	border: none;
+	background: none;
+	box-shadow: none;
+	outline: none;
+	padding: 0;
+
+	summary {
+		padding: initial;
+		background: initial;
+		color: initial;
+	}
+
+	> :where(:not(summary)) {
+		margin-left: initial;
+		margin-right: initial;
+	}
+
+	summary::marker {
+		content: initial;
+	}
+
+	summary::after,
+	&[open] summary::after {
+		content: none;
+	}
+}

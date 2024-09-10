@@ -1,0 +1,16 @@
+////
+/// Editor stylesheet for the span format.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// Use the WordPress variables module.
+// @link https://github.com/WordPress/gutenberg/tree/trunk/packages/base-styles
+@use "~@wordpress/base-styles/variables" as wp;
+
+.blockwheels-format-span-popover .components-popover__content {
+	padding: wp.$grid-unit-20;
+	width: auto;
+	max-width: 360px;
+}

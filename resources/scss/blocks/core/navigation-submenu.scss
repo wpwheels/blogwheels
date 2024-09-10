@@ -1,0 +1,94 @@
+////
+/// Navigation Submenu block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Gutenberg 18.1 broke `theme.json`-based styles for nav sub-menus by reducing
+/// specificity of global style rules. Therefore, we needed to move some CSS to
+/// custom presets.
+///
+/// @link https://github.com/wpwheels/blogwheels/issues/9
+/// @link https://github.com/WordPress/gutenberg/pull/60106
+/// @link https://github.com/WordPress/gutenberg/pull/59457
+///
+.wp-block-navigation-submenu .wp-block-navigation__submenu-container {
+	padding: var(--wp--custom--padding, var(--wp--preset--spacing--base));
+}
+
+nav.wp-block-navigation
+	.wp-block-navigation-submenu
+	.wp-block-navigation__submenu-container,
+nav.wp-block-navigation.wp-block-navigation
+	.wp-block-navigation__responsive-container.is-menu-open {
+	color: var(--wp--custom--color, var(--wp--preset--color--contrast));
+	background: var(--wp--custom--background, var(--wp--preset--color--base));
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// Sets the width of the submenu container when hovered.
+.wp-block-navigation .has-child {
+	&.has-child-selected >,
+	&.is-selected >,
+	&:not(.open-on-click):hover >,
+	.wp-block-navigation-submenu__toggle[aria-expanded="true"] ~ {
+		.wp-block-navigation__submenu-container {
+			min-width: var(--wp--custom--min-width, 16rem) !important;
+		}
+	}
+}
+
+.wp-block-navigation__submenu-container
+	.has-child
+	.wp-block-navigation__submenu-icon {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+	border-radius: inherit;
+	transition: all 0.5s ease-in-out;
+}
+
+// Fixes the toggle `<button>` when menu items are "open on click."
+.wp-block-navigation-submenu
+	.wp-block-navigation-item.open-on-click
+	.wp-block-navigation-submenu__toggle {
+	padding: var(
+		--wp--custom--submenu-toggle--padding,
+		var(--wp--preset--spacing--minus-2) var(--wp--preset--spacing--base)
+	);
+}
+
+// Hover background color for list items.
+.wp-block-navigation-submenu .wp-block-navigation-item:hover,
+.wp-block-navigation-submenu .wp-block-navigation-item:focus {
+	background: var(
+		--wp--custom--submenu-item--hover-background,
+		var(--wp--preset--color--neutral-50)
+	);
+}
+
+// -----------------------------------------------------------------------------
+// Responsive menu when it is open.
+// -----------------------------------------------------------------------------
+
+nav.wp-block-navigation
+	.is-menu-open
+	.wp-block-navigation-submenu
+	.wp-block-navigation__submenu-container {
+	border-radius: 0;
+	border: none;
+	background: transparent;
+	padding: 0;
+	box-shadow: none;
+}

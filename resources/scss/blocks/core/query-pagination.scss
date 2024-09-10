@@ -1,0 +1,68 @@
+////
+/// Query Pagination block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// WP hardcodes a `max-width: 100%` on this block in the editor. 🤦‍♀️
+///
+.editor-styles-wrapper
+	.wp-block-query-pagination:where(:not(.alignwide):not(.alignfull)) {
+	max-width: var(--wp--style--global--content-size);
+}
+
+///
+/// Fixes WP's hard coded margin for this in the editor, which breaks the block
+/// gap for any containing block.
+///
+.wp-block-query-pagination,
+.editor-styles-wrapper
+	.wp-block-query-pagination.block-editor-block-list__layout {
+	margin-block-start: var(--wp--style--block-gap);
+}
+
+///
+/// Remove WP's hard-coded bottom and right margin on sub-blocks.
+///
+.wp-block-query-pagination > [class*="wp-block-query-pagination-"] {
+	margin: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Hands a custom pagination label block binding + variation.
+///
+.wp-block-query-pagination.is-content-justification-right {
+	gap: 1rem;
+
+	.wp-block-query-pagination-numbers {
+		--wp--custom--gap: 1rem;
+	}
+
+	// Don't display previous pagination link if there's a next link.
+	&:has(.wp-block-query-pagination-next:last-child)
+		.pagination-label
+		+ .wp-block-query-pagination-previous {
+		display: none;
+	}
+
+	// Pushes the pagination label to the left.
+	.pagination-label:first-child {
+		margin-right: auto;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

@@ -1,0 +1,149 @@
+////
+/// Post Template block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Zero out padding when background is applied.
+///
+.wp-block-post-template.has-background {
+	padding: 0;
+}
+
+///
+/// Ensure list styling doesn't overrule the post template.
+///
+.wp-block-post-template {
+	list-style: none !important;
+}
+
+///
+/// Zero out potential spacing on list items. WordPress puts the post in an
+/// unordered list, so other styles on `<li>` items easily affect this.
+///
+.wp-block-post {
+	margin: 0;
+	padding: 0;
+}
+
+///
+/// The editor gives a negative margin here but not on the front end. Just
+/// making sure these match.
+///
+.wp-block-query.is-layout-constrained > .wp-block-post-template.alignfull,
+.editor-styles-wrapper
+	.wp-block-query.is-layout-constrained
+	> .wp-block-post-template.alignfull {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Ensures that `cqi` values are based on their container, not the viewport.
+///
+.wp-block-post-template-is-layout-grid > .wp-block-post,
+.wp-block-post-template.is-flex-container > .wp-block-post {
+	container-type: inline-size;
+}
+
+///
+/// Breakpoint handling that better matches the theme.
+///
+.wp-block-query .wp-block-post-template.is-layout-grid {
+	grid-template-columns: repeat(var(--col-count, 1), 1fr) !important;
+}
+
+@media (min-width: 40rem) {
+	.wp-block-post-template.is-layout-grid:where(
+			.columns-2,
+			.columns-3,
+			.columns-4,
+			.columns-5,
+			.columns-6
+		) {
+		--col-count: 2;
+	}
+}
+
+@media (min-width: 56rem) {
+	.wp-block-post-template.is-layout-grid:where(
+			.columns-3,
+			.columns-4,
+			.columns-5,
+			.columns-6
+		) {
+		--col-count: 3;
+	}
+}
+
+@media (min-width: 64rem) {
+	.wp-block-post-template.is-layout-grid:where(
+			.columns-4,
+			.columns-5,
+			.columns-6
+		) {
+		--col-count: 4;
+	}
+}
+
+@media (min-width: 80rem) {
+	.wp-block-post-template.is-layout-grid.columns-5 {
+		--col-count: 5;
+	}
+	.wp-block-post-template.is-layout-grid.columns-6 {
+		--col-count: 6;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The flex style brings back the OG flexbox handling of Query Loop / Post
+/// Template blocks. The biggest difference between the two is that CSS grid
+/// maintains a consistent column count when there is an uneven number of posts,
+/// which is desirable in many situations. But CSS flex allows the bottom row to
+/// fill out any leftover space.
+///
+.wp-block-post-template.is-style-flex {
+	display: flex !important;
+	flex-wrap: wrap;
+}
+
+.is-style-flex > .wp-block-post {
+	flex: 1 100%;
+}
+
+@media (min-width: 40rem) {
+	.is-style-flex.columns-2 > .wp-block-post {
+		min-width: 24rem;
+		flex-basis: calc(50% - var(--wp--style--block-gap));
+	}
+	.is-style-flex.columns-3 > .wp-block-post {
+		min-width: 20rem;
+		flex-basis: calc(33.33% - var(--wp--style--block-gap));
+	}
+	.is-style-flex.columns-4 > .wp-block-post {
+		min-width: 20rem;
+		flex-basis: calc(25% - var(--wp--style--block-gap));
+	}
+	.is-style-flex.columns-5 > .wp-block-post {
+		min-width: 16rem;
+		flex-basis: calc(20% - var(--wp--style--block-gap));
+	}
+	.is-style-flex.columns-6 > .wp-block-post {
+		min-width: 13rem;
+		flex-basis: calc(16.77% - var(--wp--style--block-gap));
+	}
+}

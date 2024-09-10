@@ -1,0 +1,70 @@
+////
+/// Avatar block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Remove extra whitespace from inline block element so this aligns correctly.
+///
+/// @todo `block` broke something with layout. Investigate further.
+///
+.wp-block-avatar__image {
+	//display: block;
+	display: inline-block;
+}
+
+///
+/// Setting `border.radius` via `theme.json` applies it to the wrapper, so we
+/// need to inherit to ensure the radius works. We intentionally apply it to the
+/// wrapper via the Selectors API in PHP so that links can inherit the radius
+/// from the wrapper.
+///
+/// Gutenberg 18.5 (WP 6.6 cycle) overwrote this with its global styles specificity
+/// changes (addition of `:root`), so we needed to add the `!important`.
+/// @link https://github.com/WordPress/gutenberg/pull/61638
+///
+.wp-block-avatar > *,
+.wp-block-avatar__image,
+.wp-block-avatar__link {
+	border-radius: inherit !important;
+}
+
+// Ensures the `border-radius` applies.
+.wp-block-avatar__link {
+	display: inline-block;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Gradient background handling for the avatar.
+///
+.wp-block-avatar[class*="-gradient-background"],
+.editor-styles-wrapper .wp-block-avatar[class*="-gradient-background"] {
+	background-size: 0 0 !important;
+
+	// Note that the editor has an extra wrapper `<div>` around the image.
+	> div {
+		background: inherit;
+	}
+
+	img {
+		background-color: inherit;
+		background-image: inherit;
+		padding: min(6px, 8.33%);
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

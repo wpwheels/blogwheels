@@ -1,0 +1,171 @@
+////
+/// Gallery block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Gutenberg 19.1 (WordPress 6.7) changed the behavior of the background for
+/// captions to move the blurred background, prepending it to the `<figure>`
+/// element. This breaks expectations for theme authors and existing solutions.
+/// Still just fighting for control here. 😔
+///
+/// @link https://github.com/WordPress/gutenberg/pull/63471
+///
+.wp-block-gallery.has-nested-images
+	figure.wp-block-image:has(figcaption):before {
+	display: none;
+}
+
+///
+/// WordPress hardcodes a 13px font-size for captions. At that size, captions
+/// are so unreadable that they may as well not exist. 🙈
+///
+/// This CSS makes it possible to set the font-size and line-height via the `
+/// core/gallery` or `core/image` typography styles in `theme.json`.
+///
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+	font-size: inherit;
+	line-height: inherit;
+}
+
+///
+/// WordPress doesn't zero out inherited margins from `styles.element.cite` in
+/// `theme.json`, which breaks the positioning of the caption for gallery images.
+///
+.wp-block-gallery figure.wp-block-image figcaption {
+	margin: 0;
+}
+
+///
+/// WordPress hardcodes the background gradient for captions in galleries,
+/// making it impossible to override via `theme.json`. This allows us to set the
+/// background via `styles.blocks.core/gallery.custom.caption.background`.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/41966
+/// @link https://github.com/WordPress/gutenberg/issues/56587
+/// @link https://github.com/WordPress/gutenberg/issues/8030
+///
+.wp-block-gallery.has-nested-images:where(:not(.is-style-classic))
+	figure.wp-block-image
+	figcaption {
+	padding: var(
+		--wp--custom--caption--padding,
+		var(--wp--preset--spacing--plus-3) var(--wp--preset--spacing--minus-2)
+			var(--wp--preset--spacing--base)
+	);
+	color: var(--wp--custom--caption--color, var(--wp--preset--color--white));
+	background: var(
+		--wp--custom--caption--background,
+		linear-gradient(0deg, #000000b3, #0000004d 50%, #0000)
+	);
+}
+
+///
+/// Overrule core's hardcoded width for images at smaller screen sizes. This
+/// ensures that galleries break to a single column of images.
+///
+/// @todo This should be orientation-dependent. Needs filter on image render.
+///
+@media (max-width: 30rem) {
+	.wp-block-gallery.has-nested-images
+		figure.wp-block-image:not(#individual-image) {
+		width: 100%;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Adds a bottom border-radius to captions by default. This is a hacky method
+/// to keep the caption background from overflowing the image when its rounded.
+///
+.wp-block-gallery .wp-block-image figcaption {
+	border-bottom-left-radius: var(--wp--custom--global--border--radius);
+	border-bottom-right-radius: var(--wp--custom--global--border--radius);
+}
+
+///
+/// Use the gallery gap for left/right padding for full-width galleries. This
+/// creates consistent spacing across the entire gallery.
+///
+.wp-block-gallery.alignfull {
+	padding-left: var(--wp--style--unstable-gallery-gap, 0);
+	padding-right: var(--wp--style--unstable-gallery-gap, 0);
+}
+
+///
+/// Use the gallery gap for the full gallery when it has a background, keeping
+/// the spacing consistent on all sides.
+///
+.wp-block-gallery.has-background {
+	padding: var(--wp--style--unstable-gallery-gap, 0);
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// Classic galleries. This style moves the caption below the image (the default
+/// overlays the bottom of the image), matching the classic WordPress design.
+///
+/// Note: For this style to look great, the Gallery really needs to set a
+/// specific size/resolution/aspect-ratio that is consistent. Otherwise, images
+/// may have different heights. For those cases, the default Gallery style will
+/// work best.
+///
+.wp-block-gallery.is-style-classic {
+	// Overrules the core alignment.
+	&.has-nested-images {
+		align-items: flex-start;
+	}
+
+	// Gives the nested Image block's caption its initial position so that
+	// it naturally flows below the image.
+	//
+	// Note: we're adding this style only when the Image block uses the
+	// default or icon style. Other Image styles have their own handling.
+	// If, in the future, we add support for other styles in `image.scss`,
+	// they also need to be added here.
+	figure.wp-block-image:where(
+			:not([class*="is-style-"]),
+			.is-style-default,
+			.is-style-icon
+		)
+		figcaption {
+		position: initial;
+		margin: 0;
+		padding: var(--wp--preset--spacing--minus-2);
+		color: inherit;
+		background: unset;
+	}
+
+	// Gutenberg 19.1 (WordPress 6.7) added a text-shadow to captions,
+	// making captions for this style look horrendous. 😱
+	//
+	// Note that the extra selectors here are required to overrule Core.
+	//
+	// @link https://github.com/WordPress/gutenberg/pull/63471
+	figure.wp-block-image figcaption {
+		text-shadow: none;
+	}
+}
+
+///
+/// Reverses the direction and wrap of the gallery. This is useful for galleries
+/// with an image count that doesn't match evenly with the column count. For
+/// example, a three-column gallery with five images. The bottom row will have
+/// two images that are wider than the row with three images. This allows users
+/// to flip the direction to have the larger images sitting on the top row.
+///
+.wp-block-gallery.is-style-reverse {
+	flex-flow: row-reverse wrap-reverse;
+}

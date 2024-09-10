@@ -1,0 +1,71 @@
+////
+/// Tag Cloud block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/icon";
+@use "../../tools/inline-icon";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+// WordPress nests the actual `<p>` tag (the block) inside of another `<div>`
+// with the same class in the editor. We need to zero out the default browser
+// margin here.
+.editor-styles-wrapper .wp-block-tag-cloud .wp-block-tag-cloud {
+	margin: 0;
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// Primarily layout adjustments for more consistent handling and styling.
+.wp-block-tag-cloud {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--minus-1) var(--wp--preset--spacing--minus-1);
+
+	.tag-link-count {
+		font-weight: 400;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+///
+/// The icon style prefixes all of the tag links with an icon.
+///
+/// Note: WordPress wraps the tag cloud in the admin with a `<div>` with the
+/// block class and two inner `<div>` elements before getting to the actual
+/// `<p>` tag.
+///
+.wp-block-tag-cloud.is-style-icon,
+.wp-block-tag-cloud.is-style-icon .wp-block-tag-cloud {
+	a {
+		@include inline-icon.prefix(icon.get-url("tag"));
+
+		&:has(.tag-link-count) {
+			text-decoration-line: none;
+		}
+
+		&:has(.tag-link-count):where(:hover, :focus) {
+			text-decoration-line: underline;
+		}
+	}
+
+	&.taxonomy-category a::before {
+		@include inline-icon.modify(icon.get-url("folder"));
+	}
+}
+
+// Inherit the outline font size from the parent element if assigned a preset.
+[class*="-font-size"] .wp-block-tag-cloud.is-style-outline a {
+	line-height: inherit;
+}

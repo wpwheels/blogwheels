@@ -1,0 +1,172 @@
+////
+/// Calendar block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Removes WP's default background color on the header, which cannot be
+/// customized via `theme.json`.
+///
+:where(.wp-block-calendar table:not(.has-background) th) {
+	background: unset;
+}
+
+///
+/// Overwrites WP's default border-color on cells. This is hardcoded, and themes
+/// have no way to customize it via `theme.json`.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-block-calendar table:where(:not(.has-text-color)) :is(td, th) {
+	border-color: var(--wp--preset--color--neutral-100);
+}
+
+///
+/// Overwrite WP's hardcoded text color.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-block-calendar table:where(:not(.has-text-color)) {
+	color: var(--wp--preset--color--contrast);
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// More spacing than WP's default for cells.
+///
+.wp-block-calendar :is(td, th) {
+	padding: var(--wp--preset--spacing--minus-1)
+		var(--wp--preset--spacing--minus-3);
+}
+
+///
+/// Nicer layout for the calendar nav using flexbox.
+///
+.wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
+	margin: var(--wp--preset--spacing--minus-3) var(--wp--preset--spacing--base) 0;
+}
+
+///
+/// Inherits from `<thead>`. This is necessary to overwrite core's hardcoded
+/// style rule.
+///
+.wp-block-calendar th {
+	font-weight: inherit;
+}
+
+///
+/// Allow styling `thead` from `theme.json`.
+///
+.wp-block-calendar thead {
+	font-family: var(--wp--custom--elements--thead--font-family, inherit);
+	font-style: var(--wp--custom--elements--thead--font-style, inherit);
+	font-weight: var(--wp--custom--elements--thead--font-weight, 600);
+	line-height: var(--wp--custom--elements--thead--line-height, inherit);
+	font-size: var(--wp--custom--elements--thead--font-size, inherit);
+	color: var(--wp--custom--elements--thead--color, currentColor);
+	background: var(--wp--custom--elements--thead--background, transparent);
+}
+
+///
+/// Box sizing.
+///
+.wp-block-calendar {
+	box-sizing: border-box;
+}
+
+///
+/// Don't let anything overflow the table.
+///
+.wp-block-calendar table {
+	overflow: hidden;
+}
+
+///
+/// WP nests a calendar wrapper inside itself in the editor for some crazy reason
+/// that I'm sure is some legacy thing. 🫤
+///
+.editor-styles-wrapper .wp-block-calendar:has(.wp-block-calendar) {
+	padding: 0;
+	border: none;
+	box-shadow: none;
+	outline: 0;
+}
+
+///
+/// Heading font size handling.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-block-calendar table thead {
+	font-size: var(--wp--preset--font-size--sm);
+	line-height: var(--wp--custom--line-height--sm);
+}
+
+///
+/// Remove borders.
+///
+.wp-block-calendar table thead :where(tr, th),
+.wp-block-calendar .pad {
+	border: none;
+}
+
+///
+/// Give theme-matching color to table body.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-block-calendar table tbody {
+	border: 1px solid var(--wp--preset--color--neutral-100);
+}
+
+///
+/// Cell background color.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-block-calendar table td:where(:not(.pad)) {
+	background: var(--wp--preset--color--base);
+}
+
+///
+/// Allow styling `thead` from `theme.json`.
+///
+.wp-calendar-nav {
+	font-family: var(--wp--custom--nav--font-family, inherit);
+	font-style: var(--wp--custom--nav--font-style, inherit);
+	font-weight: var(--wp--custom--nav--font-weight, 600);
+	line-height: var(--wp--custom--nav--line-height, inherit);
+	font-size: var(--wp--custom--nav--font-size, inherit);
+	color: var(--wp--custom--nav--color, currentColor);
+	background: var(--wp--custom--nav--background, transparent);
+}
+
+///
+/// Prettier nav elements.
+///
+/// @todo Integrate this into `theme.json` custom properties.
+///
+.wp-calendar-nav-prev,
+.wp-calendar-nav-next {
+	padding: var(--wp--preset--spacing--minus-1)
+		var(--wp--preset--spacing--minus-3);
+	//font-size: var(--wp--preset--font-size--sm);
+	//line-height: var(--wp--custom--line-height--sm);
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

@@ -1,0 +1,36 @@
+////
+/// Comments block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Faux `blockGap` support.
+///
+.wp-block-comments > * {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wp-block-comments > * + *,
+// Necessary fix for a hardcoded margin in the editor.
+.editor-styles-wrapper .wp-block-comments > * + .wp-block.wp-block-comments-pagination {
+	margin-block-start: var(--wp--custom--gap, var(--wp--style--block-gap));
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+// No customizations...
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...

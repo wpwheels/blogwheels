@@ -1,0 +1,14 @@
+////
+/// RichText utility classes.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+.has-larger-text {
+	font-size: larger;
+}
+
+.has-overline {
+	text-decoration: overline solid min(0.078125em, 2px);
+}

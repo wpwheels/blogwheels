@@ -1,0 +1,90 @@
+////
+/// Comment Template block CSS.
+///
+/// @author WPWheels <wpwheels@wpwheels.com>
+/// @link   https://github.com/wpwheels/blogwheels
+////
+
+@use "../../tools/icon";
+@use "../../tools/inline-icon";
+
+// -----------------------------------------------------------------------------
+// Block fixes.
+// -----------------------------------------------------------------------------
+
+///
+/// Faux `blockGap` support.
+///
+.wp-block-comment-template > * {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+.wp-block-comment-template > * + *,
+.wp-block-comment-template > li > ol,
+.wp-block-comment-template > li > ol + ol,
+.wp-block-comment-template :where(:not(.wp-block-comment-content)) li > ol {
+	margin-block-start: var(--wp--custom--gap, var(--wp--style--block-gap));
+}
+
+///
+/// Remove spacing from comment list items.
+///
+.wp-block-comment-template .comment {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
+}
+
+///
+/// Override WordPress's hardcoded left padding with our own. Ideally, we'd
+/// target the `.comment` and `.depth-X` classes here to avoid list styles
+/// leaking into any other potential lists, but WordPress only shows these
+/// classes on the front end and not the editor.
+///
+.wp-block-comment-template {
+	.editor-styles-wrapper & > li > ol,
+	.depth-1 > ol {
+		padding-left: var(--wp--style--block-gap);
+	}
+
+	// Customization: zeroes out the left padding for the third level of
+	// nested comments to avoid a broken design. By default, the theme will
+	// show a comment parent link in this scenario.
+	.editor-styles-wrapper & > li > ol > li > ol,
+	.comment:where(:not(.depth-1)) > ol {
+		padding-left: 0;
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block customizations.
+// -----------------------------------------------------------------------------
+
+///
+/// Prefix with icon.
+///
+.comment-parent-link {
+	@include inline-icon.prefix(icon.get-url("arrow-left"));
+	gap: initial;
+
+	&::before {
+		width: 1.25em;
+		height: 1.25em;
+	}
+
+	a {
+		color: var(--wp--custom--comment-parent-link--color, inherit);
+
+		&:focus,
+		&:hover {
+			color: var(--wp--custom--comment-parent-link--hover-color, inherit);
+		}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// Block style variations.
+// -----------------------------------------------------------------------------
+
+// No variations...
