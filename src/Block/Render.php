@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block;
+namespace BLOGWHEELS\Block;
 
 use WP_Block;
 use WP_HTML_Tag_Processor;
-use BLOGWHEELS\Ideas\Block\Helpers\CodeHighlight;
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Filter, Hookable};
-use BLOGWHEELS\Ideas\Views\Engine;
+use BLOGWHEELS\Block\Helpers\CodeHighlight;
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Views\Engine;
 
 class Render implements Bootable
 {

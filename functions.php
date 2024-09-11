@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas;
+namespace BLOGWHEELS;
 
 # Prevent direct access.
 defined('ABSPATH') || exit;

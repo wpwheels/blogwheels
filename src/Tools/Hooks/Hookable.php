@@ -11,12 +11,12 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Tools\Hooks;
+namespace BLOGWHEELS\Tools\Hooks;
 
 use ReflectionAttribute;
 use ReflectionClass;
 use ReflectionMethod;
-use BLOGWHEELS\Ideas\Contracts\Hook;
+use BLOGWHEELS\Contracts\Hook;
 
 trait Hookable
 {

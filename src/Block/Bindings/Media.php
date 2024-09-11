@@ -11,12 +11,12 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block\Bindings;
+namespace BLOGWHEELS\Block\Bindings;
 
 use WP_Block;
 use WP_Block_Bindings_Registry;
-use BLOGWHEELS\Ideas\Contracts\BlockBindingSource;
-use BLOGWHEELS\Ideas\Tools\MediaMeta;
+use BLOGWHEELS\Contracts\BlockBindingSource;
+use BLOGWHEELS\Tools\MediaMeta;
 
 class Media implements BlockBindingSource
 {

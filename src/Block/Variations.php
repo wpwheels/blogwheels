@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block;
+namespace BLOGWHEELS\Block;
 
 use WP_Block_Type;
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
 
 class Variations implements Bootable
 {

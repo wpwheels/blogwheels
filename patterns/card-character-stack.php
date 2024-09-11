@@ -13,7 +13,7 @@ declare(strict_types=1);
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-use BLOGWHEELS\Ideas\Tools\Language;
+use BLOGWHEELS\Tools\Language;
 
 $image = get_theme_file_uri('public/media/images/default-16x9.webp');
 

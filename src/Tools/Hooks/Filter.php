@@ -12,10 +12,10 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Tools\Hooks;
+namespace BLOGWHEELS\Tools\Hooks;
 
 use Attribute;
-use BLOGWHEELS\Ideas\Contracts\Hook;
+use BLOGWHEELS\Contracts\Hook;
 
 #[Attribute(
 	Attribute::IS_REPEATABLE

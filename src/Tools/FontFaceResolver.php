@@ -22,7 +22,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Tools;
+namespace BLOGWHEELS\Tools;
 
 use WP_Theme_JSON_Resolver;
 

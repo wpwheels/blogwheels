@@ -12,10 +12,10 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas;
+namespace BLOGWHEELS;
 
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
 
 class Parts implements Bootable
 {

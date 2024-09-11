@@ -17,7 +17,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block;
+namespace BLOGWHEELS\Block;
 
 use WP_Block;
 

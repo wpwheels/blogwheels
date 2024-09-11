@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Tools\Hooks;
+namespace BLOGWHEELS\Tools\Hooks;
 
 use Attribute;
 

@@ -12,11 +12,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block\Bindings;
+namespace BLOGWHEELS\Block\Bindings;
 
 use WP_Block_Bindings_Registry;
-use BLOGWHEELS\Ideas\Contracts\{BlockBindingSource, Bootable};
-use BLOGWHEELS\Ideas\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Contracts\{BlockBindingSource, Bootable};
+use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
 
 class Component implements Bootable
 {

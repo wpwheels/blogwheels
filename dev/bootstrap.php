@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Dev;
+namespace BLOGWHEELS\Dev;
 
 # Prevent direct execution.
 if (! defined('ABSPATH')) {

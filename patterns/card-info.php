@@ -13,7 +13,7 @@ declare(strict_types=1);
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-use BLOGWHEELS\Ideas\Tools\Language;
+use BLOGWHEELS\Tools\Language;
 
 $url = home_url();
 

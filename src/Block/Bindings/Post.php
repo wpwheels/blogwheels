@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block\Bindings;
+namespace BLOGWHEELS\Block\Bindings;
 
 use WP_Block;
 use WP_Block_Bindings_Registry;
-use BLOGWHEELS\Ideas\Contracts\BlockBindingSource;
+use BLOGWHEELS\Contracts\BlockBindingSource;
 
 class Post implements BlockBindingSource
 {

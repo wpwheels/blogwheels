@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Tools;
+namespace BLOGWHEELS\Tools;
 
 class Language
 {

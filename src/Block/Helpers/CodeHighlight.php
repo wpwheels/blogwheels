@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block\Helpers;
+namespace BLOGWHEELS\Block\Helpers;
 
 use WP_HTML_Tag_Processor;
 

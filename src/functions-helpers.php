@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas;
+namespace BLOGWHEELS;
 
 /**
  * Bootstraps the theme.

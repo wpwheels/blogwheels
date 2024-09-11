@@ -11,11 +11,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Block;
+namespace BLOGWHEELS\Block;
 
 use FilesystemIterator;
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
 
 class Assets implements Bootable
 {

@@ -13,11 +13,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas;
+namespace BLOGWHEELS;
 
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\FontFaceResolver;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Action, Filter, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\FontFaceResolver;
+use BLOGWHEELS\Tools\Hooks\{Action, Filter, Hookable};
 
 class Editor implements Bootable
 {

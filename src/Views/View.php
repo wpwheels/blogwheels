@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Views;
+namespace BLOGWHEELS\Views;
 
 use Stringable;
 

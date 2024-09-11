@@ -13,13 +13,13 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas;
+namespace BLOGWHEELS;
 
 use WP_Block_Patterns_Registry;
 use WP_Block_Pattern_Categories_Registry;
 use WP_Block_Type_Registry;
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
 
 class Patterns implements Bootable
 {

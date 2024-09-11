@@ -16,7 +16,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Contracts;
+namespace BLOGWHEELS\Contracts;
 
 interface Bootable
 {

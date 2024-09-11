@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Contracts;
+namespace BLOGWHEELS\Contracts;
 
 use WP_Block_Bindings_Registry;
 

@@ -32,11 +32,11 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Ideas\Dev;
+namespace BLOGWHEELS\Dev;
 
 use WP_Theme_JSON_Data;
-use BLOGWHEELS\Ideas\Contracts\Bootable;
-use BLOGWHEELS\Ideas\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Contracts\Bootable;
+use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
 
 class GlobalStyleVariation implements Bootable
 {
