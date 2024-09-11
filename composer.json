@@ -34,7 +34,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"BLOGWHEELS\\Ideas\\": "src/"
+			"BLOGWHEELS\\": "src/"
 		},
 		"files": [
 			"src/functions-helpers.php"
@@ -45,7 +45,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"BLOGWHEELS\\Ideas\\Dev\\": "dev/"
+			"BLOGWHEELS\\Dev\\": "dev/"
 		},
 		"files": [
 			"dev/bootstrap.php",
