@@ -1,1 +1,106 @@
-.blockwheels-list-marker-selector__list{margin-left:0;padding-left:16px}.blockwheels-list-marker-selector__list li{color:inherit;list-style-type:none;padding-left:16px}.blockwheels-list-marker-selector__list li::marker{color:inherit}.blockwheels-list-marker-selector__list.has-marker-disc li{list-style-type:disc}.blockwheels-list-marker-selector__list.has-marker-circle li{list-style-type:circle}.blockwheels-list-marker-selector__list.has-marker-square li{list-style-type:square}.blockwheels-list-marker-selector__list.has-marker-decimal li{list-style-type:decimal}.blockwheels-list-marker-selector__list.has-marker-leading-zero li{list-style-type:decimal-leading-zero}.blockwheels-list-marker-selector__list.has-marker-lower-alpha li{list-style-type:lower-alpha}.blockwheels-list-marker-selector__list.has-marker-upper-alpha li{list-style-type:upper-alpha}.blockwheels-list-marker-selector__list.has-marker-lower-roman li{list-style-type:lower-roman}.blockwheels-list-marker-selector__list.has-marker-upper-roman li{list-style-type:upper-roman}.editor-post-featured-image__preview{max-height:none}.blockwheels-format-abbr-popover .components-popover__content,.blockwheels-format-span-popover .components-popover__content{max-width:360px;padding:16px;width:auto}.components-circular-option-picker__option{color-scheme:light dark}
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/editor.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+/**
+ * SCSS Variables.
+ *
+ * Please use variables from this sheet to ensure consistency across the UI.
+ * Don't add to this sheet unless you're pretty sure the value will be reused in many places.
+ * For example, don't add rules to this sheet that affect block visuals. It's purely for UI.
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Colors
+ */
+/**
+ * Fonts & basic variables.
+ */
+/**
+ * Grid System.
+ * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ */
+/**
+ * Dimensions.
+ */
+/**
+ * Shadows.
+ */
+/**
+ * Editor widths.
+ */
+/**
+ * Block & Editor UI.
+ */
+/**
+ * Block paddings.
+ */
+/**
+ * React Native specific.
+ * These variables do not appear to be used anywhere else.
+ */
+.blockwheels-list-marker-selector__list {
+  margin-left: 0;
+  padding-left: 16px;
+}
+.blockwheels-list-marker-selector__list li {
+  list-style-type: none;
+  padding-left: 16px;
+  color: inherit;
+}
+.blockwheels-list-marker-selector__list li::marker {
+  color: inherit;
+}
+.blockwheels-list-marker-selector__list.has-marker-disc li {
+  list-style-type: disc;
+}
+.blockwheels-list-marker-selector__list.has-marker-circle li {
+  list-style-type: circle;
+}
+.blockwheels-list-marker-selector__list.has-marker-square li {
+  list-style-type: square;
+}
+.blockwheels-list-marker-selector__list.has-marker-decimal li {
+  list-style-type: decimal;
+}
+.blockwheels-list-marker-selector__list.has-marker-leading-zero li {
+  list-style-type: decimal-leading-zero;
+}
+.blockwheels-list-marker-selector__list.has-marker-lower-alpha li {
+  list-style-type: lower-alpha;
+}
+.blockwheels-list-marker-selector__list.has-marker-upper-alpha li {
+  list-style-type: upper-alpha;
+}
+.blockwheels-list-marker-selector__list.has-marker-lower-roman li {
+  list-style-type: lower-roman;
+}
+.blockwheels-list-marker-selector__list.has-marker-upper-roman li {
+  list-style-type: upper-roman;
+}
+
+.editor-post-featured-image__preview {
+  max-height: none;
+}
+
+.blockwheels-format-abbr-popover .components-popover__content {
+  padding: 16px;
+  width: auto;
+  max-width: 360px;
+}
+
+.blockwheels-format-span-popover .components-popover__content {
+  padding: 16px;
+  width: auto;
+  max-width: 360px;
+}
+
+.components-circular-option-picker__option {
+  color-scheme: light dark;
+}
+
+/*# sourceMappingURL=editor.css.map*/

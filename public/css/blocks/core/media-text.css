@@ -1,1 +1,32 @@
-.wp-block-media-text{gap:var(--wp--preset--spacing--plus-5)}.wp-block-media-text .wp-block-media-text__content{padding:0}@media(max-width:782px){.wp-block-media-text.is-stacked-on-mobile{grid-template-columns:100%!important}.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media{grid-column:1;grid-row:1}.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content{grid-column:1;grid-row:2}}.wp-block-media-text,.wp-block-media-text__content{container-type:inline-size}
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/media-text.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * Breakpoints & Media Queries
+ */
+.wp-block-media-text {
+  gap: var(--wp--preset--spacing--plus-5);
+}
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0;
+}
+
+@media (max-width: 782px) {
+  .wp-block-media-text.is-stacked-on-mobile {
+    grid-template-columns: 100% !important;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+.wp-block-media-text,
+.wp-block-media-text__content {
+  container-type: inline-size;
+}
+
+/*# sourceMappingURL=media-text.css.map*/

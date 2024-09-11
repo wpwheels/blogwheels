@@ -1,1 +1,35 @@
-.wp-block-button[style*=font-weight] .wp-block-button__link{font-weight:inherit}.wp-block-button[style*=font-style] .wp-block-button__link{font-style:inherit}.wp-block-button .wp-block-button__link code,.wp-block-button .wp-block-button__link kbd{background:transparent;border-color:currentColor;color:inherit;font-size:smaller;font-weight:400;opacity:.7;text-decoration:none}.wp-block-button .wp-block-button__link del,.wp-block-button .wp-block-button__link s{color:currentColor;opacity:.7;text-decoration-color:currentColor}.wp-block-button .wp-block-button__link ins{background:inherit;border:none;color:inherit;text-decoration:underline}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/button.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-button[style*=font-weight] .wp-block-button__link {
+  font-weight: inherit;
+}
+
+.wp-block-button[style*=font-style] .wp-block-button__link {
+  font-style: inherit;
+}
+
+.wp-block-button .wp-block-button__link code,
+.wp-block-button .wp-block-button__link kbd {
+  border-color: currentColor;
+  background: transparent;
+  color: inherit;
+  opacity: 0.7;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: smaller;
+}
+.wp-block-button .wp-block-button__link del,
+.wp-block-button .wp-block-button__link s {
+  opacity: 0.7;
+  color: currentColor;
+  text-decoration-color: currentColor;
+}
+.wp-block-button .wp-block-button__link ins {
+  border: none;
+  background: inherit;
+  color: inherit;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=button.css.map*/

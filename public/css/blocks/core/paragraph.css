@@ -1,1 +1,62 @@
-p{box-sizing:border-box;text-shadow:var(--wp--custom--text-shadow,none)}.has-drop-cap:not(:focus):first-letter{float:none;font:inherit;margin:0;padding:0;text-transform:none}@supports(initial-letter:3) or (-webkit-initial-letter:3){.has-drop-cap:not(:focus):first-letter{-webkit-initial-letter:3;initial-letter:3;float:none;font:inherit;font-family:var(--wp--custom--drop-cap--font-family,inherit);font-style:var(--wp--custom--drop-cap--font-style,normal);font-variant:normal;font-weight:var(--wp--custom--drop-cap--font-weight,700);margin:0;padding-right:var(--wp--preset--spacing--minus-2)}}.media-data{align-items:center;display:flex;flex-wrap:nowrap}.media-data:has(.media-data__label,.media-data__content){justify-content:space-between}p.is-style-indent{text-indent:var(--wp--preset--spacing--plus-4)}p.is-style-indent.has-drop-cap{text-indent:var(--wp--preset--spacing--plus-2)}p.is-style-lead-in:first-line{font-synthesis:none;font-variant:small-caps;font-weight:700}p.is-style-lede{font-size:var(--wp--preset--font-size--lg);font-weight:500;line-height:var(--wp--custom--line-height--lg)}
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/paragraph.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+p {
+  box-sizing: border-box;
+}
+
+p {
+  text-shadow: var(--wp--custom--text-shadow, none);
+}
+
+.has-drop-cap:not(:focus)::first-letter {
+  float: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  text-transform: none;
+}
+@supports (initial-letter: 3) or (-webkit-initial-letter: 3) {
+  .has-drop-cap:not(:focus)::first-letter {
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+    float: none;
+    margin: 0;
+    padding-right: var(--wp--preset--spacing--minus-2);
+    font: inherit;
+    font-variant: normal;
+    font-family: var(--wp--custom--drop-cap--font-family, inherit);
+    font-style: var(--wp--custom--drop-cap--font-style, normal);
+    font-weight: var(--wp--custom--drop-cap--font-weight, 700);
+  }
+}
+
+.media-data {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.media-data:has(.media-data__label, .media-data__content) {
+  justify-content: space-between;
+}
+
+p.is-style-indent {
+  text-indent: var(--wp--preset--spacing--plus-4);
+}
+p.is-style-indent.has-drop-cap {
+  text-indent: var(--wp--preset--spacing--plus-2);
+}
+
+p.is-style-lead-in::first-line {
+  font-weight: 700;
+  font-synthesis: none;
+  font-variant: small-caps;
+}
+
+p.is-style-lede {
+  font-weight: 500;
+  font-size: var(--wp--preset--font-size--lg);
+  line-height: var(--wp--custom--line-height--lg);
+}
+
+/*# sourceMappingURL=paragraph.css.map*/

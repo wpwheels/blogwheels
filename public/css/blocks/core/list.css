@@ -1,1 +1,61 @@
-.wp-block-list:where(ul,ol),ol,ul{padding-inline-start:var(--wp--preset--spacing--plus-4)}.wp-block-list:where(ul,ol) :where(li+li,li>ul,li>ol),ol :where(li+li,li>ul,li>ol),ul :where(li+li,li>ul,li>ol){margin-block-start:var(--wp--preset--spacing--minus-1)}.wp-block-list:where(ul,ol):where(ul,ol) li,.wp-block-list:where(ul,ol):where(ul,ol):not([class*=wp-block-]) li,ol:where(ul,ol) li,ol:where(ul,ol):not([class*=wp-block-]) li,ul:where(ul,ol) li,ul:where(ul,ol):not([class*=wp-block-]) li{padding-left:.25em}ol li::marker{font-size:.875em}li::marker{color:var(--wp--custom--marker--color,var(--wp--custom--elements--marker--color))}[class*=has-text-color-] li::marker{color:inherit}:is(ul,ol).is-style-pull{padding-left:1em}.wp-block-list.is-style-horizontal,:is(ul,ol).is-style-horizontal{display:flex;flex-direction:row;flex-wrap:wrap;gap:var(--wp--preset--spacing--minus-2) var(--wp--preset--spacing--base);list-style:none;padding:0}.wp-block-list.is-style-horizontal li,:is(ul,ol).is-style-horizontal li{margin:0;padding:0}.wp-block-list.is-style-horizontal li::marker,:is(ul,ol).is-style-horizontal li::marker{content:none}.wp-block-list.is-style-horizontal li ul,:is(ul,ol).is-style-horizontal li ul{display:none}
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/list.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-list:where(ul, ol),
+ul,
+ol {
+  padding-inline-start: var(--wp--preset--spacing--plus-4);
+}
+.wp-block-list:where(ul, ol) :where(li + li, li > ul, li > ol),
+ul :where(li + li, li > ul, li > ol),
+ol :where(li + li, li > ul, li > ol) {
+  margin-block-start: var(--wp--preset--spacing--minus-1);
+}
+.wp-block-list:where(ul, ol):where(ul, ol):not([class*=wp-block-]) li, .wp-block-list:where(ul, ol):where(ul, ol) li,
+ul:where(ul, ol):not([class*=wp-block-]) li,
+ul:where(ul, ol) li,
+ol:where(ul, ol):not([class*=wp-block-]) li,
+ol:where(ul, ol) li {
+  padding-left: 0.25em;
+}
+
+ol li::marker {
+  font-size: 0.875em;
+}
+
+li::marker {
+  color: var(--wp--custom--marker--color, var(--wp--custom--elements--marker--color));
+}
+
+[class*=has-text-color-] li::marker {
+  color: inherit;
+}
+
+:is(ul, ol).is-style-pull {
+  padding-left: 1em;
+}
+
+:is(ul, ol).is-style-horizontal,
+.wp-block-list.is-style-horizontal {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--wp--preset--spacing--minus-2) var(--wp--preset--spacing--base);
+  padding: 0;
+}
+:is(ul, ol).is-style-horizontal li,
+.wp-block-list.is-style-horizontal li {
+  padding: 0;
+  margin: 0;
+}
+:is(ul, ol).is-style-horizontal li::marker,
+.wp-block-list.is-style-horizontal li::marker {
+  content: none;
+}
+:is(ul, ol).is-style-horizontal li ul,
+.wp-block-list.is-style-horizontal li ul {
+  display: none;
+}
+
+/*# sourceMappingURL=list.css.map*/

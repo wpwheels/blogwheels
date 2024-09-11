@@ -1,1 +1,20 @@
-.wp-block-social-link.wp-social-link:hover{transform:scale(1.05)}.wp-block-social-link:where(:hover,:focus) .wp-block-social-link-label{text-decoration-line:underline}.wp-block-social-link .wp-block-social-link-anchor{outline:none}.wp-block-social-links .wp-social-link .wp-block-social-link-anchor{padding:var(--wp--preset--spacing--minus-2)}
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/social-link.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-social-link.wp-social-link:hover {
+  transform: scale(1.05);
+}
+
+.wp-block-social-link:where(:hover, :focus) .wp-block-social-link-label {
+  text-decoration-line: underline;
+}
+
+.wp-block-social-link .wp-block-social-link-anchor {
+  outline: none;
+}
+
+.wp-block-social-links .wp-social-link .wp-block-social-link-anchor {
+  padding: var(--wp--preset--spacing--minus-2);
+}
+
+/*# sourceMappingURL=social-link.css.map*/

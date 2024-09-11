@@ -1,1 +1,26 @@
-.wp-block-post-featured-image a:has(img){border-radius:var(--wp--custom--global--border--radius)}figure.wp-block-post-featured-image[class*=-gradient-background]{background-size:0 0!important}figure.wp-block-post-featured-image[class*=-gradient-background] img{background-color:inherit;background-image:inherit;padding:clamp(.5rem,-.3333333333rem + 2.0833333333cqi,1rem)}.wp-block-post-featured-image.is-style-borderless,.wp-block-post-featured-image.is-style-borderless img{background:none!important;border:none!important;box-shadow:none!important;outline:none!important;padding:0!important}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/scss/blocks/core/post-featured-image.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-post-featured-image a:has(img) {
+  border-radius: var(--wp--custom--global--border--radius);
+}
+
+figure.wp-block-post-featured-image[class*=-gradient-background] {
+  background-size: 0 0 !important;
+}
+figure.wp-block-post-featured-image[class*=-gradient-background] img {
+  background-color: inherit;
+  background-image: inherit;
+  padding: clamp(0.5rem, -0.3333333333rem + 2.0833333333cqi, 1rem);
+}
+
+.wp-block-post-featured-image.is-style-borderless,
+.wp-block-post-featured-image.is-style-borderless img {
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/*# sourceMappingURL=post-featured-image.css.map*/
