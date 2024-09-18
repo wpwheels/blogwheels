@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace BLOGWHEELS\Inc;
 
+use BLOGWHEELS\Inc\Blocks\Assets;
+
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
@@ -20,7 +22,12 @@ class Theme {
 	public function __construct() {
 
 		Hooks::get_instance();
+		Frontend::get_instance();
+		Editor::get_instance();
+		Embeds::get_instance();
 		Assets::get_instance();
+
+
 		// Utils::get_instance();
 		// Customizer::get_instance();
 		// Menus::get_instance();
