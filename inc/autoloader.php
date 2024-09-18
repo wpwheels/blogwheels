@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Inc\Helpers;
+namespace BLOGWHEELS\Inc;
 
 # Prevent direct access.
 defined('ABSPATH') || exit;
@@ -59,6 +59,12 @@ function autoloader( $resource = '' ) {
 				$file_name = sprintf( 'trait-%s', trim( strtolower( $path[2] ) ) );
 				break;
 
+			case 'helpers':
+				$directory = 'helpers';
+				$file_name = sprintf( 'class-%s', trim( strtolower( $path[2] ) ) );
+				break;
+
+			case 'views':
 			case 'widgets':
 			case 'blocks': // phpcs:ignore PSR2.ControlStructures.SwitchDeclaration.TerminatingComment
 				/**
@@ -92,4 +98,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\BLOGWHEELS\Inc\Helpers\autoloader' );
+spl_autoload_register( '\BLOGWHEELS\Inc\autoloader' );

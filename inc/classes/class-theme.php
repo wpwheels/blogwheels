@@ -12,7 +12,14 @@ declare(strict_types=1);
 
 namespace BLOGWHEELS\Inc;
 
+use BLOGWHEELS\Inc\Views\Engine;
+
+
 use BLOGWHEELS\Inc\Blocks\Assets;
+use BLOGWHEELS\Inc\Blocks\Metadata;
+use BLOGWHEELS\Inc\Blocks\Rules;
+use BLOGWHEELS\Inc\Blocks\Style_Variations;
+use BLOGWHEELS\Inc\Blocks\Variations;
 
 # Prevent direct access.
 defined('ABSPATH') || exit;
@@ -25,13 +32,17 @@ class Theme {
 		Frontend::get_instance();
 		Editor::get_instance();
 		Embeds::get_instance();
+
+
+
+		Engine::get_instance();
+
+
 		Assets::get_instance();
-
-
-		// Utils::get_instance();
-		// Customizer::get_instance();
-		// Menus::get_instance();
-		// Sidebars::get_instance();
+		Metadata::get_instance();
+		Rules::get_instance();
+		Style_Variations::get_instance();
+		Variations::get_instance();
 
 		$this->setup_hooks();
 	}

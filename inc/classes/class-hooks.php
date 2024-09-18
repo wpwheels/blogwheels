@@ -15,7 +15,6 @@ namespace BLOGWHEELS\Inc;
 use WP_Block_Patterns_Registry;
 use WP_Block_Pattern_Categories_Registry;
 use WP_Block_Type_Registry;
-use FilesystemIterator;
 use BLOGWHEELS\Inc\Traits\Singleton;
 
 # Prevent direct access.

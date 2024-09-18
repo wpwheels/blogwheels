@@ -72,7 +72,7 @@ if ( ! defined( 'BLOGWHEELS_SEARCH_RESULTS_POST_PER_PAGE' ) ) {
 	define( 'BLOGWHEELS_SEARCH_RESULTS_POST_PER_PAGE', 9 );
 }
 
-require_once BLOGWHEELS_DIR_PATH . '/inc/helpers/autoloader.php';
+require_once BLOGWHEELS_DIR_PATH . '/inc/autoloader.php';
 
 function blogwheels_get_theme_instance() {
 	new \BLOGWHEELS\Inc\Theme();
