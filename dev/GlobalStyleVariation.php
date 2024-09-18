@@ -36,7 +36,7 @@ namespace BLOGWHEELS\Dev;
 
 use WP_Theme_JSON_Data;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Filter, Hookable};
 
 class GlobalStyleVariation implements Bootable
 {

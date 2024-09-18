@@ -15,7 +15,7 @@ namespace BLOGWHEELS\Block;
 
 use WP_Block_Type;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Filter, Hookable};
 
 class Variations implements Bootable
 {

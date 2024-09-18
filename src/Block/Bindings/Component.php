@@ -16,7 +16,7 @@ namespace BLOGWHEELS\Block\Bindings;
 
 use WP_Block_Bindings_Registry;
 use BLOGWHEELS\Contracts\{BlockBindingSource, Bootable};
-use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Hookable};
 
 class Component implements Bootable
 {

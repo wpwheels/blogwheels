@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace BLOGWHEELS;
 
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Action, Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Filter, Hookable};
 
 class Embeds implements Bootable
 {

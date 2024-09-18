@@ -17,7 +17,7 @@ use WP_Block;
 use WP_HTML_Tag_Processor;
 use BLOGWHEELS\Block\Helpers\CodeHighlight;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Filter, Hookable};
 use BLOGWHEELS\Views\Engine;
 
 class Render implements Bootable

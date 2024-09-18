@@ -17,7 +17,7 @@ use WP_Block;
 use WP_Block_Bindings_Registry;
 use WP_Query;
 use BLOGWHEELS\Contracts\BlockBindingSource;
-use BLOGWHEELS\Tools\Superpower;
+use BLOGWHEELS\Inc\Helpers\Superpower;
 
 class Theme implements BlockBindingSource
 {

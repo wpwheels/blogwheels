@@ -16,8 +16,8 @@ declare(strict_types=1);
 namespace BLOGWHEELS;
 
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\FontFaceResolver;
-use BLOGWHEELS\Tools\Hooks\{Action, Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\FontFaceResolver;
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Filter, Hookable};
 
 class Editor implements Bootable
 {

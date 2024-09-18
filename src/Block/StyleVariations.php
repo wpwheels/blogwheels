@@ -15,7 +15,7 @@ namespace BLOGWHEELS\Block;
 
 use WP_Block_Styles_Registry;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Hookable};
 
 class StyleVariations implements Bootable
 {

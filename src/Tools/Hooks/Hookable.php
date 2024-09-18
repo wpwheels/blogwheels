@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Tools\Hooks;
+namespace BLOGWHEELS\Inc\Helpers\Hooks;
 
 use ReflectionAttribute;
 use ReflectionClass;

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Media binding class.
  *
@@ -11,15 +10,23 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Block\Bindings;
+namespace BLOGWHEELS\Inc\Blocks;
 
 use WP_Block;
 use WP_Block_Bindings_Registry;
-use BLOGWHEELS\Contracts\BlockBindingSource;
-use BLOGWHEELS\Inc\Helpers\MediaMeta;
+use BLOGWHEELS\Inc\Helpers\Media_Meta;
+use BLOGWHEELS\Inc\Traits\Singleton;
 
-class Media implements BlockBindingSource
+# Prevent direct access.
+defined('ABSPATH') || exit;
+
+/**
+ * Class Media.
+ */
+class Media
 {
+	use Singleton;
+
 	/**
 	 * Map of keys to their associated methods.
 	 *
@@ -41,9 +48,9 @@ class Media implements BlockBindingSource
 	private int $post_id = 0;
 
 	/**
-	 * Stores instances of the `MediaMeta` class by post ID.
+	 * Stores instances of the `Media_Meta` class by post ID.
 	 *
-	 * @var   MediaMeta[]
+	 * @var   Media_Meta[]
 	 * @since 1.0.0
 	 */
 	private array $meta = [];
@@ -57,8 +64,8 @@ class Media implements BlockBindingSource
 	{
 		$bindings->register('blockwheels/media', [
 			'label'              => __('Media Data', 'blogwheels'),
-			'uses_context'       => [ 'postType', 'postId'],
-			'get_value_callback' => [ $this, 'callback' ]
+			'uses_context'       => ['postType', 'postId'],
+			'get_value_callback' => [$this, 'callback']
 		]);
 	}
 
@@ -74,8 +81,8 @@ class Media implements BlockBindingSource
 		// If no key is explicitly passed in, use the attribute name.
 		$args['key'] ??= $name;
 
-		if (isset(self::KEY_METHODS[ $args['key'] ])) {
-			$method = self::KEY_METHODS[ $args['key'] ];
+		if (isset(self::KEY_METHODS[$args['key']])) {
+			$method = self::KEY_METHODS[$args['key']];
 
 			return $this->$method($args);
 		}
@@ -117,7 +124,7 @@ class Media implements BlockBindingSource
 	}
 
 	/**
-	 * Returns an image attachment alt text.
+	 * Returns an image attachment caption.
 	 *
 	 * @since 1.0.0
 	 */
@@ -135,13 +142,11 @@ class Media implements BlockBindingSource
 	 */
 	private function renderMeta(array $args): ?string
 	{
-		$this->meta[ $this->post_id ] ??= new MediaMeta(get_post($this->post_id));
+		$this->meta[$this->post_id] ??= new Media_Meta(get_post($this->post_id));
 
-		$data = $this->meta[ $this->post_id ]->render($args['key']);
+		$data = $this->meta[$this->post_id]->render($args['key']);
 
-		// If there's a label, let's wrap it and the metadata in some
-		// markup. Basically, this is our way of doing conditionals at
-		// the moment.
+		// If there's a label, let's wrap it and the metadata in some markup.
 		if ($data && isset($args['label'])) {
 			$data = sprintf(
 				'<span class="media-data__label" style="font-weight:500">%s</span>

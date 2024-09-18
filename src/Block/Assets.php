@@ -15,7 +15,7 @@ namespace BLOGWHEELS\Block;
 
 use FilesystemIterator;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Action, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Hookable};
 
 class Assets implements Bootable
 {

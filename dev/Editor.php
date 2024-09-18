@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace BLOGWHEELS\Dev;
 
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Filter, Hookable};
 
 class Editor implements Bootable
 {

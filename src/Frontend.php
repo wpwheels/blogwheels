@@ -16,7 +16,7 @@ namespace BLOGWHEELS;
 
 use WP;
 use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Tools\Hooks\{Action, Filter, Hookable};
+use BLOGWHEELS\Inc\Helpers\Hooks\{Action, Filter, Hookable};
 
 class Frontend implements Bootable
 {
