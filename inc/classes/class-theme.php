@@ -15,10 +15,11 @@ namespace BLOGWHEELS\Inc;
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-class Blogwheels {
+class Theme {
 
 	public function __construct() {
 
+		Hooks::get_instance();
 		Assets::get_instance();
 		// Utils::get_instance();
 		// Customizer::get_instance();

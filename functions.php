@@ -75,6 +75,6 @@ if ( ! defined( 'BLOGWHEELS_SEARCH_RESULTS_POST_PER_PAGE' ) ) {
 require_once BLOGWHEELS_DIR_PATH . '/inc/helpers/autoloader.php';
 
 function blogwheels_get_theme_instance() {
-	new \BLOGWHEELS\Inc\Blogwheels();
+	new \BLOGWHEELS\Inc\Theme();
 }
 blogwheels_get_theme_instance();
