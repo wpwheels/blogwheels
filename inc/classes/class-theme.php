@@ -32,6 +32,9 @@ class Theme {
 		Editor::get_instance();
 		Embeds::get_instance();
 		Media::get_instance();
+		Parts::get_instance();
+		Patterns::get_instance();
+		Templates::get_instance();
 
 
 		Assets::get_instance();
