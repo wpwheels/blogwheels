@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace BLOGWHEELS\Inc;
 
-use BLOGWHEELS\Inc\Font_Resolver;
+use BLOGWHEELS\Inc\Helpers\Font_Face_Resolver;
 use BLOGWHEELS\Inc\Traits\Singleton;
 
 # Prevent direct access.
@@ -111,7 +111,7 @@ class Editor {
 	public function enqueueFonts(): void
 	{
 		ob_start();
-		wp_print_font_faces(Font_Resolver::getFonts());
+		wp_print_font_faces(Font_Face_Resolver::getFonts());
 		$content = ob_get_clean();
 
 		// phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion

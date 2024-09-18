@@ -21,14 +21,14 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Inc;
+namespace BLOGWHEELS\Inc\Helpers;
 
 use WP_Theme_JSON_Resolver;
 
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-class Font_Resolver
+class Font_Face_Resolver
 {
 
     /**

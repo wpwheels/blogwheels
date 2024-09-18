@@ -26,10 +26,12 @@ class Theme {
 
 	public function __construct() {
 
+
 		Hooks::get_instance();
 		Frontend::get_instance();
 		Editor::get_instance();
 		Embeds::get_instance();
+		Media::get_instance();
 
 
 		Assets::get_instance();
@@ -37,6 +39,7 @@ class Theme {
 		Rules::get_instance();
 		Style_Variations::get_instance();
 		Variations::get_instance();
+
 
 		$this->setup_hooks();
 	}
