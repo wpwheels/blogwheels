@@ -12,8 +12,6 @@ declare(strict_types=1);
 
 namespace BLOGWHEELS\Inc;
 
-use BLOGWHEELS\Inc\Views\Engine;
-
 
 use BLOGWHEELS\Inc\Blocks\Assets;
 use BLOGWHEELS\Inc\Blocks\Metadata;
@@ -32,10 +30,6 @@ class Theme {
 		Frontend::get_instance();
 		Editor::get_instance();
 		Embeds::get_instance();
-
-
-
-		Engine::get_instance();
 
 
 		Assets::get_instance();
