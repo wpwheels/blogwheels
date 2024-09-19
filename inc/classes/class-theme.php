@@ -15,10 +15,11 @@ namespace BLOGWHEELS\Inc;
 
 use BLOGWHEELS\Inc\Blocks\Assets;
 use BLOGWHEELS\Inc\Blocks\Metadata;
-use BLOGWHEELS\Inc\Blocks\Rules;
+
 use BLOGWHEELS\Inc\Blocks\Style_Variations;
 use BLOGWHEELS\Inc\Blocks\Variations;
 use BLOGWHEELS\Inc\Blocks\Media;
+use BLOGWHEELS\Inc\Blocks\Render;
 
 # Prevent direct access.
 defined('ABSPATH') || exit;
@@ -40,7 +41,7 @@ class Theme {
 
 		Assets::get_instance();
 		Metadata::get_instance();
-		Rules::get_instance();
+		Render::get_instance();
 		Style_Variations::get_instance();
 		Variations::get_instance();
 		Media::get_instance();

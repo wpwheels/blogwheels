@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The Render class handles filters on block rendering.
  *
@@ -11,39 +10,59 @@
 
 declare(strict_types=1);
 
-namespace BLOGWHEELS\Block;
+namespace BLOGWHEELS\Inc\Blocks;
 
 use WP_Block;
 use WP_HTML_Tag_Processor;
-use BLOGWHEELS\Block\Helpers\CodeHighlight;
-use BLOGWHEELS\Contracts\Bootable;
-use BLOGWHEELS\Inc\Helpers\Hooks\{Filter, Hookable};
-use BLOGWHEELS\Views\Engine;
+use FilesystemIterator;
+use BLOGWHEELS\Inc\Traits\Singleton;
+use BLOGWHEELS\Inc\Blocks\Engine;
+use BLOGWHEELS\Inc\Blocks\Rules;
+use BLOGWHEELS\Block\Helpers\Code_Highlight;
 
-class Render implements Bootable
-{
-	use Hookable;
+# Prevent direct access.
+defined('ABSPATH') || exit;
+
+/**
+ * Class Render.
+ */
+class Render {
+
+	use Singleton;
+
+	protected $rules;
+
+	protected $views;
 
 	/**
-	 * Sets up the object state.
-	 *
-	 * @since 1.0.0
+	 * Constructor.
 	 */
-	public function __construct(
-		protected Rules $rules,
-		protected Engine $views
-	) {}
-
-	/**
-	 * Boots the component, running its actions/filters.
-	 *
-	 * @since 1.0.0
-	 */
-	#[\Override]
-	public function boot(): void
-	{
-		$this->hookMethods();
+	public function __construct() {
+		$this->rules = Rules::get_instance();
+		$this->views = Engine::get_instance();
+		$this->setup_hooks();
 	}
+
+	/**
+	 * Initialize hooks.
+	 */
+	private function setup_hooks() {
+
+		// Hook into WordPress.
+        add_filter('pre_render_block', [$this, 'preRenderCorePostExcerpt'], 10, 3);
+        add_filter('render_block_data', [$this, 'renderCoreQueryData']);
+        add_filter('render_block', [$this, 'renderByRule'], 10, 3);
+        add_filter('render_block_core/calendar', [$this, 'renderCoreCalendar']);
+        add_filter('render_block_core/code', [$this, 'renderCoreCode'], 10, 2);
+        add_filter('render_block_core/cover', [$this, 'renderCoreCover'], 10, 2);
+        add_filter('render_block_core/loginout', [$this, 'renderCoreLoginout'], 10, 2);
+        add_filter('render_block_core/post-excerpt', [$this, 'renderCorePostExcerpt']);
+        add_filter('render_block_core/tag-cloud', [$this, 'renderCoreTagCloud'], 10, 2);
+        add_filter('render_block_core/template-part', [$this, 'renderCoreTemplatePart'], 10, 2);
+        add_filter('render_block_core/post-content', [$this, 'renderCorePostContent'], 10, 3);
+        add_filter('block_core_navigation_listable_blocks', [$this, 'setListItemWrapper']);
+        add_filter('widget_archives_args', [$this, 'setWidgetArchivesArgs'], 10, 1);
+    }
 
 	/**
 	 * Before rendering the Post Excerpt block, add a custom filter to
@@ -52,7 +71,6 @@ class Render implements Bootable
 	 * @since 1.0.0
 	 * @link  https://github.com/WordPress/gutenberg/issues/49449
 	 */
-	#[Filter('pre_render_block')]
 	public function preRenderCorePostExcerpt(
 		?string $pre_render,
 		array $block,
@@ -80,7 +98,6 @@ class Render implements Bootable
 	 * @since 1.0.0
 	 * @link  https://developer.wordpress.org/reference/hooks/render_block_data/
 	 */
-	#[Filter('render_block_data')]
 	public function renderCoreQueryData(array $parsed_block): array
 	{
 		if ('core/query' === $parsed_block['blockName']) {
@@ -96,7 +113,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block', 'last')]
 	public function renderByRule(
 		string $content,
 		array $block,
@@ -110,7 +126,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block_core/calendar')]
 	public function renderCoreCalendar(string $content): string
 	{
 		$processor = new WP_HTML_Tag_Processor($content);
@@ -136,10 +151,9 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block_core/code')]
 	public function renderCoreCode(string $content, array $block): string
 	{
-		return (new CodeHighlight($content, $block))->render();
+		return (new Code_Highlight($content, $block))->render();
 	}
 
 	/**
@@ -149,7 +163,6 @@ class Render implements Bootable
 	 * @since 1.0.0
 	 * @link  https://github.com/WordPress/gutenberg/issues/18962
 	 */
-	#[Filter('render_block_core/cover')]
 	public function renderCoreCover(string $content, array $block): string
 	{
 		if (
@@ -180,7 +193,6 @@ class Render implements Bootable
 	 * @since 1.0.0
 	 * @link  https://github.com/WordPress/gutenberg/issues/50466
 	 */
-	#[Filter('render_block_core/loginout')]
 	public function renderCoreLoginout(string $content, array $block): string
 	{
 		if (
@@ -215,7 +227,6 @@ class Render implements Bootable
 	 * @link  https://github.com/WordPress/gutenberg/issues/49449
 	 * @see   Render::preRenderCorePostExcerpt()
 	 */
-	#[Filter('render_block_core/post-excerpt', 'first')]
 	public function renderCorePostExcerpt(string $content): string
 	{
 		if ($priority = has_filter('wp_trim_words', [$this, 'formatManualExcerpt'])) {
@@ -232,7 +243,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block_core/tag-cloud')]
 	public function renderCoreTagCloud(string $content, array $block): string
 	{
 		$processor = new WP_HTML_Tag_Processor($content);
@@ -253,7 +263,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block_core/template-part')]
 	public function renderCoreTemplatePart(string $content, array $block): string
 	{
 		if (
@@ -274,7 +283,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('render_block_core/post-content')]
 	public function renderCorePostContent(
 		string $content,
 		array $block,
@@ -330,7 +338,6 @@ class Render implements Bootable
 	 * @since 1.0.0
 	 * @link  https://github.com/WordPress/gutenberg/pull/55551
 	 */
-	#[Filter('block_core_navigation_listable_blocks')]
 	public function setListItemWrapper(array $blocks): array
 	{
 		return [ 'core/loginout' ] + $blocks;
@@ -345,7 +352,6 @@ class Render implements Bootable
 	 *
 	 * @since 1.0.0
 	 */
-	#[Filter('widget_archives_args', 'last')]
 	public function setWidgetArchivesArgs(array $args): array
 	{
 		$before = $args['before'] ?? '';
@@ -356,6 +362,16 @@ class Render implements Bootable
 
 		return $args;
 	}
+
+
+
+
+
+
+
+
+
+
 
 	/**
 	 * Filters `wp_trim_words` to allow the original text but removes
@@ -386,4 +402,6 @@ class Render implements Bootable
 			'strong'  => [ 'class' => true ]
 		]);
 	}
+
+
 }
