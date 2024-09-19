@@ -1,20 +1,20 @@
 ////
 /// Inline Icon mixin.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 @mixin wrapper {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--minus-3);
+	gap: var( --wp--preset--spacing--minus-3 );
 	align-items: center;
 }
 
-@mixin icon($icon) {
-	content: "";
-	mask: no-repeat 50% 50% #{$icon};
+@mixin icon( $icon ) {
+	content: '';
+	mask: no-repeat 50% 50% #{ $icon };
 	mask-size: cover;
 	background: currentColor;
 	display: inline-block;
@@ -22,22 +22,22 @@
 	height: 1em;
 }
 
-@mixin modify($icon) {
-	mask-image: #{$icon};
+@mixin modify( $icon ) {
+	mask-image: #{ $icon };
 }
 
-@mixin prefix($icon) {
+@mixin prefix( $icon ) {
 	@include wrapper();
 
 	&::before {
-		@include icon($icon);
+		@include icon( $icon );
 	}
 }
 
-@mixin suffix($icon) {
+@mixin suffix( $icon ) {
 	@include wrapper();
 
 	&::after {
-		@include icon($icon);
+		@include icon( $icon );
 	}
 }

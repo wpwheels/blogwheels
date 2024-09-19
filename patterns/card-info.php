@@ -3,7 +3,7 @@
 /**
  * Title: Info Card
  * Slug: blogwheels/card-info
- * Categories: blockwheels-card
+ * Categories: blogwheels-card
  * Keywords: card, grid
  * Viewport Width: 480
  */
@@ -24,11 +24,11 @@ $url = home_url();
 			"blockGap":"var:preset|spacing|minus-3"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"layout":{"type":"default"},
 	"fontSize":"xs"
 } -->
-<div class="wp-block-group has-global-border is-style-section-3 has-xs-font-size">
+<div class="wp-block-group has-global-border is-style-section-1 has-xs-font-size">
 
 	<!-- wp:heading {"level":3,"fontSize":"md"} -->
 	<h3 class="wp-block-heading has-md-font-size" id="browse-the-resources"><a href="<?= esc_url($url) ?>"><?= esc_html__('Placeholder Text', 'blogwheels') ?></a></h3>

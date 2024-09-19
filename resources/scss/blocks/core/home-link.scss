@@ -1,12 +1,12 @@
 ////
 /// Home Link block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon.scss";
-@use "../../tools/inline-icon";
+@use '../../tools/icon.scss';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -28,5 +28,5 @@
 /// Icon style.
 ///
 .wp-block-home-link.is-style-icon .wp-block-home-link__content {
-	@include inline-icon.prefix(icon.get-url("home"));
+	@include inline-icon.prefix( icon.get-url( 'home' ) );
 }

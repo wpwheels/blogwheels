@@ -1,11 +1,11 @@
 ////
 /// Latest Posts block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/list";
+@use '../../tools/list';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -37,14 +37,14 @@
 /// this in 2024?
 ///
 .wp-block-latest-posts:has(
-		.wp-block-latest-posts__featured-image:where(.alignleft, .alignright)
-	) {
+	.wp-block-latest-posts__featured-image:where(.alignleft, .alignright)
+) {
 	> li::after,
 	.wp-block-latest-posts__post-excerpt::before {
-		content: ".";
-		display: block;
-		height: 0;
-		clear: both;
+		content:    ".";
+		display:    block;
+		height:     0;
+		clear:      both;
 		visibility: hidden;
 	}
 }
@@ -54,17 +54,16 @@
 /// and right-aligned images.
 ///
 .wp-block-latest-posts__featured-image {
+
 	> img {
 		border-radius: var(--wp--custom--global--border--radius);
-		box-shadow: var(--wp--custom--global--shadow);
+		box-shadow: var(--wp--custom--shadow--primary--default);
 	}
 
 	&:where(.alignleft, .alignright) {
 		max-width: 20%;
 
-		> img {
-			max-width: 100% !important;
-		}
+		> img { max-width: 100% !important; }
 	}
 }
 
@@ -111,9 +110,9 @@
 	}
 
 	&:has(
-			.wp-block-latest-posts__post-excerpt,
-			.wp-block-latest-posts__post-full-content
-		) {
+		.wp-block-latest-posts__post-excerpt,
+		.wp-block-latest-posts__post-full-content
+	) {
 		.wp-block-latest-posts__post-title {
 			font-size: var(--wp--preset--font-size--md);
 			line-height: var(--wp--custom--line-height--md);
@@ -126,32 +125,31 @@
 /// because there is no specific class for the list style.
 ///
 .wp-block-latest-posts.wp-block-latest-posts__list:where(:not(.is-grid)) {
+
 	// Add extra whitespace when there are featured images.
 	&:has(.wp-block-latest-posts__featured-image) li + li {
 		margin-top: var(--wp--preset--spacing--base);
 	}
 
 	&:has(
-			.wp-block-latest-posts__post-excerpt,
-			.wp-block-latest-posts__post-full-content
-		)
-		li
-		+ li {
+		.wp-block-latest-posts__post-excerpt,
+		.wp-block-latest-posts__post-full-content
+	) li + li {
 		margin-top: var(--wp--style--block-gap);
 	}
 
 	// When there is no excerpt, content, or featured image, treat the block
 	// like a normal list.
-	&:not(
-			:has(
-					.wp-block-latest-posts__post-excerpt,
-					.wp-block-latest-posts__post-full-content,
-					.wp-block-latest-posts__featured-image
-				)
-		) {
+	&:not(:has(
+		.wp-block-latest-posts__post-excerpt,
+		.wp-block-latest-posts__post-full-content,
+		.wp-block-latest-posts__featured-image
+	)) {
 		@include list.flow();
 
-		list-style: initial;
+		& {
+			list-style: initial;
+		}
 
 		// We need to reset the overflow to allow the markers to show up.
 		// WP sets this to `hidden` by default.
@@ -187,22 +185,21 @@
 
 	// Break into three columns when there are at least three nested columns.
 	@media (min-width: 64rem) {
-		&:where(.columns-3, .columns-4, .columns-5, .columns-6) {
+		&:where(
+			.columns-3,
+			.columns-4,
+			.columns-5,
+			.columns-6
+		) {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 
 	// Allow any number of columns at equal width.
 	@media (min-width: 80rem) {
-		&.columns-4 {
-			grid-template-columns: repeat(4, 1fr);
-		}
-		&.columns-5 {
-			grid-template-columns: repeat(5, 1fr);
-		}
-		&.columns-6 {
-			grid-template-columns: repeat(6, 1fr);
-		}
+		&.columns-4 { grid-template-columns: repeat(4, 1fr); }
+		&.columns-5 { grid-template-columns: repeat(5, 1fr); }
+		&.columns-6 { grid-template-columns: repeat(6, 1fr); }
 	}
 
 	li {
@@ -210,6 +207,7 @@
 		margin: 0;
 	}
 }
+
 
 // -----------------------------------------------------------------------------
 // Block style variations.

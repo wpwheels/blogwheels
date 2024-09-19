@@ -1,8 +1,8 @@
 /**
  * Code syntax highlighter.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -13,9 +13,9 @@ window.Prism = window.Prism || {};
 window.Prism.manual = true;
 
 // Import the Prism script.
-import "./prism";
+import './prism';
 
 // Target our code blocks only.
-document
-	.querySelectorAll(".wp-block-code.is-style-highlight")
-	.forEach((block) => Prism.highlightAllUnder(block));
+document.querySelectorAll('.wp-block-code.is-style-highlight').forEach(
+	(block) => Prism.highlightAllUnder(block)
+);

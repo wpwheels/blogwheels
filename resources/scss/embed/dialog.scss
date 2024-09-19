@@ -1,13 +1,13 @@
 ////
 /// Styling for the embed dialog popover.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Import tools.
-@use "../tools/icon";
-@use "../tools/inline-icon";
+@use '../tools/icon';
+@use '../tools/inline-icon';
 
 .wp-embed-share-dialog {
 	color: var(--color);
@@ -65,14 +65,7 @@
 	height: revert;
 	font-family: var(
 		--wp--preset--font-family--mono,
-		ui-monospace,
-		"Fira Code",
-		"Cascadia Code",
-		"Source Code Pro",
-		Menlo,
-		Consolas,
-		"DejaVu Sans Mono",
-		monospace
+		ui-monospace, 'Fira Code', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace
 	);
 	font-size: var(--wp--preset--font-size--sm);
 	font-style: normal;
@@ -107,8 +100,8 @@
 	top: var(--wp--style--block-gap);
 	right: var(--wp--style--block-gap);
 	font-size: inherit;
-	color: var(--wp--preset--color--base);
-	@include inline-icon.prefix(icon.get-url("close"));
+	color: inherit;
+	@include inline-icon.prefix(icon.get-url('close'));
 
 	.dashicons {
 		display: none !important;

@@ -20,41 +20,136 @@
 						"padding": "var:preset|spacing|base"
 					}
 				}
-			},
-			"core/navigation-submenu": {
-				"custom": {
-					"background": "var:preset|color|neutral-950",
-					"color": "var:preset|color|base"
-				}
 			}
 		},
 		"custom": {
 			"variation": "saga",
+			"color": {
+				"surface": {
+					"primary": "var:preset|color|primary-600",
+					"button": {
+						"primary": {
+							"default": "var:preset|color|primary-600",
+							"hover": "var:preset|color|primary-900"
+						}
+					},
+					"submenu": {
+						"default": "var:custom|color|surface|level-1",
+						"hover": "var:custom|color|surface|level-2"
+					}
+				},
+				"text": {
+					"default": "var:preset|color|neutral-900"
+				},
+				"icon": {
+					"default": "currentColor",
+					"muted": "var:preset|color|neutral-400",
+					"primary": "var:preset|color|primary-600"
+				},
+				"border": {
+					"default": "var:preset|color|neutral-100"
+				}
+			},
+			"section-1": {
+				"color": {
+					"surface": {
+						"primary": "var:preset|color|primary-600",
+						"button": {
+							"primary": {
+								"default": "var:preset|color|primary-600",
+								"hover": "var:preset|color|primary-900"
+							}
+						}
+					},
+					"text": {
+						"default": "var:preset|color|neutral-900"
+					},
+					"icon": {
+						"default": "currentColor",
+						"muted": "var:preset|color|neutral-400",
+						"primary": "var:preset|color|primary-600"
+					},
+					"border": {
+						"default": "var:preset|color|neutral-200"
+					}
+				}
+			},
+			"section-2": {
+				"color": {
+					"surface": {
+						"primary": "var:preset|color|primary-600",
+						"button": {
+							"primary": {
+								"default": "var:preset|color|primary-600",
+								"hover": "var:preset|color|primary-900"
+							}
+						}
+					},
+					"text": {
+						"default": "var:preset|color|neutral-900"
+					},
+					"icon": {
+						"default": "currentColor",
+						"muted": "var:preset|color|neutral-400",
+						"primary": "var:preset|color|primary-600"
+					},
+					"border": {
+						"default": "var:preset|color|neutral-300"
+					}
+				}
+			},
+			"section-3": {
+				"color": {
+					"surface": {
+						"level-0": "var:preset|color|neutral-950",
+						"level-1": "var:preset|color|neutral-900",
+						"level-2": "var:preset|color|neutral-800",
+						"primary": "var:preset|color|primary-600",
+						"button": {
+							"primary": {
+								"default": "var:preset|color|primary-600",
+								"hover": "var:preset|color|primary-800"
+							}
+						}
+					},
+					"text": {
+						"default": "var:preset|color|white",
+						"muted": "var:preset|color|neutral-400",
+						"primary": "var:preset|color|primary-200",
+						"on-primary": "var:preset|color|white",
+						"button": {
+							"primary": {
+								"default": "var:preset|color|white",
+								"hover": "var:preset|color|white"
+							}
+						},
+						"link": {
+							"primary": {
+								"default": "var:preset|color|primary-200",
+								"hover": "var:preset|color|primary-200"
+							}
+						}
+					},
+					"icon": {
+						"default": "currentColor",
+						"muted": "var:preset|color|neutral-500",
+						"primary": "var:preset|color|primary-600"
+					},
+					"border": {
+						"default": "var:preset|color|neutral-800"
+					}
+				}
+			},
 			"global": {
 				"border": {
-					"color": "var:preset|color|neutral-100",
 					"style": "solid",
 					"width": "1px",
 					"radius": "0"
-				},
-				"fill": {
-					"background": "var:preset|color|primary-500",
-					"hoverBackground": "var:preset|color|primary-700"
 				}
 			}
 		},
 		"color": {
 			"palette": [
-				{
-					"slug": "base",
-					"color": "#ffffff",
-					"name": "Base"
-				},
-				{
-					"slug": "contrast",
-					"color": "#32373c",
-					"name": "Contrast"
-				},
 				{
 					"slug": "primary-950",
 					"color": "#450a0a",
@@ -109,6 +204,11 @@
 					"slug": "primary-50",
 					"color": "#fef2f2",
 					"name": "Primary: 50"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
 				},
 				{
 					"slug": "neutral-950",
@@ -166,9 +266,9 @@
 					"name": "Neutral: 50"
 				},
 				{
-					"slug": "black",
-					"color": "#000000",
-					"name": "Black"
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
 				}
 			]
 		},
@@ -248,17 +348,6 @@
 					"lineHeight": "var:preset|line-height|xl"
 				}
 			},
-			"core/navigation-submenu": {
-				"color": {
-					"background": "var:preset|color|neutral-950",
-					"text": "var:preset|color|base"
-				},
-				"border": {
-					"width": "0",
-					"radius": "0"
-				},
-				"css": "--wp--custom--submenu-item--hover-background: var(--wp--preset--color--neutral-900);"
-			},
 			"core/post-comments-form": {
 				"elements": {
 					"h3": {
@@ -320,10 +409,12 @@
 			},
 			"core/site-title": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontSize": "var:preset|font-size|lg",
+					"fontFamily": "var:preset|font-family|primary",
+					"fontSize": "var:preset|font-size|md",
 					"fontWeight": "700",
-					"letterSpacing": "-0.03em"
+					"fontStyle": "italic",
+					"letterSpacing": "-0.03em",
+					"textTransform": "none"
 				}
 			},
 			"core/verse": {
@@ -336,14 +427,14 @@
 		"variations": {
 			"meta": {
 				"color": {
-					"text": "var:preset|color|neutral-500"
+					"text": "var:custom|color|text|muted"
 				},
 				"blocks": {
 					"core/post-author-name": {
 						"elements": {
 							"link": {
 								"color": {
-									"text": "var:preset|color|neutral-900"
+									"text": "var:custom|color|text|default"
 								},
 								"typography": {
 									"fontFamily": "var:preset|font-family|primary",
@@ -365,11 +456,13 @@
 					}
 				}
 			},
-			"section-1": {
-				"css": "--wp--custom--global--fill--background: var(--wp--preset--color--primary-700);\n--wp--custom--global--fill--hover-background: var(--wp--preset--color--primary-900);",
-				"color": {
-					"background": "var:preset|color|neutral-950",
-					"text": "var:preset|color|white"
+			"section-3": {
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var:custom|color|text|default"
+						}
+					}
 				}
 			},
 			"site-footer": {

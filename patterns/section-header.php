@@ -3,7 +3,7 @@
 /**
  * Title: Section Header
  * Slug: blogwheels/section-header
- * Categories: blockwheels-layout
+ * Categories: blogwheels-layout
  * Viewport Width: 1376
  */
 

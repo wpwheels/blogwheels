@@ -1,24 +1,24 @@
 /**
  * Creates the delete RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import { delIcon } from "../../common/utils-icon";
+import { delIcon } from '../../common/utils-icon';
 
 // WordPress dependencies.
-import { RichTextToolbarButton } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-import { toggleFormat } from "@wordpress/rich-text";
+import { RichTextToolbarButton } from '@wordpress/block-editor';
+import { __ }                    from '@wordpress/i18n';
+import { toggleFormat }          from '@wordpress/rich-text';
 
 /**
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/del";
+const name = 'blogwheels/del';
 
 /**
  * RichText format type definition.
@@ -26,15 +26,17 @@ const name = "blockwheels/del";
  */
 export default {
 	name,
-	title: __("Delete", "blogwheels"),
-	tagName: "del",
+	title: __('Delete', 'blogwheels'),
+	tagName: 'del',
 	className: null,
 	edit: ({ isActive, onChange, value }) => (
 		<RichTextToolbarButton
-			icon={delIcon}
-			title={__("Delete", "blogwheels")}
-			isActive={isActive}
-			onClick={() => onChange(toggleFormat(value, { type: name }))}
+			icon={ delIcon }
+			title={ __('Delete', 'blogwheels') }
+			isActive={ isActive }
+			onClick={ () => onChange(
+				toggleFormat(value, { type: name })
+			) }
 		/>
-	),
+	)
 };

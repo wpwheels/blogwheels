@@ -1,8 +1,8 @@
 ////
 /// Calendar block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@
 /// @todo Integrate this into `theme.json` custom properties.
 ///
 .wp-block-calendar table:where(:not(.has-text-color)) :is(td, th) {
-	border-color: var(--wp--preset--color--neutral-100);
+	border-color: var(--wp--custom--color--border--default);
 }
 
 ///
@@ -33,7 +33,7 @@
 /// @todo Integrate this into `theme.json` custom properties.
 ///
 .wp-block-calendar table:where(:not(.has-text-color)) {
-	color: var(--wp--preset--color--contrast);
+	color: inherit;
 }
 
 // -----------------------------------------------------------------------------
@@ -44,8 +44,7 @@
 /// More spacing than WP's default for cells.
 ///
 .wp-block-calendar :is(td, th) {
-	padding: var(--wp--preset--spacing--minus-1)
-		var(--wp--preset--spacing--minus-3);
+	padding: var(--wp--preset--spacing--minus-1) var(--wp--preset--spacing--minus-3);
 }
 
 ///
@@ -70,12 +69,13 @@
 ///
 .wp-block-calendar thead {
 	font-family: var(--wp--custom--elements--thead--font-family, inherit);
-	font-style: var(--wp--custom--elements--thead--font-style, inherit);
+	font-style:  var(--wp--custom--elements--thead--font-style, inherit);
 	font-weight: var(--wp--custom--elements--thead--font-weight, 600);
 	line-height: var(--wp--custom--elements--thead--line-height, inherit);
-	font-size: var(--wp--custom--elements--thead--font-size, inherit);
-	color: var(--wp--custom--elements--thead--color, currentColor);
-	background: var(--wp--custom--elements--thead--background, transparent);
+	font-size:   var(--wp--custom--elements--thead--font-size, inherit);
+	// color:       var(--wp--custom--elements--thead--color, currentColor);
+	color:       inherit;
+	background:  var(--wp--custom--elements--thead--background, transparent);
 }
 
 ///
@@ -90,6 +90,8 @@
 ///
 .wp-block-calendar table {
 	overflow: hidden;
+	border-spacing: 2px;
+	border-collapse: separate;
 }
 
 ///
@@ -127,7 +129,7 @@
 /// @todo Integrate this into `theme.json` custom properties.
 ///
 .wp-block-calendar table tbody {
-	border: 1px solid var(--wp--preset--color--neutral-100);
+	border: none;
 }
 
 ///
@@ -136,20 +138,22 @@
 /// @todo Integrate this into `theme.json` custom properties.
 ///
 .wp-block-calendar table td:where(:not(.pad)) {
-	background: var(--wp--preset--color--base);
+	background: var(--wp--custom--color--surface--level-2, transparent);
+	border: none;
 }
+
 
 ///
 /// Allow styling `thead` from `theme.json`.
 ///
 .wp-calendar-nav {
 	font-family: var(--wp--custom--nav--font-family, inherit);
-	font-style: var(--wp--custom--nav--font-style, inherit);
+	font-style:  var(--wp--custom--nav--font-style, inherit);
 	font-weight: var(--wp--custom--nav--font-weight, 600);
 	line-height: var(--wp--custom--nav--line-height, inherit);
-	font-size: var(--wp--custom--nav--font-size, inherit);
-	color: var(--wp--custom--nav--color, currentColor);
-	background: var(--wp--custom--nav--background, transparent);
+	font-size:   var(--wp--custom--nav--font-size, inherit);
+	color:       var(--wp--custom--nav--color, currentColor);
+	background:  var(--wp--custom--nav--background, transparent);
 }
 
 ///
@@ -159,10 +163,7 @@
 ///
 .wp-calendar-nav-prev,
 .wp-calendar-nav-next {
-	padding: var(--wp--preset--spacing--minus-1)
-		var(--wp--preset--spacing--minus-3);
-	//font-size: var(--wp--preset--font-size--sm);
-	//line-height: var(--wp--custom--line-height--sm);
+	padding: var(--wp--preset--spacing--minus-1) var(--wp--preset--spacing--minus-3);
 }
 
 // -----------------------------------------------------------------------------

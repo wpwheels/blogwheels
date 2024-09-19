@@ -1,19 +1,19 @@
 /**
  * Filters the `BlockEdit` to add a text shadow control.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import CodeLanguageControl from "./control-code-language";
-import { SUPPORTED_BLOCKS } from "./constants";
+import CodeLanguageControl from './control-code-language';
+import { SUPPORTED_BLOCKS } from './constants';
 
 // WordPress dependencies.
-import { InspectorControls } from "@wordpress/block-editor";
-import { PanelBody } from "@wordpress/components";
-import { __ } from "@wordpress/i18n";
+import { InspectorControls } from '@wordpress/block-editor';
+import { PanelBody } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Filters and returns the `BlockEdit` component.
@@ -23,17 +23,17 @@ import { __ } from "@wordpress/i18n";
 export default (BlockEdit) => (props) => {
 	return SUPPORTED_BLOCKS.includes(props.name) ? (
 		<>
-			<BlockEdit {...props} />
+			<BlockEdit { ...props } />
 			<InspectorControls group="settings">
-				<PanelBody title={__("Code Settings", "blogwheels")}>
+				<PanelBody title={ __('Code Settings', 'blogwheels') }>
 					<CodeLanguageControl
-						attributes={props.attributes}
-						setAttributes={props.setAttributes}
+						attributes={ props.attributes }
+						setAttributes={ props.setAttributes }
 					/>
 				</PanelBody>
 			</InspectorControls>
 		</>
 	) : (
-		<BlockEdit {...props} />
+		<BlockEdit { ...props } />
 	);
 };

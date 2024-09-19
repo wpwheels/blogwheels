@@ -170,7 +170,7 @@
 					"lineHeight": "var:custom|line-height|md"
 				}
 			},
-			"blockwheels/breadcrumbs": {
+			"blogwheels/breadcrumbs": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|secondary",
 					"fontSize": "var:preset|font-size|xs",

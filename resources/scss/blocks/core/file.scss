@@ -1,12 +1,12 @@
 ////
 /// File block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon";
-@use "../../tools/inline-icon";
+@use '../../tools/icon';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -87,14 +87,16 @@
 /// The icon style prefixes the block download button with an icon.
 ///
 .wp-block-file.is-style-icon {
+
 	&:where(:not(:has(.wp-block-file__button))) {
+
 		a {
-			@include inline-icon.prefix(icon.get-url("download"));
+			@include inline-icon.prefix(icon.get-url('download'));
 		}
 	}
 
 	.wp-block-file__button {
-		@include inline-icon.prefix(icon.get-url("download"));
+		@include inline-icon.prefix(icon.get-url('download'));
 	}
 }
 

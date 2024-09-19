@@ -1,8 +1,8 @@
 ////
 /// Table of Contents block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -20,7 +20,7 @@
 // -----------------------------------------------------------------------------
 
 // Tighten spacing between list elements.
-.wp-block-table-of-contents ol :where(li + li, li > ol) {
+.wp-block-table-of-contents ol :where( li + li, li > ol ) {
 	margin-block-start: revert;
 }
 
@@ -40,6 +40,7 @@
 /// items and a `{num}.{num}` prefix for sub-items.
 ///
 .wp-block-table-of-contents.is-style-chapters {
+
 	ol {
 		list-style: none;
 		counter-reset: chapter;
@@ -54,7 +55,7 @@
 	}
 
 	li + li {
-		margin-top: var(--wp--preset--spacing--base);
+		margin-top: var( --wp--preset--spacing--base );
 	}
 
 	li::before {
@@ -64,15 +65,15 @@
 	}
 
 	> ol > li::before {
-		content: "Chapter " counters(chapter, "", decimal);
+		content: "Chapter " counters( chapter, '', decimal );
 		display: block;
 	}
 
 	li li {
-		margin-top: var(--wp--preset--spacing--base);
+		margin-top: var( --wp--preset--spacing--base );
 
 		&::before {
-			content: counters(chapter, ".", decimal);
+			content: counters( chapter, '.', decimal );
 			padding-right: 0.5rem;
 		}
 

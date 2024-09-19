@@ -1,13 +1,13 @@
 ////
 /// Styling for the embedded post.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Import tools.
-@use "../tools/icon";
-@use "../tools/inline-icon";
+@use '../tools/icon';
+@use '../tools/inline-icon';
 
 body {
 	margin: 0 !important;
@@ -32,9 +32,7 @@ body {
 		text-decoration: underline;
 		color: var(--link-hover-color);
 
-		> svg {
-			fill: currentColor;
-		}
+		> svg { fill: currentColor; }
 	}
 }
 
@@ -81,7 +79,7 @@ body {
 
 .wp-embed-site-title {
 	display: block;
-	font-size: 1em;
+	font-size: 0.9375em;
 	line-height: 1.2;
 	font-weight: 600;
 
@@ -106,6 +104,7 @@ body {
 	fill: currentColor;
 }
 
+
 .wp-embed-meta {
 	display: flex;
 	align-items: center;
@@ -117,18 +116,20 @@ body {
 	font-size: inherit;
 	margin: 0;
 
-	.dashicons {
-		display: none !important;
-	}
+	.dashicons { display: none !important; }
 }
 
 .wp-embed-comments a {
-	@include inline-icon.prefix(icon.get-url("comment"));
+	@include inline-icon.prefix(icon.get-url('comment'));
+
 }
 
 .wp-embed-share-dialog-open {
-	@include inline-icon.prefix(icon.get-url("share"));
-	color: var(--link-color);
+	@include inline-icon.prefix(icon.get-url('share'));
+
+	& {
+		color: var(--link-color);
+	}
 
 	&:hover,
 	&:focus {

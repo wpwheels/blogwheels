@@ -1,16 +1,16 @@
 /**
  * Gradient utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // WordPress dependencies.
 import {
 	getGradientSlugByValue,
-	getGradientValueBySlug,
-} from "@wordpress/block-editor";
+	getGradientValueBySlug
+} from '@wordpress/block-editor';
 
 /**
  * Formats a gradient value as a preset string if the preset exists. Otherwise,
@@ -19,16 +19,16 @@ import {
 export const gradientAttribute = (value, gradients) => {
 	const slug = getGradientSlugByValue(gradients, value);
 
-	return slug ? `var:preset|gradient|${slug}` : value;
+	return slug ? `var:preset|gradient|${ slug }` : value;
 };
 
 /**
  * Returns a gradient preset slug if a preset string is given. Otherwise, null.
  */
 export const gradientSlug = (gradient) => {
-	return gradient && gradient.startsWith("var:preset|gradient|")
-		? gradient.replace("var:preset|gradient|", "")
-		: null;
+	return gradient && gradient.startsWith('var:preset|gradient|')
+	       ? gradient.replace('var:preset|gradient|', '')
+	       : null;
 };
 
 /**
@@ -52,5 +52,5 @@ export const gradientSetting = (gradient, gradients) => {
 export const gradientStyle = (gradient) => {
 	const slug = gradientSlug(gradient);
 
-	return slug ? `var(--wp--preset--gradient--${slug})` : gradient;
+	return slug ? `var(--wp--preset--gradient--${ slug })` : gradient;
 };

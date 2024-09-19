@@ -1,12 +1,12 @@
 ////
 /// Comment Template block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon";
-@use "../../tools/inline-icon";
+@use '../../tools/icon';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -45,7 +45,7 @@
 .wp-block-comment-template {
 	.editor-styles-wrapper & > li > ol,
 	.depth-1 > ol {
-		padding-left: var(--wp--style--block-gap);
+	       padding-left: var(--wp--style--block-gap);
 	}
 
 	// Customization: zeroes out the left padding for the third level of
@@ -65,21 +65,15 @@
 /// Prefix with icon.
 ///
 .comment-parent-link {
-	@include inline-icon.prefix(icon.get-url("arrow-left"));
-	gap: initial;
+	@include inline-icon.prefix(icon.get-url('arrow-left'));
+
+	& {
+		gap: initial;
+	}
 
 	&::before {
 		width: 1.25em;
 		height: 1.25em;
-	}
-
-	a {
-		color: var(--wp--custom--comment-parent-link--color, inherit);
-
-		&:focus,
-		&:hover {
-			color: var(--wp--custom--comment-parent-link--hover-color, inherit);
-		}
 	}
 }
 

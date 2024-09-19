@@ -1,18 +1,23 @@
 /**
  * Utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import { updateClass } from "../../common/utils-classname";
+import { updateClass } from '../../common/utils-classname';
 
-import { MARKERS, OL_MARKERS, UL_MARKERS, MARKER_PREFIX } from "./constants";
+import {
+	MARKERS,
+	OL_MARKERS,
+	UL_MARKERS,
+	MARKER_PREFIX
+} from './constants';
 
 // WordPress dependencies.
-import TokenList from "@wordpress/token-list";
+import TokenList from '@wordpress/token-list';
 
 /**
  * Gets a marker value if it is included in a class.
@@ -24,10 +29,10 @@ export const getMarkerFromClassName = (className) => {
 	const list = new TokenList(className);
 
 	const marker = MARKERS.find((option) =>
-		list.contains(MARKER_PREFIX + option.value),
+		list.contains(MARKER_PREFIX + option.value)
 	);
 
-	return undefined !== marker ? marker.value : "";
+	return undefined !== marker ? marker.value : '';
 };
 
 /**
@@ -38,8 +43,12 @@ export const getMarkerFromClassName = (className) => {
  * @param {string} oldMarker
  * @returns {string}
  */
-export const updateMarkerClass = (className, newMarker, oldMarker) =>
-	updateClass(className, newMarker, oldMarker, MARKER_PREFIX);
+export const updateMarkerClass = (className, newMarker, oldMarker) => updateClass(
+	className,
+	newMarker,
+	oldMarker,
+	MARKER_PREFIX
+);
 
 /**
  * Determines if the marker is for ordered lists.
@@ -47,8 +56,9 @@ export const updateMarkerClass = (className, newMarker, oldMarker) =>
  * @param {string} slug
  * @returns {boolean}
  */
-export const isOrderedMarker = (slug) =>
-	OL_MARKERS.find((marker) => marker.value === slug);
+export const isOrderedMarker = (slug) => OL_MARKERS.find(
+	marker => marker.value === slug
+);
 
 /**
  * Determines if the marker is for unordered lists.
@@ -56,5 +66,6 @@ export const isOrderedMarker = (slug) =>
  * @param {string} slug
  * @returns {boolean}
  */
-export const isUnorderedMarker = (slug) =>
-	UL_MARKERS.find((marker) => marker.value === slug);
+export const isUnorderedMarker = (slug) => UL_MARKERS.find(
+	marker => marker.value === slug
+);

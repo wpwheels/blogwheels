@@ -1,13 +1,13 @@
 ////
 /// Search block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/form";
-@use "../../tools/icon";
-@use "../../tools/inline-icon";
+@use '../../tools/form';
+@use '../../tools/icon';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -23,22 +23,25 @@
 // -----------------------------------------------------------------------------
 
 .wp-block-search {
+
 	// In the editor, this is a `<div>` instead of a real `<label>`.
 	&__label {
 		@include form.label();
 
 		// Because of the structure, this label doesn't pick up the
 		// mixin's bottom margin.
-		margin-bottom: var(--wp--preset--spacing--minus-3);
+		& {
+			margin-bottom: var(--wp--preset--spacing--minus-3);
+		}
 	}
 
 	// The label for the search form is placed before the inside wrapper.
 	// So we must specifically look for the sibling wrapper with a nested
 	// search input field to change the label's color when focused.
 	&__label:has(
-			+ .wp-block-search__inside-wrapper .wp-block-search__input:focus
-		) {
-		color: var(--wp--custom--elements--label--focus-color, inherit);
+		+ .wp-block-search__inside-wrapper .wp-block-search__input:focus
+	) {
+		color: var(--wp--custom--color--text--primary, inherit);
 	}
 
 	// Input styling, which includes styling the inside wrapper to appear as
@@ -68,11 +71,7 @@
 		}
 
 		.wp-block-search__inside-wrapper:has(.wp-block-search__input:focus) {
-			outline: 2px solid
-				var(
-					--wp--custom--elements--input-accent-color,
-					var(--wp--preset--color--primary-700)
-				);
+			outline: 2px solid var(--wp--custom--color--text--primary, currentColor);
 			outline-offset: 2px;
 		}
 
@@ -114,13 +113,12 @@
 /// Adds an icon to the search label.
 ///
 .wp-block-search.is-style-icon {
+
 	.wp-block-search__label {
-		@include inline-icon.prefix(icon.get-url("search"));
+		@include inline-icon.prefix( icon.get-url( 'search' ) );
 
 		// Flip the icon horizontally.
-		&::before {
-			transform: scaleX(-1);
-		}
+		&::before { transform: scaleX( -1 ); }
 	}
 }
 
@@ -130,7 +128,7 @@
 /// @todo Test to see if this style is necessary and if there are better methods
 ///       of making the form smaller when needed.
 .wp-block-search.is-style-sm {
-	font-size: var(--wp--preset--font-size--sm);
+	font-size: var( --wp--preset--font-size--sm );
 
 	&.wp-block-search__button-inside .wp-block-search__inside-wrapper,
 	.wp-block-search__input {

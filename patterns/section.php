@@ -3,7 +3,7 @@
 /**
  * Title: Section
  * Slug: blogwheels/section
- * Categories: blockwheels-layout
+ * Categories: blogwheels-layout
  * Viewport Width: 640
  */
 
@@ -27,10 +27,10 @@ defined('ABSPATH') || exit;
 		}
 	},
 	"align":"full",
-	"className":"is-style-section-3",
+	"className":"is-style-section-1",
 	"layout":{"type":"constrained"}
 } -->
-<section class="wp-block-group alignfull is-style-section-3" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
+<section class="wp-block-group alignfull is-style-section-1" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
 
 	<!-- wp:pattern {"slug":"blogwheels/section-header"} /-->
 

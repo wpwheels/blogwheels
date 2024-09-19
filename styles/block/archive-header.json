@@ -3,15 +3,10 @@
 	"version": 3,
 	"title": "Archive Header",
 	"slug": "archive-header",
-	"blockTypes": [ "core/group" ],
+	"blockTypes": [ "core/template-part" ],
 	"styles": {
-		"spacing": {
-			"padding": {
-				"top": "var:preset|spacing|plus-3",
-				"bottom": "var:preset|spacing|plus-3",
-				"left": "var:preset|spacing|plus-3",
-				"right": "var:preset|spacing|plus-3"
-			}
+		"color": {
+			"background": "transparent"
 		}
 	}
 }

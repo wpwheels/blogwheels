@@ -26,7 +26,7 @@
   transition: box-shadow 0.5s ease-in-out;
 }
 .wp-lightbox-container img:hover {
-  box-shadow: var(--wp--preset--shadow--enlarge);
+  box-shadow: var(--wp--custom--shadow--primary--hover);
 }
 
 .wp-lightbox-container .lightbox-trigger {
@@ -35,11 +35,7 @@
 }
 
 figure.wp-block-image[class*=-gradient-background] {
-  --image-padding: clamp(
-  	0.5rem,
-  	-0.33333333333333326rem + 2.083333333333333cqi,
-  	1rem
-  );
+  --image-padding: clamp(0.5rem, -0.33333333333333326rem + 2.083333333333333cqi, 1rem);
   background-size: 0 0 !important;
   padding: 0;
 }
@@ -76,7 +72,7 @@ figure.wp-block-image[class*=-gradient-background] .lightbox-trigger {
   color: inherit;
   border: 2px solid currentColor;
   overflow: hidden;
-  box-shadow: var(--wp--custom--global--shadow);
+  box-shadow: var(--wp--custom--shadow--primary--default);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
 }
 .wp-block-image.is-style-hand-drawn[class*=gradient-] img {
@@ -100,8 +96,6 @@ figure.wp-block-image[class*=-gradient-background] .lightbox-trigger {
   flex-wrap: wrap;
   gap: var(--wp--preset--spacing--minus-3);
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
 }
 .wp-block-image.is-style-icon .wp-element-caption::before {
   content: "";
@@ -114,21 +108,25 @@ figure.wp-block-image[class*=-gradient-background] .lightbox-trigger {
   width: 1em;
   height: 1em;
 }
+.wp-block-image.is-style-icon .wp-element-caption {
+  justify-content: center;
+  gap: 0.5rem;
+}
 
 figure.wp-block-image.is-style-polaroid {
   padding: var(--wp--preset--spacing--base);
-  background-color: var(--wp--preset--color--base);
+  background-color: var(--wp--custom--color--surface--level-0);
   transition: all 0.5s ease-in-out;
   overflow: visible;
   background-size: auto !important;
 }
 
 .wp-block-image.is-style-polaroid:where(:not([class*=gradient-])) {
-  box-shadow: var(--wp--custom--global--shadow), 0 0 8rem rgb(255, 255, 235) inset;
+  box-shadow: var(--wp--custom--shadow--primary--default), 0 0 8rem rgb(255, 255, 235) inset;
 }
 .wp-block-image.is-style-polaroid .wp-element-caption {
   margin-top: var(--wp--preset--spacing--base);
-  color: var(--wp--preset--color--contrast);
+  color: var(--wp--custom--color--text--default);
 }
 .wp-block-image.is-style-polaroid[class*=-gradient-background] img {
   padding: 0;
@@ -181,7 +179,7 @@ figure.wp-block-image.is-style-polaroid {
   padding: 0 !important;
   border: none !important;
   border-radius: var(--wp--custom--global--border--radius) !important;
-  box-shadow: var(--wp--custom--global--shadow) !important;
+  box-shadow: var(--wp--custom--shadow--primary--default) !important;
 }
 
 /*# sourceMappingURL=image.css.map*/

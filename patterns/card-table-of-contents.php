@@ -4,7 +4,7 @@
  * Title: Table of Contents Card
  * Slug: blogwheels/card-table-of-contents
  * Description: Displays a post's table of contents within a Group block with a Heading.
- * Categories: text, blockwheels-card
+ * Categories: text, blogwheels-card
  * Keywords: table, contents, list
  * Block Types: core/table-of-contents
  * Viewport Width: 640
@@ -23,10 +23,10 @@ defined('ABSPATH') || exit;
 			"blockGap":"var:preset|spacing|base"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"layout":{"type":"default"}
 } -->
-<div class="wp-block-group has-global-border is-style-section-3">
+<div class="wp-block-group has-global-border is-style-section-1">
 
 	<!-- wp:paragraph {"fontFamily":"primary"} -->
 	<p class="has-primary-font-family"><strong><?= esc_html__('Table of Contents', 'blogwheels') ?></strong></p>

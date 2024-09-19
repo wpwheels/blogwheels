@@ -1,8 +1,8 @@
 ////
 /// Table block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -54,12 +54,12 @@
 ///
 .wp-block-table thead {
 	font-family: var(--wp--custom--elements--thead--font-family, inherit);
-	font-style: var(--wp--custom--elements--thead--font-style, inherit);
+	font-style:  var(--wp--custom--elements--thead--font-style, inherit);
 	font-weight: var(--wp--custom--elements--thead--font-weight, 600);
 	line-height: var(--wp--custom--elements--thead--line-height, inherit);
-	font-size: var(--wp--custom--elements--thead--font-size, inherit);
-	color: var(--wp--custom--elements--thead--color, currentColor);
-	background: var(--wp--custom--elements--thead--background, transparent);
+	font-size:   var(--wp--custom--elements--thead--font-size, inherit);
+	color:       var(--wp--custom--elements--thead--color, currentColor);
+	background:  var(--wp--custom--elements--thead--background, transparent);
 }
 
 ///
@@ -67,11 +67,11 @@
 ///
 .wp-block-table tfoot {
 	font-family: var(--wp--custom--elements--tfoot--font-family, inherit);
-	font-style: var(--wp--custom--elements--tfoot--font-style, inherit);
+	font-style:  var(--wp--custom--elements--tfoot--font-style, inherit);
 	font-weight: var(--wp--custom--elements--tfoot--font-weight, 600);
 	line-height: var(--wp--custom--elements--tfoot--line-height, inherit);
-	font-size: var(--wp--custom--elements--tfoot--font-size, inherit);
-	color: var(--wp--custom--elements--tfoot--color, currentColor);
+	font-size:   var(--wp--custom--elements--tfoot--font-size, inherit);
+	color:      var(--wp--custom--elements--tfoot--color, currentColor);
 	background: var(--wp--custom--elements--tfoot--background, transparent);
 }
 
@@ -98,7 +98,7 @@
 	thead tr,
 	tbody tr:nth-child(even),
 	tbody:has(tr:last-child:nth-child(odd)) + tfoot tr {
-		color: var(--wp--custom--stripes--stripe-color, inherit);
+		color:      var(--wp--custom--stripes--stripe-color, inherit);
 		background: var(--wp--custom--stripes--stripe-background, transparent);
 	}
 }

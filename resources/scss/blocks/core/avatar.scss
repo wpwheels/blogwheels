@@ -1,8 +1,8 @@
 ////
 /// Avatar block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -12,10 +12,7 @@
 ///
 /// Remove extra whitespace from inline block element so this aligns correctly.
 ///
-/// @todo `block` broke something with layout. Investigate further.
-///
 .wp-block-avatar__image {
-	//display: block;
 	display: inline-block;
 }
 
@@ -47,8 +44,8 @@
 ///
 /// Gradient background handling for the avatar.
 ///
-.wp-block-avatar[class*="-gradient-background"],
-.editor-styles-wrapper .wp-block-avatar[class*="-gradient-background"] {
+.wp-block-avatar[class*=-gradient-background],
+.editor-styles-wrapper .wp-block-avatar[class*=-gradient-background] {
 	background-size: 0 0 !important;
 
 	// Note that the editor has an extra wrapper `<div>` around the image.

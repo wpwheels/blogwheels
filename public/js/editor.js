@@ -111,8 +111,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Houses constants needed for the component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -123,13 +123,13 @@ __webpack_require__.r(__webpack_exports__);
  * Array of supported blocks for the filter.
  * @type {array}
  */
-const SUPPORTED_BLOCKS = ["core/code"];
+const SUPPORTED_BLOCKS = ['core/code'];
 
 /**
  * Prefix used for the class name.
  * @type {string}
  */
-const LANGUAGE_PREFIX = "language-";
+const LANGUAGE_PREFIX = 'language-';
 
 /**
  * Array of icon options. Ideally, we'd be able to pull these from
@@ -138,20 +138,20 @@ const LANGUAGE_PREFIX = "language-";
  * @type {array}
  */
 const LANGUAGES = [{
-  value: "css",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("CSS", "blogwheels")
+  value: 'css',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('CSS', 'blogwheels')
 }, {
-  value: "html",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("HTML", "blogwheels")
+  value: 'html',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('HTML', 'blogwheels')
 }, {
-  value: "js",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("JavaScript", "blogwheels")
+  value: 'js',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('JavaScript', 'blogwheels')
 }, {
-  value: "php",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("PHP", "blogwheels")
+  value: 'php',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('PHP', 'blogwheels')
 }, {
-  value: "scss",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("SCSS", "blogwheels")
+  value: 'scss',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('SCSS', 'blogwheels')
 }];
 
 /***/ }),
@@ -179,8 +179,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Text language component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -197,9 +197,9 @@ __webpack_require__.r(__webpack_exports__);
  * @type {object}
  */
 const DEFAULT_OPTION = {
-  key: "default",
-  name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Default", "blogwheels"),
-  value: ""
+  key: 'default',
+  name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Default', 'blogwheels'),
+  value: ''
 };
 
 /**
@@ -225,9 +225,9 @@ const DEFAULT_OPTION = {
     value: language.value
   }))];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "blockwheels-code-language"
+    className: "blogwheels-code-language"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CustomSelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Code Language", "blogwheels"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Code Language', 'blogwheels'),
     options: options,
     value: options.find(option => option.value === language),
     onChange: ({
@@ -267,8 +267,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Filters the `BlockEdit` to add a text shadow control.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -292,7 +292,7 @@ __webpack_require__.r(__webpack_exports__);
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
     group: "settings"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Code Settings", "blogwheels")
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Code Settings', 'blogwheels')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_control_code_language__WEBPACK_IMPORTED_MODULE_1__["default"], {
     attributes: props.attributes,
     setAttributes: props.setAttributes
@@ -326,8 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -345,7 +345,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @returns {array}
  */
-const getLanguages = () => (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.applyFilters)("blockwheels.ideas.blockEdit.codeLanguages", _constants__WEBPACK_IMPORTED_MODULE_1__.LANGUAGES);
+const getLanguages = () => (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.applyFilters)('blogwheels.ideas.blockEdit.codeLanguages', _constants__WEBPACK_IMPORTED_MODULE_1__.LANGUAGES);
 
 /**
  * Gets a language value if it is included in a class.
@@ -356,7 +356,7 @@ const getLanguages = () => (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.appl
 const getLanguageFromClassName = className => {
   const list = new (_wordpress_token_list__WEBPACK_IMPORTED_MODULE_2___default())(className);
   const language = getLanguages().find(option => list.contains(_constants__WEBPACK_IMPORTED_MODULE_1__.LANGUAGE_PREFIX + option.value));
-  return undefined !== language ? language.value : "";
+  return undefined !== language ? language.value : '';
 };
 
 /**
@@ -386,8 +386,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Houses constants needed for the component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -395,19 +395,19 @@ __webpack_require__.r(__webpack_exports__);
  * Array of supported blocks for the filter.
  * @type {array}
  */
-const SUPPORTED_BLOCKS = ["core/avatar", "core/image", "core/post-featured-image"];
+const SUPPORTED_BLOCKS = ['core/avatar', 'core/image', 'core/post-featured-image'];
 
 /**
  * Prefix used for the class name.
  * @type {string}
  */
-const GRADIENT_PREFIX = "has-";
+const GRADIENT_PREFIX = 'has-';
 
 /**
  * Suffix used for the class name.
  * @type {string}
  */
-const GRADIENT_SUFFIX = "-gradient-background";
+const GRADIENT_SUFFIX = '-gradient-background';
 
 /***/ }),
 
@@ -434,8 +434,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Gradient background component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -481,7 +481,7 @@ __webpack_require__.r(__webpack_exports__);
 
   // Define the gradient picker settings.
   const settings = {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Gradient Outline", "blogwheels"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Gradient Outline', 'blogwheels'),
     gradientValue: getGradientValue(),
     onGradientChange: value => setAttributes({
       className: (0,_utils__WEBPACK_IMPORTED_MODULE_2__.updateGradientClass)(className, getGradientSlugByValue(value), currentGradient)
@@ -519,8 +519,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * The hooks file houses custom React hooks for use with the component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -564,8 +564,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Filters the `BlockEdit` to add a gradient background control.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -615,8 +615,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -636,7 +636,7 @@ __webpack_require__.r(__webpack_exports__);
 const getGradientFromClassName = (className, gradients) => {
   const list = new (_wordpress_token_list__WEBPACK_IMPORTED_MODULE_2___default())(className);
   const gradient = gradients.find(option => list.contains(_constants__WEBPACK_IMPORTED_MODULE_1__.GRADIENT_PREFIX + option.slug + _constants__WEBPACK_IMPORTED_MODULE_1__.GRADIENT_SUFFIX));
-  return undefined !== gradient ? gradient.slug : "";
+  return undefined !== gradient ? gradient.slug : '';
 };
 
 /**
@@ -666,8 +666,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Registers block edit filters.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -680,9 +680,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Add filters.
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)("editor.BlockEdit", "blogwheels-code-language", _code_language__WEBPACK_IMPORTED_MODULE_0__["default"]);
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)("editor.BlockEdit", "blogwheels-gradient-background", _gradient_background__WEBPACK_IMPORTED_MODULE_1__["default"]);
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)("editor.BlockEdit", "blogwheels-list-marker", _list_marker__WEBPACK_IMPORTED_MODULE_2__["default"]);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockEdit', 'blogwheels-code-language', _code_language__WEBPACK_IMPORTED_MODULE_0__["default"]);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockEdit', 'blogwheels-gradient-background', _gradient_background__WEBPACK_IMPORTED_MODULE_1__["default"]);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_3__.addFilter)('editor.BlockEdit', 'blogwheels-list-marker', _list_marker__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
 /***/ }),
 
@@ -705,8 +705,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Houses constants needed for the component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -717,30 +717,30 @@ __webpack_require__.r(__webpack_exports__);
  * Array of supported blocks for the filter.
  * @type {array}
  */
-const SUPPORTED_BLOCKS = ["core/archives", "core/categories", "core/list", "core/page-list"];
+const SUPPORTED_BLOCKS = ['core/archives', 'core/categories', 'core/list', 'core/page-list'];
 
 /**
  * Prefix used for the class name.
  * @type {string}
  */
-const MARKER_PREFIX = "has-marker-";
+const MARKER_PREFIX = 'has-marker-';
 
 /**
  * Unordered list options.
  * @type {array}
  */
 const UL_MARKERS = [{
-  value: "disc",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Disc", "blogwheels")
+  value: 'disc',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Disc', 'blogwheels')
 }, {
-  value: "circle",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Circle", "blogwheels")
+  value: 'circle',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Circle', 'blogwheels')
 }, {
-  value: "square",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Square", "blogwheels")
+  value: 'square',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Square', 'blogwheels')
 }, {
-  value: "none",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("None", "blogwheels")
+  value: 'none',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None', 'blogwheels')
 }];
 
 /**
@@ -748,26 +748,26 @@ const UL_MARKERS = [{
  * @type {array}
  */
 const OL_MARKERS = [{
-  value: "decimal",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Decimal", "blogwheels")
+  value: 'decimal',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Decimal', 'blogwheels')
 }, {
-  value: "leading-zero",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Leading Zero", "blogwheels")
+  value: 'leading-zero',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Leading Zero', 'blogwheels')
 }, {
-  value: "upper-alpha",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Alphabetical: Uppercase", "blogwheels")
+  value: 'upper-alpha',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Alphabetical: Uppercase', 'blogwheels')
 }, {
-  value: "lower-alpha",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Alphabetical: Lowercase", "blogwheels")
+  value: 'lower-alpha',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Alphabetical: Lowercase', 'blogwheels')
 }, {
-  value: "upper-roman",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Roman: Uppercase", "blogwheels")
+  value: 'upper-roman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Roman: Uppercase', 'blogwheels')
 }, {
-  value: "lower-roman",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Roman: Lowercase", "blogwheels")
+  value: 'lower-roman',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Roman: Lowercase', 'blogwheels')
 }, {
-  value: "none",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("None", "blogwheels")
+  value: 'none',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('None', 'blogwheels')
 }];
 
 /**
@@ -803,8 +803,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * List marker component.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -820,8 +820,8 @@ __webpack_require__.r(__webpack_exports__);
 
 // Define a default option for the select control.
 const DEFAULT_OPTION = {
-  value: "",
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Default", "blogwheels")
+  value: '',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Default', 'blogwheels')
 };
 
 /**
@@ -849,23 +849,23 @@ const DEFAULT_OPTION = {
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useEffect)(() => {
     if (marker && ordered && !(0,_utils__WEBPACK_IMPORTED_MODULE_3__.isOrderedMarker)(marker) || !ordered && !(0,_utils__WEBPACK_IMPORTED_MODULE_3__.isUnorderedMarker)(marker)) {
       setAttributes({
-        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.updateMarkerClass)(className, "", marker)
+        className: (0,_utils__WEBPACK_IMPORTED_MODULE_3__.updateMarkerClass)(className, '', marker)
       });
     }
   }, [ordered]);
   const markerButtonContent = (option, index) => {
-    const slug = option.value ? option.value : "default";
+    const slug = option.value ? option.value : 'default';
     return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.FlexItem, {
-      key: `blockwheels-marker-name-${index}`,
-      className: "blockwheels-list-marker-selector__content"
+      key: `blogwheels-marker-name-${index}`,
+      className: "blogwheels-list-marker-selector__content"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-      className: `blockwheels-list-marker-selector__list has-marker-${slug}`
+      className: `blogwheels-list-marker-selector__list has-marker-${slug}`
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, option.label)));
   };
   const markerButton = (option, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.MenuItem, {
     key: index,
     role: "menuitemradio",
-    className: "blockwheels-list-marker-selector__button",
+    className: "blogwheels-list-marker-selector__button",
     isSelected: marker === option.value,
     isPressed: marker === option.value,
     onClick: () => setAttributes({
@@ -873,22 +873,22 @@ const DEFAULT_OPTION = {
     })
   }, markerButtonContent(option, index));
   const markerControls = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.MenuGroup, {
-    className: "blockwheels-list-marker-selector",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Select a list marker", "blogwheels")
+    className: "blogwheels-list-marker-selector",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Select a list marker', 'blogwheels')
   }, options.map((option, index) => markerButton(option, index)));
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Dropdown, {
-    className: "blockwheels-list-marker-dropdown",
-    contentClassName: "blockwheels-list-marker-popover",
+    className: "blogwheels-list-marker-dropdown",
+    contentClassName: "blogwheels-list-marker-popover",
     popoverProps: {
-      placement: "bottom-start"
+      placement: 'bottom-start'
     },
     renderToggle: ({
       isOpen,
       onToggle
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.ToolbarButton, {
-      className: "blockwheels-list-marker__button",
+      className: "blogwheels-list-marker__button",
       icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.markerIcon,
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("List Marker", "blogwheels"),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('List Marker', 'blogwheels'),
       onClick: onToggle,
       "aria-expanded": isOpen,
       isPressed: !!marker
@@ -919,8 +919,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Filters the `BlockEdit` to add a list marker control.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -971,8 +971,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -992,7 +992,7 @@ __webpack_require__.r(__webpack_exports__);
 const getMarkerFromClassName = className => {
   const list = new (_wordpress_token_list__WEBPACK_IMPORTED_MODULE_2___default())(className);
   const marker = _constants__WEBPACK_IMPORTED_MODULE_1__.MARKERS.find(option => list.contains(_constants__WEBPACK_IMPORTED_MODULE_1__.MARKER_PREFIX + option.value));
-  return undefined !== marker ? marker.value : "";
+  return undefined !== marker ? marker.value : '';
 };
 
 /**
@@ -1037,8 +1037,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Registers block styles.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1049,8 +1049,9 @@ __webpack_require__.r(__webpack_exports__);
 // registered via JS must also be unregistered via JS.
 _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_1___default()(() => {
   // Remove core block styles.
-  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.unregisterBlockStyle)("core/separator", "dots");
-  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.unregisterBlockStyle)("core/social-links", "pill-shape");
+  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.unregisterBlockStyle)('core/separator', 'dots');
+  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.unregisterBlockStyle)('core/social-links', 'pill-shape');
+  (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.unregisterBlockStyle)('core/tag-cloud', 'outline');
 });
 
 /***/ }),
@@ -1071,39 +1072,39 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Comment parent link variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/paragraph",
+  block: 'core/paragraph',
   variation: {
-    name: "blockwheels/comment-parent-link",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Comment Parent Link", "blogwheels"),
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Displays a link to the comment parent.", "blogwheels"),
-    category: "widgets",
-    keywords: ["comment", "parent"],
+    name: 'blogwheels/comment-parent-link',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Comment Parent Link', 'blogwheels'),
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Displays a link to the comment parent.', 'blogwheels'),
+    category: 'widgets',
+    keywords: ['comment', 'parent'],
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
     scope: [],
     // For internal use, so leave scope empty.
-    ancestor: "core/comment-template",
+    ancestor: 'core/comment-template',
     attributes: {
       metadata: {
         bindings: {
           content: {
-            source: "blockwheels/comment",
+            source: 'blogwheels/comment',
             args: {
-              key: "parentLink"
+              key: 'parentLink'
             }
           }
         }
       },
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("In reply to Comment Author", "blogwheels")
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('In reply to Comment Author', 'blogwheels')
     },
-    isActive: ["metadata.bindings.content.source", "metadata.bindings.content.args.key"]
+    isActive: ['metadata.bindings.content.source', 'metadata.bindings.content.args.key']
   }
 });
 
@@ -1125,8 +1126,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Grid variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1137,19 +1138,19 @@ __webpack_require__.r(__webpack_exports__);
 // plugin, and we're just plugging it in here until it gets ported to WordPress
 // at some point.
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/group",
+  block: 'core/group',
   variation: {
-    name: "group-grid",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Grid", "blogwheels"),
+    name: 'group-grid',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Grid', 'blogwheels'),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Arrange blocks in a grid.", "blogwheels"),
-    scope: ["block", "inserter", "transform"],
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Arrange blocks in a grid.', 'blogwheels'),
+    scope: ['block', 'inserter', 'transform'],
     attributes: {
       layout: {
-        type: "grid"
+        type: 'grid'
       }
     },
-    isActive: blockAttributes => blockAttributes.layout?.type === "grid"
+    isActive: blockAttributes => blockAttributes.layout?.type === 'grid'
   }
 });
 
@@ -1175,8 +1176,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Registers block variations.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1217,37 +1218,37 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Query pagination label variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/paragraph",
+  block: 'core/paragraph',
   variation: {
-    name: "blockwheels/pagination-label",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Pagination Label", "blogwheels"),
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Displays the pagination current and total pages.", "blogwheels"),
-    category: "theme",
+    name: 'blogwheels/pagination-label',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Pagination Label', 'blogwheels'),
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Displays the pagination current and total pages.', 'blogwheels'),
+    category: 'theme',
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_0__.labelImportantIcon,
-    scope: ["inserter"],
+    scope: ['inserter'],
     attributes: {
       metadata: {
         bindings: {
           content: {
-            source: "blockwheels/theme",
+            source: 'blogwheels/theme',
             args: {
-              key: "paginationLabel"
+              key: 'paginationLabel'
             }
           }
         }
       },
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Page %1$s / %2$s:", "blogwheels"), 3, 7),
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Page %1$s / %2$s:', 'blogwheels'), 3, 7),
       className: "pagination-label"
     },
-    isActive: ["metadata.bindings.content.source", "metadata.bindings.content.args.key"]
+    isActive: ['metadata.bindings.content.source', 'metadata.bindings.content.args.key']
   }
 });
 
@@ -1269,25 +1270,25 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Post format variation for the Post Terms block.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/post-terms",
+  block: 'core/post-terms',
   variation: {
-    name: "blockwheels/post-format",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Format", "blogwheels"),
+    name: 'blogwheels/post-format',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Format', 'blogwheels'),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Displays the assigned post format.", "blogwheels"),
-    scope: ["block", "inserter", "transform"],
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Displays the assigned post format.', 'blogwheels'),
+    scope: ['block', 'inserter', 'transform'],
     attributes: {
-      term: "post_format"
+      term: 'post_format'
     },
-    isActive: ["term"]
+    isActive: ['term']
   }
 });
 
@@ -1309,38 +1310,38 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Reading Time variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/paragraph",
+  block: 'core/paragraph',
   variation: {
-    name: "blockwheels/post",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Reading Time", "blogwheels"),
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Displays the estimated time to read the post.", "blogwheels"),
-    category: "theme",
-    keywords: ["time", "read", "reading"],
+    name: 'blogwheels/post',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reading Time', 'blogwheels'),
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Displays the estimated time to read the post.', 'blogwheels'),
+    category: 'theme',
+    keywords: ['time', 'read', 'reading'],
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_0__.timerIcon,
-    scope: ["inserter"],
+    scope: ['inserter'],
     attributes: {
       metadata: {
         bindings: {
           content: {
-            source: "blockwheels/post",
+            source: 'blogwheels/post',
             args: {
-              key: "readingTime"
+              key: 'readingTime'
             }
           }
         }
       },
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Reading Time", "blogwheels")
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reading Time', 'blogwheels')
     },
     example: {},
-    isActive: ["metadata.bindings.content.source", "metadata.bindings.content.args.key"]
+    isActive: ['metadata.bindings.content.source', 'metadata.bindings.content.args.key']
   }
 });
 
@@ -1362,39 +1363,39 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Site Copyright variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  block: "core/paragraph",
+  block: 'core/paragraph',
   variation: {
-    name: "blockwheels/site-copyright",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Site Copyright", "blogwheels"),
-    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Displays the site copyright date.", "blogwheels"),
-    category: "widgets",
-    keywords: ["copyright"],
+    name: 'blogwheels/site-copyright',
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Site Copyright', 'blogwheels'),
+    description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Displays the site copyright date.', 'blogwheels'),
+    category: 'widgets',
+    keywords: ['copyright'],
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_0__.copyrightIcon,
-    scope: ["inserter"],
+    scope: ['inserter'],
     attributes: {
       metadata: {
         bindings: {
           content: {
-            source: "blockwheels/site",
+            source: 'blogwheels/site',
             args: {
-              key: "copyright"
+              key: 'copyright'
             }
           }
         }
       },
       content: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
       // Translators: %s is the copyright year.
-      (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Copyright © %s", "blogwheels"), new Date().getFullYear())
+      (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Copyright © %s', 'blogwheels'), new Date().getFullYear())
     },
-    isActive: ["metadata.bindings.content.source", "metadata.bindings.content.args.key"]
+    isActive: ['metadata.bindings.content.source', 'metadata.bindings.content.args.key']
   }
 });
 
@@ -1415,8 +1416,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Common utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1438,7 +1439,7 @@ __webpack_require__.r(__webpack_exports__);
  * const newClass = updateClass(className, 'foo', 'bar', 'prefix-', '-suffix');
  * // returns: 'prefix-foo-suffix
  */
-const updateClass = (className, newClass = "", oldClass = "", prefix = "", suffix = "") => {
+const updateClass = (className, newClass = '', oldClass = '', prefix = '', suffix = '') => {
   const list = new (_wordpress_token_list__WEBPACK_IMPORTED_MODULE_0___default())(className);
   if (oldClass) {
     list.remove(prefix + oldClass + suffix);
@@ -1469,8 +1470,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Gradient utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1490,7 +1491,7 @@ const gradientAttribute = (value, gradients) => {
  * Returns a gradient preset slug if a preset string is given. Otherwise, null.
  */
 const gradientSlug = gradient => {
-  return gradient && gradient.startsWith("var:preset|gradient|") ? gradient.replace("var:preset|gradient|", "") : null;
+  return gradient && gradient.startsWith('var:preset|gradient|') ? gradient.replace('var:preset|gradient|', '') : null;
 };
 
 /**
@@ -1543,8 +1544,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Icons library.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1692,8 +1693,8 @@ __webpack_require__.r(__webpack_exports__);
  * Primary editor script. Imports all of the various features so that they can
  * be bundled into a final file during the build process.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1733,8 +1734,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the abbreviation RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1752,7 +1753,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/abbr";
+const name = 'blogwheels/abbr';
 
 /**
  * RichText format type definition.
@@ -1760,8 +1761,8 @@ const name = "blockwheels/abbr";
  */
 const abbreviationFormat = {
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Abbreviation", "blogwheels"),
-  tagName: "abbr",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Abbreviation', 'blogwheels'),
+  tagName: 'abbr',
   className: null,
   edit: Edit
 };
@@ -1785,7 +1786,7 @@ function Edit({
   const togglePopover = () => setIsPopoverVisible(state => !state);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.abbreviationIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Abbreviation", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Abbreviation', 'blogwheels'),
     isActive: isActive,
     onClick: () => isActive ? onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_6__.removeFormat)(value, name)) : togglePopover()
   }), isPopoverVisible && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AbbrTitlePopover, {
@@ -1795,6 +1796,7 @@ function Edit({
     contentRef: contentRef
   }));
 }
+;
 
 /**
  * Creates the popover component.
@@ -1809,15 +1811,15 @@ function AbbrTitlePopover({
     editableContentElement: contentRef.current,
     settings: abbreviationFormat
   });
-  const [title, setTitle] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("");
+  const [title, setTitle] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('');
   const titleTextControl = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add title for abbreviation", "blogwheels"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add title for abbreviation', 'blogwheels'),
     value: title,
     onChange: val => setTitle(val),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Expand on the definition for the abbreviation when a full description is not present in the content.", "blogwheels")
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Expand on the definition for the abbreviation when a full description is not present in the content.', 'blogwheels')
   });
   const popoverForm = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
-    className: "blockwheels-format-abbr-popover__form",
+    className: "blogwheels-format-abbr-popover__form",
     onSubmit: event => {
       event.preventDefault();
       onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_6__.applyFormat)(value, {
@@ -1830,13 +1832,14 @@ function AbbrTitlePopover({
     }
   }, titleTextControl);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
-    className: "blockwheels-format-abbr-popover",
+    className: "blogwheels-format-abbr-popover",
     anchor: popoverAnchor,
     placement: "top",
     onClose: onClose,
     variant: "toolbar"
   }, popoverForm);
 }
+;
 
 /***/ }),
 
@@ -1863,8 +1866,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the big RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1880,7 +1883,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/big";
+const name = 'blogwheels/big';
 
 /**
  * RichText format type definition.
@@ -1888,16 +1891,16 @@ const name = "blockwheels/big";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Big", "blogwheels"),
-  tagName: "span",
-  className: "has-larger-text",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Big', 'blogwheels'),
+  tagName: 'span',
+  className: 'has-larger-text',
   edit: ({
     isActive,
     onChange,
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.textIncreaseIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Big", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Big', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -1930,8 +1933,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the mark RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -1947,7 +1950,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/cite";
+const name = 'blogwheels/cite';
 
 /**
  * RichText format type definition.
@@ -1955,8 +1958,8 @@ const name = "blockwheels/cite";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cite", "blogwheels"),
-  tagName: "cite",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cite', 'blogwheels'),
+  tagName: 'cite',
   className: null,
   edit: ({
     isActive,
@@ -1964,7 +1967,7 @@ const name = "blockwheels/cite";
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.citeIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Cite", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Cite', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -1997,8 +2000,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the delete RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2014,7 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/del";
+const name = 'blogwheels/del';
 
 /**
  * RichText format type definition.
@@ -2022,8 +2025,8 @@ const name = "blockwheels/del";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Delete", "blogwheels"),
-  tagName: "del",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Delete', 'blogwheels'),
+  tagName: 'del',
   className: null,
   edit: ({
     isActive,
@@ -2031,7 +2034,7 @@ const name = "blockwheels/del";
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.delIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Delete", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Delete', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -2064,8 +2067,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Registers the RichText format types
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2101,7 +2104,7 @@ __webpack_require__.r(__webpack_exports__);
 // It uses the semantic `<mark>` tag but leave the styling in control of the
 // theme or style variation.
 _wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_9___default()(() => {
-  (0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_10__.unregisterFormatType)("core/text-color");
+  (0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_10__.unregisterFormatType)('core/text-color');
 });
 
 /***/ }),
@@ -2129,8 +2132,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the insert RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2146,7 +2149,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/ins";
+const name = 'blogwheels/ins';
 
 /**
  * RichText format type definition.
@@ -2154,8 +2157,8 @@ const name = "blockwheels/ins";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Insert", "blogwheels"),
-  tagName: "ins",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Insert', 'blogwheels'),
+  tagName: 'ins',
   className: null,
   edit: ({
     isActive,
@@ -2163,7 +2166,7 @@ const name = "blockwheels/ins";
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.insertIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Insert", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Insert', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -2196,8 +2199,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the mark RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2213,7 +2216,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/mark";
+const name = 'blogwheels/mark';
 
 /**
  * RichText format type definition.
@@ -2221,8 +2224,8 @@ const name = "blockwheels/mark";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Highlight", "blogwheels"),
-  tagName: "mark",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Highlight', 'blogwheels'),
+  tagName: 'mark',
   className: null,
   edit: ({
     isActive,
@@ -2230,7 +2233,7 @@ const name = "blockwheels/mark";
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.markIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Highlight", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Highlight', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -2263,8 +2266,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the overline RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2280,7 +2283,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/overline";
+const name = 'blogwheels/overline';
 
 /**
  * RichText format type definition.
@@ -2288,16 +2291,16 @@ const name = "blockwheels/overline";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overline", "blogwheels"),
-  tagName: "span",
-  className: "has-overline",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Overline', 'blogwheels'),
+  tagName: 'span',
+  className: 'has-overline',
   edit: ({
     isActive,
     onChange,
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.overlineIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Overline", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Overline', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -2330,8 +2333,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the small RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2347,7 +2350,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/small";
+const name = 'blogwheels/small';
 
 /**
  * RichText format type definition.
@@ -2355,8 +2358,8 @@ const name = "blockwheels/small";
  */
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Small", "blogwheels"),
-  tagName: "small",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Small', 'blogwheels'),
+  tagName: 'small',
   className: null,
   edit: ({
     isActive,
@@ -2364,7 +2367,7 @@ const name = "blockwheels/small";
     value
   }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.textDecreaseIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Small", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Small', 'blogwheels'),
     isActive: isActive,
     onClick: () => onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_4__.toggleFormat)(value, {
       type: name
@@ -2401,8 +2404,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Creates the span RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -2420,7 +2423,7 @@ __webpack_require__.r(__webpack_exports__);
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/span";
+const name = 'blogwheels/span';
 
 /**
  * RichText format type definition.
@@ -2428,9 +2431,9 @@ const name = "blockwheels/span";
  */
 const spanFormat = {
   name,
-  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Custom", "blogwheels"),
-  tagName: "span",
-  className: "blockwheels-span",
+  title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Custom', 'blogwheels'),
+  tagName: 'span',
+  className: 'blogwheels-span',
   edit: Edit
 };
 
@@ -2453,7 +2456,7 @@ function Edit({
   const togglePopover = () => setIsPopoverVisible(state => !state);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichTextToolbarButton, {
     icon: _common_utils_icon__WEBPACK_IMPORTED_MODULE_1__.tuneIcon,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Custom", "blogwheels"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Custom', 'blogwheels'),
     isActive: isActive,
     onClick: () => isActive ? onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_6__.removeFormat)(value, name)) : togglePopover()
   }), isPopoverVisible && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(SpanClassPopover, {
@@ -2463,6 +2466,7 @@ function Edit({
     contentRef: contentRef
   }));
 }
+;
 
 /**
  * Creates the popover component.
@@ -2477,34 +2481,35 @@ function SpanClassPopover({
     editableContentElement: contentRef.current,
     settings: spanFormat
   });
-  const [className, setClassName] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)("");
+  const [className, setClassName] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)('');
   const classTextControl = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add CSS class(es)", "blogwheels"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add CSS class(es)', 'blogwheels'),
     value: className,
     onChange: val => setClassName(val),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Apply one or more custom CSS classes to the element.", "blogwheels")
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Apply one or more custom CSS classes to the element.', 'blogwheels')
   });
   const popoverForm = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
-    className: "blockwheels-format-span-popover__form",
+    className: "blogwheels-format-span-popover__form",
     onSubmit: event => {
       event.preventDefault();
       onChange((0,_wordpress_rich_text__WEBPACK_IMPORTED_MODULE_6__.applyFormat)(value, {
         type: name,
         attributes: {
-          class: className.replace(/[^A-Za-z0-9_-]/g, "")
+          class: className.replace(/[^A-Za-z0-9_-]/g, '')
         }
       }));
       onClose();
     }
   }, classTextControl);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
-    className: "blockwheels-format-span-popover",
+    className: "blogwheels-format-span-popover",
     anchor: popoverAnchor,
     placement: "top",
     onClose: onClose,
     variant: "toolbar"
   }, popoverForm);
 }
+;
 
 /***/ }),
 

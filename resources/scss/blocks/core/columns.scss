@@ -1,13 +1,13 @@
 ////
 /// Columns block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Use the WordPress breakpoints module.
 // @link https://github.com/WordPress/gutenberg/tree/trunk/packages/base-styles
-@use "~@wordpress/base-styles/breakpoints" as wp;
+@use '~@wordpress/base-styles/breakpoints' as wp;
 
 // -----------------------------------------------------------------------------
 // Block fixes.

@@ -17,10 +17,19 @@ defined('ABSPATH') || exit;
 ?>
 <!-- wp:columns {
 	"metadata":{"name":"<?= esc_attr__('Footer Columns', 'blogwheels') ?>"},
-	"align":"full",
-	"className":"is-style-site-footer"
+	"style":{
+		"spacing":{
+			"padding":{
+				"top":"var:preset|spacing|plus-6",
+				"bottom":"var:preset|spacing|plus-6",
+				"left":"var:preset|spacing|plus-3",
+				"right":"var:preset|spacing|plus-3"
+			}
+		}
+	},
+	"align":"full"
 } -->
-<div class="wp-block-columns alignfull is-style-site-footer">
+<div class="wp-block-columns alignfull" style="padding-top:var(--wp--preset--spacing--plus-6);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-6);padding-left:var(--wp--preset--spacing--plus-3)">
 
 	<!-- wp:column {
 		"metadata":{"name":"<?= esc_attr__('About Column', 'blogwheels') ?>"},
@@ -41,9 +50,9 @@ defined('ABSPATH') || exit;
 
 		<!-- wp:social-links {
 			"size":"has-large-icon-size",
-			"className":"is-style-fill"
+			"className":"is-style-buttons-primary"
 		} -->
-		<ul class="wp-block-social-links has-large-icon-size is-style-fill">
+		<ul class="wp-block-social-links has-large-icon-size is-style-buttons-primary">
 			<!-- wp:social-link {"url":"https://wordpress.org","service":"wordpress"} /-->
 			<!-- wp:social-link {"url":"https://github.com","service":"github"} /-->
 			<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->

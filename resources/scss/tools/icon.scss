@@ -1,14 +1,14 @@
 ////
 /// Icon functions.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../settings/icons";
+@use '../settings/icons';
 
-@function get-url($name) {
-	$icon: map-get(icons.$icons, $name);
+@function get-url( $name ) {
+	$icon: map-get( icons.$icons, $name );
 
-	@return url(icons.$data-svg-prefix + $icon);
+	@return url( icons.$data-svg-prefix + $icon );
 }

@@ -1,8 +1,8 @@
 ////
 /// Cover block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -14,8 +14,7 @@
 /// global padding.
 ///
 .wp-block-cover,
-.wp-block-cover:where(:not([style*="padding"]))
-	.wp-block-cover__inner-container.has-global-padding {
+.wp-block-cover:where(:not([style*=padding])) .wp-block-cover__inner-container.has-global-padding {
 	padding: var(--wp--style--block-gap);
 }
 
@@ -31,13 +30,11 @@
 /// If the Cover block has explicit left/right padding, disable the global
 /// padding set on the inner container.
 ///
-.wp-block-cover:where([style*="padding-left"])
-	.wp-block-cover__inner-container.has-global-padding {
+.wp-block-cover:where([style*=padding-left]) .wp-block-cover__inner-container.has-global-padding {
 	padding-left: 0;
 }
 
-.wp-block-cover:where([style*="padding-right"])
-	.wp-block-cover__inner-container.has-global-padding {
+.wp-block-cover:where([style*=padding-right]) .wp-block-cover__inner-container.has-global-padding {
 	padding-right: 0;
 }
 
@@ -96,7 +93,7 @@
 ///
 .wp-block-cover.is-style-global-border,
 .editor-styles-wrapper .wp-block-cover.is-style-global-border {
-	overflow: hidden;
+	overflow:      hidden;
 }
 
 ///
@@ -106,8 +103,8 @@
 	align-items: stretch;
 
 	.wp-block-cover__inner-container {
-		display: flex;
-		flex-direction: column;
+		display:         flex;
+		flex-direction:  column;
 		justify-content: space-between;
 	}
 }

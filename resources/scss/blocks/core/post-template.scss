@@ -1,8 +1,8 @@
 ////
 /// Post Template block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -37,9 +37,7 @@
 /// making sure these match.
 ///
 .wp-block-query.is-layout-constrained > .wp-block-post-template.alignfull,
-.editor-styles-wrapper
-	.wp-block-query.is-layout-constrained
-	> .wp-block-post-template.alignfull {
+.editor-styles-wrapper .wp-block-query.is-layout-constrained > .wp-block-post-template.alignfull {
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -52,7 +50,7 @@
 /// Ensures that `cqi` values are based on their container, not the viewport.
 ///
 .wp-block-post-template-is-layout-grid > .wp-block-post,
-.wp-block-post-template.is-flex-container > .wp-block-post {
+.wp-block-post-template.is-flex-container > .wp-block-post  {
 	container-type: inline-size;
 }
 
@@ -65,44 +63,34 @@
 
 @media (min-width: 40rem) {
 	.wp-block-post-template.is-layout-grid:where(
-			.columns-2,
-			.columns-3,
-			.columns-4,
-			.columns-5,
-			.columns-6
-		) {
-		--col-count: 2;
-	}
+		.columns-2,
+		.columns-3,
+		.columns-4,
+		.columns-5,
+		.columns-6
+	) { --col-count: 2; }
 }
 
 @media (min-width: 56rem) {
 	.wp-block-post-template.is-layout-grid:where(
-			.columns-3,
-			.columns-4,
-			.columns-5,
-			.columns-6
-		) {
-		--col-count: 3;
-	}
+		.columns-3,
+		.columns-4,
+		.columns-5,
+		.columns-6
+	) { --col-count: 3; }
 }
 
 @media (min-width: 64rem) {
 	.wp-block-post-template.is-layout-grid:where(
-			.columns-4,
-			.columns-5,
-			.columns-6
-		) {
-		--col-count: 4;
-	}
+		.columns-4,
+		.columns-5,
+		.columns-6
+	) { --col-count: 4; }
 }
 
 @media (min-width: 80rem) {
-	.wp-block-post-template.is-layout-grid.columns-5 {
-		--col-count: 5;
-	}
-	.wp-block-post-template.is-layout-grid.columns-6 {
-		--col-count: 6;
-	}
+	.wp-block-post-template.is-layout-grid.columns-5 { --col-count: 5; }
+	.wp-block-post-template.is-layout-grid.columns-6 { --col-count: 6; }
 }
 
 // -----------------------------------------------------------------------------

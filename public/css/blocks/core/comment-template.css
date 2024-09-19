@@ -33,7 +33,6 @@
   flex-wrap: wrap;
   gap: var(--wp--preset--spacing--minus-3);
   align-items: center;
-  gap: initial;
 }
 .comment-parent-link::before {
   content: "";
@@ -46,15 +45,12 @@
   width: 1em;
   height: 1em;
 }
+.comment-parent-link {
+  gap: initial;
+}
 .comment-parent-link::before {
   width: 1.25em;
   height: 1.25em;
-}
-.comment-parent-link a {
-  color: var(--wp--custom--comment-parent-link--color, inherit);
-}
-.comment-parent-link a:focus, .comment-parent-link a:hover {
-  color: var(--wp--custom--comment-parent-link--hover-color, inherit);
 }
 
 /*# sourceMappingURL=comment-template.css.map*/

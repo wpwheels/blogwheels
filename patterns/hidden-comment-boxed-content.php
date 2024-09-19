@@ -49,7 +49,7 @@ defined('ABSPATH') || exit;
 				"metadata":{
 					"bindings":{
 						"content":{
-							"source":"blockwheels/comment",
+							"source":"blogwheels/comment",
 							"args":{
 								"key":"parentLink"
 							}
@@ -113,7 +113,7 @@ defined('ABSPATH') || exit;
 	<!-- /wp:group -->
 
 	<!-- wp:comment-content {
-		"className":"is-style-section-3 has-global-border"
+		"className":"is-style-section-1 has-global-border"
 	} /-->
 
 	<!-- wp:group {

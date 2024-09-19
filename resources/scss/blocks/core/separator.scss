@@ -4,8 +4,8 @@
 /// Note that we're specifically targeting `<hr>` so that custom styles the
 /// specificity battle in the editor. ⚔️
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -19,7 +19,7 @@
 ///
 /// @link https://github.com/WordPress/gutenberg/issues/52986
 ///
-.wp-block-separator.has-background[class*="-gradient"] {
+.wp-block-separator.has-background[class*=-gradient] {
 	border: none;
 	height: 2px;
 }
@@ -41,7 +41,11 @@
 ///
 /// Normal dashed, dotted, and double border styles.
 ///
-hr.wp-block-separator:is(.is-style-dashed, .is-style-dotted, .is-style-double) {
+hr.wp-block-separator:is(
+	.is-style-dashed,
+	.is-style-dotted,
+	.is-style-double
+) {
 	background-color: transparent !important;
 }
 
@@ -55,13 +59,13 @@ hr.wp-block-separator.is-style-hand-drawn {
 	border-radius: 255px 15px 0 0/15px 8px 0 0;
 	transform: rotate(-1deg);
 
-	&:where([class*="gradient-background"]) {
+	&:where([class*=gradient-background]) {
 		margin-bottom: 0 !important;
 		padding: 4px;
 		border-radius: 94% 6% 95% 5% / 95% 4% 96% 5%;
 	}
 
-	&:where(:not([class*="gradient-background"])) {
+	&:where(:not([class*=gradient-background])) {
 		background: none !important;
 	}
 }

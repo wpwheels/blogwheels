@@ -6,7 +6,9 @@
   height: 2px;
 }
 
-hr.wp-block-separator:is(.is-style-dashed, .is-style-dotted, .is-style-double) {
+hr.wp-block-separator:is(.is-style-dashed,
+.is-style-dotted,
+.is-style-double) {
   background-color: transparent !important;
 }
 

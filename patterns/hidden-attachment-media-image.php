@@ -17,25 +17,25 @@ defined('ABSPATH') || exit;
 
 	<!-- wp:image {
 		"align":"wide",
-		"sizeSlug":"blockwheels-wide",
+		"sizeSlug":"blogwheels-wide",
 		"linkDestination":"none",
 		"metadata":{
 			"bindings":{
 				"url":{
-					"source":"blockwheels/media",
+					"source":"blogwheels/media",
 					"args":{
 						"type":"image",
-						"size":"blockwheels-wide"
+						"size":"blogwheels-wide"
 					}
 				},
 				"alt":{
-					"source":"blockwheels/media"
+					"source":"blogwheels/media"
 				}
 			},
 			"@ifAttribute":"url"
 		}
 	} -->
-	<figure class="wp-block-image alignwide size-blockwheels-wide">
+	<figure class="wp-block-image alignwide size-blogwheels-wide">
 		<img src="" alt="" />
 	</figure>
 	<!-- /wp:image -->

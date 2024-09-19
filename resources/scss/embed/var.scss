@@ -13,53 +13,32 @@
 /// embed.borderStyle
 /// embed.borderWidth
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 .wp-embed-responsive {
 	// Typography.
 	--font-family: var(--wp--custom--embed--font-family, system-ui);
-	--font-size: var(
-		--wp--custom--embed--font-family,
-		var(--wp--preset--font-size--md)
-	);
-	--line-height: var(
-		--wp--custom--embed--line-height,
-		var(--wp--custom--line-height--sm)
-	);
+	--font-size: var(--wp--custom--embed--font-size, var(--wp--preset--font-size--md));
+	--line-height: var(--wp--custom--embed--line-height, var(--wp--custom--line-height--sm));
 
 	// Color.
-	--color: var(--wp--custom--embed--color, var(--wp--preset--color--contrast));
-	--background: var(
-		--wp--custom--embed--background,
-		var(--wp--preset--color--base)
-	);
+	--color: var(--wp--custom--embed--color, var(--wp--custom--color--text--default));
+	--background: var(--wp--custom--embed--background, var(--wp--custom--color--surface--level-0));
 	--link-color: var(--wp--custom--embed--link-color, currentColor);
-	--link-hover-color: var(
-		--wp--custom--embed--link-hover-color,
-		var(--wp--preset--color--primary-700)
-	);
+	--link-hover-color: var(--wp--custom--embed--link-hover-color, var(--wp--custom--color--text--primary));
 
 	// Border and shadow.
-	--border-color: var(
-		--wp--custom--embed--border-color,
-		var(--wp--preset--color--neutral-100)
-	);
-	--border-style: var(--wp--custom--embed--border-style, solid);
-	--border-width: var(--wp--custom--embed--border-width, 1px);
-	--border-radius: var(
-		--wp--custom--embed--border-radius,
-		var(--wp--custom--global--border--radius)
-	);
-	--shadow: var(--wp--custom--embed--shadow, var(--wp--custom--global--shadow));
+	--border-color: var(--wp--custom--embed--border-color, var(--wp--custom--global--border--color));
+	--border-style: var(--wp--custom--embed--border-style, var(--wp--custom--global--border--style));
+	--border-width: var(--wp--custom--embed--border-width, var(--wp--custom--global--border--width));
+	--border-radius: var(--wp--custom--embed--border-radius, var(--wp--custom--global--border--radius));
+	--shadow: none;
 }
 
 // Flip colors for dialog.
 .wp-embed-share-dialog {
-	--color: var(--wp--custom--embed--background, var(--wp--preset--color--base));
-	--background: var(
-		--wp--custom--embed--color,
-		var(--wp--preset--color--contrast)
-	);
+	--color: var(--wp--custom--embed--background, var(--wp--custom--color--surface--level-0));
+	--background: var(--wp--custom--embed--color, var(--wp--custom--color--text--default));
 }

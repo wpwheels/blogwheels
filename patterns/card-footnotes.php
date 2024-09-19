@@ -4,7 +4,7 @@
  * Title: Footnotes Card
  * Slug: blogwheels/card-footnotes
  * Description: Displays a post's footnotes within a Group block with a Heading.
- * Categories: text, blockwheels-card
+ * Categories: text, blogwheels-card
  * Keywords: footnotes, text, cite
  * Block Types: core/footnotes
  * Viewport Width: 640
@@ -23,10 +23,10 @@ defined('ABSPATH') || exit;
 			"blockGap":"var:preset|spacing|base"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"layout":{"type":"default"}
 } -->
-<div class="wp-block-group has-global-border is-style-section-3">
+<div class="wp-block-group has-global-border is-style-section-1">
 
 	<!-- wp:paragraph {"fontFamily":"primary"} -->
 	<p class="has-primary-font-family"><strong><?= esc_html__('Footnotes', 'blogwheels') ?></strong></p>

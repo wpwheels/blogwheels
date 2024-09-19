@@ -1,8 +1,8 @@
 ////
 /// Code block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -51,11 +51,11 @@
 	overflow: hidden;
 	box-sizing: border-box;
 	padding: 0;
-	border-color: var(--wp--custom--global--border--color);
-	border-style: var(--wp--custom--global--border--style);
-	border-width: var(--wp--custom--global--border--width);
+	border-color:  var(--wp--custom--global--border--color);
+	border-style:  var(--wp--custom--global--border--style);
+	border-width:  var(--wp--custom--global--border--width);
 	border-radius: var(--wp--custom--global--border--radius);
-	box-shadow: var(--wp--custom--global--shadow);
+	box-shadow:    var(--wp--custom--global--shadow);
 
 	// Reset what would've normally been a `<pre>` tag styling.
 	word-wrap: initial;
@@ -83,6 +83,7 @@
 }
 
 .wp-block-code {
+
 	&__toolbar {
 		box-sizing: border-box;
 		display: flex;
@@ -93,8 +94,7 @@
 		font-family: var(--wp--preset--font-family--mono);
 		font-size: 14px;
 		line-height: 1.5;
-		padding: var(--wp--preset--spacing--minus-1)
-			var(--wp--preset--spacing--base);
+		padding: var(--wp--preset--spacing--minus-1) var(--wp--preset--spacing--base);
 		gap: 2px;
 	}
 
@@ -130,8 +130,10 @@
 		word-wrap: normal;
 
 		max-height: calc(
-			100vh - 46px - (var(--wp--preset--spacing--minus-1) * 2) -
-				(var(--wp--preset--spacing--plus-3) * 2)
+			100vh
+			- 46px
+			- (var(--wp--preset--spacing--minus-1) * 2)
+			- (var(--wp--preset--spacing--plus-3) * 2)
 		); // 46px is mobile size of WP toolbar.
 
 		margin: 0;

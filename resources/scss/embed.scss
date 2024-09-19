@@ -2,16 +2,16 @@
 /// Embed stylesheet. Used for when a post from the site is embedded on a third-
 /// party site. This controls the design of the embed inside of the `<iframe>`.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Import base styles.
-@use "base/var";
-@use "base/elements";
+@use 'base/var';
+@use 'base/elements';
 
 // Import embed styles.
-@use "embed/var" as embed-var;
-@use "embed/root" as embed-root;
-@use "embed/embed" as embed-embed;
-@use "embed/dialog" as embed-dialog;
+@use 'embed/var' as embed-var;
+@use 'embed/root' as embed-root;
+@use 'embed/embed' as embed-embed;
+@use 'embed/dialog' as embed-dialog;

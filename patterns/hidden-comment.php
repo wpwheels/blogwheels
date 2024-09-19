@@ -44,7 +44,7 @@ defined('ABSPATH') || exit;
 				"metadata":{
 					"bindings":{
 						"content":{
-							"source":"blockwheels/comment",
+							"source":"blogwheels/comment",
 							"args":{
 								"key":"parentLink"
 							}

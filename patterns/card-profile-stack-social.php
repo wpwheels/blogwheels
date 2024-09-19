@@ -3,7 +3,7 @@
 /**
  * Title: Vertical Social Profile Card
  * Slug: blogwheels/card-profile-stack-social
- * Categories: team, blockwheels-card
+ * Categories: team, blogwheels-card
  * Keywords: card, grid, profile, social, team
  * Viewport Width: 480
  */
@@ -20,7 +20,7 @@ use BLOGWHEELS\Inc\Helpers\Language;
 	"metadata":{
 		"name":"<?= esc_attr__('Card', 'blogwheels') ?>"
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"style":{
 		"spacing":{
 			"padding":{
@@ -43,7 +43,7 @@ use BLOGWHEELS\Inc\Helpers\Language;
 		"verticalAlignment":"space-between"
 	}
 } -->
-<div class="wp-block-group has-text-align-center has-global-border is-style-section-3 has-sm-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-text-align-center has-global-border is-style-section-1 has-sm-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 
 	<!-- wp:group {
 		"style":{

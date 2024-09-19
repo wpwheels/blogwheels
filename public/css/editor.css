@@ -43,43 +43,43 @@
  * React Native specific.
  * These variables do not appear to be used anywhere else.
  */
-.blockwheels-list-marker-selector__list {
+.blogwheels-list-marker-selector__list {
   margin-left: 0;
   padding-left: 16px;
 }
-.blockwheels-list-marker-selector__list li {
+.blogwheels-list-marker-selector__list li {
   list-style-type: none;
   padding-left: 16px;
   color: inherit;
 }
-.blockwheels-list-marker-selector__list li::marker {
+.blogwheels-list-marker-selector__list li::marker {
   color: inherit;
 }
-.blockwheels-list-marker-selector__list.has-marker-disc li {
+.blogwheels-list-marker-selector__list.has-marker-disc li {
   list-style-type: disc;
 }
-.blockwheels-list-marker-selector__list.has-marker-circle li {
+.blogwheels-list-marker-selector__list.has-marker-circle li {
   list-style-type: circle;
 }
-.blockwheels-list-marker-selector__list.has-marker-square li {
+.blogwheels-list-marker-selector__list.has-marker-square li {
   list-style-type: square;
 }
-.blockwheels-list-marker-selector__list.has-marker-decimal li {
+.blogwheels-list-marker-selector__list.has-marker-decimal li {
   list-style-type: decimal;
 }
-.blockwheels-list-marker-selector__list.has-marker-leading-zero li {
+.blogwheels-list-marker-selector__list.has-marker-leading-zero li {
   list-style-type: decimal-leading-zero;
 }
-.blockwheels-list-marker-selector__list.has-marker-lower-alpha li {
+.blogwheels-list-marker-selector__list.has-marker-lower-alpha li {
   list-style-type: lower-alpha;
 }
-.blockwheels-list-marker-selector__list.has-marker-upper-alpha li {
+.blogwheels-list-marker-selector__list.has-marker-upper-alpha li {
   list-style-type: upper-alpha;
 }
-.blockwheels-list-marker-selector__list.has-marker-lower-roman li {
+.blogwheels-list-marker-selector__list.has-marker-lower-roman li {
   list-style-type: lower-roman;
 }
-.blockwheels-list-marker-selector__list.has-marker-upper-roman li {
+.blogwheels-list-marker-selector__list.has-marker-upper-roman li {
   list-style-type: upper-roman;
 }
 
@@ -87,13 +87,13 @@
   max-height: none;
 }
 
-.blockwheels-format-abbr-popover .components-popover__content {
+.blogwheels-format-abbr-popover .components-popover__content {
   padding: 16px;
   width: auto;
   max-width: 360px;
 }
 
-.blockwheels-format-span-popover .components-popover__content {
+.blogwheels-format-span-popover .components-popover__content {
   padding: 16px;
   width: auto;
   max-width: 360px;

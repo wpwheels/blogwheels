@@ -1,8 +1,8 @@
 ////
 /// Paragraph block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -35,6 +35,7 @@ p {
 /// @link https://caniuse.com/css-initial-letter
 ///
 .has-drop-cap:not(:focus)::first-letter {
+
 	// Revert core's implementation.
 	float: none;
 	margin: 0;
@@ -53,7 +54,7 @@ p {
 		font-variant: normal;
 
 		font-family: var(--wp--custom--drop-cap--font-family, inherit);
-		font-style: var(--wp--custom--drop-cap--font-style, normal);
+		font-style:  var(--wp--custom--drop-cap--font-style, normal);
 		font-weight: var(--wp--custom--drop-cap--font-weight, 700);
 	}
 }

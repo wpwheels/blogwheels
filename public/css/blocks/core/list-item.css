@@ -18,6 +18,9 @@ li.is-style-check-circle::before {
   width: 1em;
   height: 1em;
 }
+li.is-style-check-circle::before {
+  background-color: var(--wp--custom--color--icon--primary);
+}
 
 li.is-style-cancel-circle {
   display: flex;
@@ -35,6 +38,9 @@ li.is-style-cancel-circle::before {
   display: inline-block;
   width: 1em;
   height: 1em;
+}
+li.is-style-cancel-circle::before {
+  background-color: var(--wp--custom--color--icon--muted);
 }
 
 li.is-style-check-circle::before,

@@ -1,44 +1,44 @@
 /**
  * Site Copyright variation.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
-import { copyrightIcon } from "../../common/utils-icon";
-import { __, sprintf } from "@wordpress/i18n";
+import { copyrightIcon } from '../../common/utils-icon';
+import { __, sprintf } from '@wordpress/i18n';
 
 export default {
-	block: "core/paragraph",
+	block: 'core/paragraph',
 	variation: {
-		name: "blockwheels/site-copyright",
-		title: __("Site Copyright", "blogwheels"),
-		description: __("Displays the site copyright date.", "blogwheels"),
-		category: "widgets",
-		keywords: ["copyright"],
-		icon: copyrightIcon,
-		scope: ["inserter"],
+		name:       'blogwheels/site-copyright',
+		title:      __('Site Copyright', 'blogwheels'),
+		description: __('Displays the site copyright date.', 'blogwheels'),
+		category:   'widgets',
+		keywords:   [ 'copyright' ],
+		icon:       copyrightIcon,
+		scope:      [ 'inserter' ],
 		attributes: {
 			metadata: {
 				bindings: {
 					content: {
-						source: "blockwheels/site",
+						source: 'blogwheels/site',
 						args: {
-							key: "copyright",
-						},
-					},
-				},
+							key: 'copyright'
+						}
+					}
+				}
 			},
 			content: sprintf(
 				// Translators: %s is the copyright year.
-				__("Copyright © %s", "blogwheels"),
-				new Date().getFullYear(),
-			),
+				__('Copyright © %s', 'blogwheels'),
+				new Date().getFullYear()
+			)
 		},
 		isActive: [
-			"metadata.bindings.content.source",
-			"metadata.bindings.content.args.key",
-		],
-	},
+			'metadata.bindings.content.source',
+			'metadata.bindings.content.args.key'
+		]
+	}
 };

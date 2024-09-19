@@ -1,25 +1,25 @@
 /**
  * Registers the RichText format types
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
 import abbreviationFormat from "./abbreviation";
-import bigFormat from "./big";
-import citeFormat from "./cite";
-import deleteFormat from "./delete";
-import insertFormat from "./insert";
-import markFormat from "./mark";
-import overlineFormat from "./overline";
-import smallFormat from "./small";
-import spanFormat from "./span";
+import bigFormat          from "./big";
+import citeFormat         from "./cite";
+import deleteFormat       from "./delete";
+import insertFormat       from "./insert";
+import markFormat         from "./mark";
+import overlineFormat     from "./overline";
+import smallFormat        from "./small";
+import spanFormat         from "./span";
 
 // WordPress dependencies.
-import domReady from "@wordpress/dom-ready";
-import { registerFormatType, unregisterFormatType } from "@wordpress/rich-text";
+import domReady from '@wordpress/dom-ready';
+import { registerFormatType, unregisterFormatType } from '@wordpress/rich-text';
 
 // Register each `RichText` format type.
 registerFormatType(abbreviationFormat.name, abbreviationFormat);
@@ -38,5 +38,5 @@ registerFormatType(spanFormat.name, spanFormat);
 // It uses the semantic `<mark>` tag but leave the styling in control of the
 // theme or style variation.
 domReady(() => {
-	unregisterFormatType("core/text-color");
+	unregisterFormatType('core/text-color');
 });

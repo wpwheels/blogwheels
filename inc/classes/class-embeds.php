@@ -2,7 +2,8 @@
 /**
  * Embed filters and actions.
  *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ *
+ * @copyright 2023 WPWheels
  * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
  * @link      https://github.com/wpwheels/blogwheels
  */

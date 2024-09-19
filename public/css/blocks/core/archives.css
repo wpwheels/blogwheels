@@ -5,8 +5,12 @@ ul.wp-block-archives-list,
 :where(.wp-block-archives ul.wp-block-archives-list) {
   padding-inline-start: var(--wp--preset--spacing--plus-4);
 }
-ul.wp-block-archives-list :where(li + li, li > ul, li > ol),
-:where(.wp-block-archives ul.wp-block-archives-list) :where(li + li, li > ul, li > ol) {
+ul.wp-block-archives-list :where(li + li,
+li > ul,
+li > ol),
+:where(.wp-block-archives ul.wp-block-archives-list) :where(li + li,
+li > ul,
+li > ol) {
   margin-block-start: var(--wp--preset--spacing--minus-1);
 }
 ul.wp-block-archives-list:where(ul, ol):not([class*=wp-block-]) li, ul.wp-block-archives-list:where(ul, ol) li,

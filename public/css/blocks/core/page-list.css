@@ -4,7 +4,9 @@
 .wp-block-page-list {
   padding-inline-start: var(--wp--preset--spacing--plus-4);
 }
-.wp-block-page-list :where(li + li, li > ul, li > ol) {
+.wp-block-page-list :where(li + li,
+li > ul,
+li > ol) {
   margin-block-start: var(--wp--preset--spacing--minus-1);
 }
 .wp-block-page-list:where(ul, ol):not([class*=wp-block-]) li, .wp-block-page-list:where(ul, ol) li {

@@ -1,27 +1,31 @@
 /**
  * Creates the span RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import { tuneIcon } from "../../common/utils-icon";
+import { tuneIcon } from '../../common/utils-icon';
 
 // WordPress dependencies.
-import { RichTextToolbarButton } from "@wordpress/block-editor";
-import { useState } from "@wordpress/element";
-import { __ } from "@wordpress/i18n";
-import { Popover, TextControl } from "@wordpress/components";
+import { RichTextToolbarButton } from '@wordpress/block-editor';
+import { useState }              from '@wordpress/element';
+import { __ }                    from '@wordpress/i18n';
+import { Popover, TextControl }  from '@wordpress/components';
 
-import { applyFormat, removeFormat, useAnchor } from "@wordpress/rich-text";
+import {
+	applyFormat,
+	removeFormat,
+	useAnchor
+} from '@wordpress/rich-text';
 
 /**
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/span";
+const name = 'blogwheels/span';
 
 /**
  * RichText format type definition.
@@ -29,10 +33,10 @@ const name = "blockwheels/span";
  */
 const spanFormat = {
 	name,
-	title: __("Custom", "blogwheels"),
-	tagName: "span",
-	className: "blockwheels-span",
-	edit: Edit,
+	title:     __('Custom', 'blogwheels'),
+	tagName:   'span',
+	className: 'blogwheels-span',
+	edit:      Edit
 };
 
 /**
@@ -44,85 +48,86 @@ export default spanFormat;
 /**
  * Creates the format type edit component.
  */
-function Edit({ isActive, onChange, value, contentRef }) {
-	const [isPopoverVisible, setIsPopoverVisible] = useState(false);
+function Edit({ isActive, onChange, value, contentRef })
+{
+	const [ isPopoverVisible, setIsPopoverVisible ] = useState(false);
 
-	const togglePopover = () => setIsPopoverVisible((state) => !state);
+	const togglePopover = () => setIsPopoverVisible((state) => ! state);
 
 	return (
 		<>
 			<RichTextToolbarButton
-				icon={tuneIcon}
-				title={__("Custom", "blogwheels")}
-				isActive={isActive}
-				onClick={() =>
-					isActive ? onChange(removeFormat(value, name)) : togglePopover()
+				icon={ tuneIcon }
+				title={ __('Custom', 'blogwheels') }
+				isActive={ isActive }
+				onClick={ () =>
+					isActive
+					? onChange(removeFormat(value, name))
+					: togglePopover()
 				}
 			/>
-			{isPopoverVisible && (
+			{ isPopoverVisible && (
 				<SpanClassPopover
-					value={value}
-					onChange={onChange}
-					onClose={togglePopover}
-					contentRef={contentRef}
+					value={ value }
+					onChange={ onChange }
+					onClose={ togglePopover }
+					contentRef={ contentRef }
 				/>
-			)}
+			) }
 		</>
 	);
-}
+};
 
 /**
  * Creates the popover component.
  */
-function SpanClassPopover({ value, contentRef, onChange, onClose }) {
+function SpanClassPopover({ value, contentRef, onChange, onClose })
+{
 	const popoverAnchor = useAnchor({
 		editableContentElement: contentRef.current,
 		settings: spanFormat,
 	});
 
-	const [className, setClassName] = useState("");
+	const [ className, setClassName ] = useState('');
 
 	const classTextControl = (
 		<TextControl
-			label={__("Add CSS class(es)", "blogwheels")}
-			value={className}
-			onChange={(val) => setClassName(val)}
-			help={__(
-				"Apply one or more custom CSS classes to the element.",
-				"blogwheels",
-			)}
+			label={ __('Add CSS class(es)', 'blogwheels') }
+			value={ className }
+			onChange={ (val) => setClassName(val) }
+			help={
+				__('Apply one or more custom CSS classes to the element.', 'blogwheels')
+			}
 		/>
 	);
 
 	const popoverForm = (
 		<form
-			className="blockwheels-format-span-popover__form"
-			onSubmit={(event) => {
+			className="blogwheels-format-span-popover__form"
+			onSubmit={ (event) => {
 				event.preventDefault();
-				onChange(
-					applyFormat(value, {
-						type: name,
-						attributes: {
-							class: className.replace(/[^A-Za-z0-9_-]/g, ""),
-						},
-					}),
-				);
+				onChange(applyFormat(value, {
+					type: name,
+					attributes: {
+						class: className.replace(/[^A-Za-z0-9_-]/g, '')
+					}
+				}));
 				onClose();
-			}}
+			} }
 		>
-			{classTextControl}
+			{ classTextControl }
 		</form>
 	);
 
 	return (
 		<Popover
-			className="blockwheels-format-span-popover"
-			anchor={popoverAnchor}
+			className="blogwheels-format-span-popover"
+			anchor={ popoverAnchor }
 			placement="top"
-			onClose={onClose}
+			onClose={ onClose }
 			variant="toolbar"
 		>
-			{popoverForm}
+			{ popoverForm }
 		</Popover>
 	);
-}
+};

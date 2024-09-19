@@ -1,12 +1,12 @@
 /**
  * Block editor filters.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
-import { addFilter } from "@wordpress/hooks";
+import { addFilter } from '@wordpress/hooks';
 
 /**
  * Returns the theme's default featured image size so that it's rendered in the
@@ -14,10 +14,10 @@ import { addFilter } from "@wordpress/hooks";
  *
  * @returns {string}
  */
-const withImageSize = () => "blockwheels-wide";
+const withImageSize = () => 'blogwheels-wide';
 
 addFilter(
-	"editor.PostFeaturedImage.imageSize",
-	"blockwheels/ideas/featured-image-size",
-	withImageSize,
+	'editor.PostFeaturedImage.imageSize',
+	'blogwheels/ideas/featured-image-size',
+	withImageSize
 );

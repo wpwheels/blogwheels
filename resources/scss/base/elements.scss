@@ -8,24 +8,30 @@
 /// would normally be necessary. However, it is the only way to cleanly support
 /// style changes via custom style variations.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-// -----------------------------------------------------------------------------
-// `theme.json`-supported elements with extra styles.
-// -----------------------------------------------------------------------------
-
-// Adds transition effects to hoverable and focusable elements.
+///
+/// Adds transition effects to hoverable and focusable elements.
+///
 a:where(:not(:focus)),
-input[type="submit"],
+button,
+input[type=reset],
+input[type=submit],
 input:focus,
 textarea:focus {
 	transition: 0.5s ease-in-out;
-	transition-property: color, background-color, border-color, outline-color;
+	transition-property:
+		color,
+		background-color,
+		border-color,
+		outline-color;
 }
 
-// Link extras.
+///
+/// Link customizations that are not fully supported through `theme.json`.
+///
 a {
 	// The `!important` is necessary to overrule the shorthand version
 	// `text-decoration` used via `theme.json`.
@@ -38,7 +44,7 @@ a {
 	}
 
 	&:hover img:where(:not(.avatar)) {
-		box-shadow: var(--wp--preset--shadow--enlarge);
+		box-shadow: var(--wp--custom--shadow--primary--hover);
 	}
 
 	.is-style-borderless &:focus {
@@ -46,185 +52,204 @@ a {
 	}
 }
 
-// Ensure audio/video elements are set to block-level.
+///
+/// Ensure audio/video elements are set to block-level.
+///
 audio,
 video {
 	display: block;
 }
 
-// Prefix `cite` elements (WP doesn't support element CSS in `theme.json`).
-blockquote cite::before {
-	content: "\2013\000A0";
-}
-
-// Center captions (WP doesn't support text-align in `theme.json`).
-.wp-element-caption {
-	text-align: center;
-}
-
-// -----------------------------------------------------------------------------
-// `<abbr>`
-// -----------------------------------------------------------------------------
-
+///
+/// Abbreviation styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 abbr[title] {
 	cursor: help;
 	text-decoration: currentColor underline dotted min(0.078125em, 3px);
 	text-underline-offset: 0.078125em;
 }
 
-// -----------------------------------------------------------------------------
-// `<code>`
-// -----------------------------------------------------------------------------
+///
+/// Caption styles.
+///
+.wp-element-caption a {
+	// WordPress targets links for Image blocks with `width: 100%` (when
+	// wide/full) and `display: inline-block`. This breaks links in captions.
+	// This change ensures that this and other cases are covered.
+	display: inline;
+	width:   initial;
 
+	// Add colors for links within captions.
+	color: var(--wp--custom--color--text--link--secondary--default);
+
+	&:hover,
+	&:focus {
+		color: var(--wp--custom--color--text--link--secondary--hover);
+	}
+}
+
+///
+/// Citation styles.
+///
+blockquote cite {
+	// Prefix `cite` elements (WP doesn't support element CSS in `theme.json`).
+	&::before {
+		content: "\2013\000A0";
+	}
+
+	// Add colors for links within block quote citations.
+	a {
+		color: var(--wp--custom--color--text--link--secondary--default);
+
+		&:hover,
+		&:focus {
+			color: var(--wp--custom--color--text--link--secondary--hover);
+		}
+	}
+}
+
+///
+/// Inline code styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 :where(:not(pre) > code) {
 	// Spacing.
-	padding: var(--wp--custom--elements--code--padding, 0);
+	padding: 0.125em 0.25em;
 
 	// Typography.
-	font-family: var(--wp--custom--elements--code--font-family, monospace);
-	font-style: var(--wp--custom--elements--code--font-style, normal);
-	font-weight: var(--wp--custom--elements--code--font-weight, inherit);
-	line-height: var(--wp--custom--elements--code--line-height, inherit);
-	font-size: var(--wp--custom--elements--code--font-size, inherit);
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size:   clamp(var(--wp--preset--font-size--xs), 0.8125em, 0.8125em);
+	font-style:  normal;
+	font-weight: 600;
+	line-height: inherit;
 
 	// Color.
-	color: var(--wp--custom--elements--code--color, inherit);
-	background: var(--wp--custom--elements--code--background, transparent);
+	color:      var(--wp--custom--color--text--default, inherit);
+	background: var(--wp--custom--color--surface--level-1, transparent);
 
-	// Border.
-	border-color: var(--wp--custom--elements--code--border-color, transparent);
-	border-style: var(--wp--custom--elements--code--border-style, solid);
-	border-width: var(--wp--custom--elements--code--border-width, 0);
-	border-radius: var(--wp--custom--elements--code--border-radius, 0);
-
-	// Box shadow.
-	box-shadow: var(--wp--custom--elements--code--shadow, none);
+	// Border and shadow.
+	border:     none;
+	box-shadow: none;
 }
 
-// -----------------------------------------------------------------------------
-// `<del>` and `<s>` - While these are technically different elements, they are
-// generally styled the same.
-// -----------------------------------------------------------------------------
-
+///
+/// Delete and strikethrough styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 del,
 s {
-	color: var(--wp--custom--elements--del--color, inherit);
-	text-decoration: var(
-		--wp--custom--elements--del--text-decoration,
-		currentColor line-through solid clamp(2px, 0.125em, 0.125em)
-	);
+	color: var(--wp--custom--color--text--muted, inherit);
+	text-decoration:
+		var(--wp--custom--color--text--default, currentColor)
+		line-through
+		solid
+		min(0.078125em, 3px);
 }
 
-// -----------------------------------------------------------------------------
-// `<figure>` - WordPress Core zeroes out the browser defaults and adds a
-// default bottom margin to figures.
-// -----------------------------------------------------------------------------
-
+///
+/// WordPress Core zeroes out the browser defaults and adds a default bottom
+/// margin to figures.
+///
 :where(figure) {
 	margin: 0;
 }
 
-// -----------------------------------------------------------------------------
-// `<img>` - WordPress has several image-type blocks, but it doesn't support
-// the image element itself via `theme.json`.
-// -----------------------------------------------------------------------------
-
+///
+/// WordPress has several image-type blocks, but it doesn't support the image
+/// element itself via `theme.json`.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 img:where(:not(.avatar)) {
 	border-color: var(--wp--custom--elements--img--border-color, transparent);
 	border-style: var(--wp--custom--elements--img--border-style, solid);
 	border-width: var(--wp--custom--elements--img--border-width, 0);
-	box-shadow: var(--wp--custom--elements--img--shadow, none);
+	box-shadow:   var(--wp--custom--elements--img--shadow, none);
 }
 
-// -----------------------------------------------------------------------------
-// `<ins>`
-// -----------------------------------------------------------------------------
-
+///
+/// Insert styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 ins {
-	color: var(--wp--custom--elements--ins--color, inherit);
-	text-decoration: var(
-		--wp--custom--elements--ins--text-decoration,
-		currentColor underline solid max(1px, 0.0625em)
-	);
+	color: inherit;
+	text-decoration: currentColor underline solid clamp(2px, 0.125em, 0.125em);
 	text-underline-offset: 4px;
 }
 
-// -----------------------------------------------------------------------------
-// `<kbd>`
-// -----------------------------------------------------------------------------
-
+///
+/// Keyboard input styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 kbd {
 	white-space: nowrap;
 
 	// Spacing.
-	padding: var(--wp--custom--elements--kbd--padding, 0);
+	padding: 0.125em 0.375em;
 
 	// Typography.
-	font-family: var(--wp--custom--elements--kbd--font-family, monospace);
-	font-style: var(--wp--custom--elements--kbd--font-style, normal);
-	font-weight: var(--wp--custom--elements--kbd--font-weight, inherit);
-	line-height: var(--wp--custom--elements--kbd--line-height, inherit);
-	font-size: var(--wp--custom--elements--kbd--font-size, inherit);
+	font-family: var(--wp--preset--font-family--mono, monospace);
+	font-size: clamp(var(--wp--preset--font-size--xs), 0.8125em, 0.8125em);
+	font-style:  normal;
+	font-weight: 500;
+	line-height: inherit;
 
 	// Color.
-	color: var(--wp--custom--elements--kbd--color, inherit);
-	background: var(--wp--custom--elements--kbd--background, transparent);
+	color:      inherit;
+	background: transparent;
 
-	// Border.
-	border-color: var(--wp--custom--elements--kbd--border-color, transparent);
-	border-style: var(--wp--custom--elements--kbd--border-style, solid);
-	border-width: var(--wp--custom--elements--kbd--border-width, 0);
-	border-radius: var(--wp--custom--elements--kbd--border-radius, 0);
-
-	// Box shadow.
-	box-shadow: var(--wp--custom--elements--kbd--shadow, none);
+	// Border and shadow.
+	border-color:  var(--wp--custom--color--border--default);
+	border-style:  solid;
+	border-width:  1px;
+	border-radius: 0.25rem;
+	box-shadow:    var(--wp--preset--shadow--sm, none);
 }
 
-// -----------------------------------------------------------------------------
-// `<mark>`
-// -----------------------------------------------------------------------------
+///
+/// Adds a list item marker color.
+///
+li::marker {
+	color: var(--wp--custom--color--text--muted, currentColor);
+}
 
-// Spacing for all `<mark>` elements, including WP's "highlight".
+///
+/// Spacing for all `<mark>` elements, including WP's "highlight".
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 mark {
-	padding: var(--wp--custom--elements--mark--padding, 0);
+	padding: 0.125em 0.25em;
+
+	// Style `<mark>` elements but avoid WP's "highlight" rich text element.
+	&:where(:not(.has-inline-color):not([style])) {
+		color:      var(--wp--custom--color--text--on-primary, currentColor);
+		background: var(--wp--custom--color--surface--primary, transparent);
+	}
 }
 
-// Style <mark> elements but avoid WP's "highlight" rich text element.
-mark:where(:not(.has-inline-color):not([style])) {
-	// Typography.
-	font-family: var(--wp--custom--elements--mark--font-family, inherit);
-	font-style: var(--wp--custom--elements--mark--font-style, inherit);
-	font-weight: var(--wp--custom--elements--mark--font-weight, inherit);
-	line-height: var(--wp--custom--elements--mark--line-height, inherit);
-	font-size: var(--wp--custom--elements--mark--font-size, inherit);
-
-	// Color.
-	color: var(--wp--custom--elements--mark--color, currentColor);
-	background: var(--wp--custom--elements--mark--background, transparent);
-
-	// Border.
-	border-color: var(--wp--custom--elements--mark--border-color, transparent);
-	border-style: var(--wp--custom--elements--mark--border-style, solid);
-	border-width: var(--wp--custom--elements--mark--border-width, 0);
-	border-radius: var(--wp--custom--elements--mark--border-radius, 0);
-
-	// Box shadow.
-	box-shadow: var(--wp--custom--elements--mark--shadow, none);
-}
-
-// Bump the line-height when used in a heading and remove padding.
+///
+/// Bump the line-height when using `<mark>` in a heading and remove padding.
+///
 :where(h1, h2, h3, h4, h5 h6) > mark {
 	line-height: 1.625em;
 	padding: 0;
 }
 
-// -----------------------------------------------------------------------------
-// `<sup>` and `<sub>`
-// -----------------------------------------------------------------------------
-
+///
+/// Superscript and subscript styles.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/64362
+///
 sup,
 sub {
-	font-size: 0.8125em;
+	font-size:   0.8125em;
 	line-height: 0; // Don't mess up line-height of parent.
 
 	// Text decoration doesn't really work well for most cases here, such as
@@ -232,22 +257,5 @@ sub {
 	a {
 		text-decoration: none;
 		outline: none;
-	}
-}
-
-// -----------------------------------------------------------------------------
-// Section styles for elements that WordPress doesn't support styling via
-// `theme.json`. For these, we're mostly inheriting the color styles from the
-// current color.
-// -----------------------------------------------------------------------------
-
-:is([class*="is-style-section-"]) {
-	:where(del, s, ins, kbd) {
-		color: currentColor;
-		text-decoration-color: currentColor;
-	}
-	kbd {
-		border-color: currentColor;
-		background: transparent;
 	}
 }

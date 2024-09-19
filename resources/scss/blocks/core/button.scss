@@ -1,8 +1,8 @@
 ////
 /// Button block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -14,12 +14,8 @@
 ///
 /// @todo Maybe remove. Is this still needed?
 ///
-.wp-block-button[style*="font-weight"] .wp-block-button__link {
-	font-weight: inherit;
-}
-.wp-block-button[style*="font-style"] .wp-block-button__link {
-	font-style: inherit;
-}
+.wp-block-button[style*=font-weight] .wp-block-button__link { font-weight: inherit; }
+.wp-block-button[style*=font-style] .wp-block-button__link { font-style: inherit; }
 
 // -----------------------------------------------------------------------------
 // Block customizations.
@@ -42,8 +38,7 @@
 		font-size: smaller;
 	}
 
-	del,
-	s {
+	del, s {
 		opacity: 0.7;
 		color: currentColor;
 		text-decoration-color: currentColor;
@@ -61,4 +56,12 @@
 // Block style variations.
 // -----------------------------------------------------------------------------
 
-// No variations...
+///
+/// Ensure underline on outline style buttons.
+///
+.wp-block-button.is-style-outline .wp-element-button:where(
+	:focus,
+	:hover
+) {
+	text-decoration: underline;
+}

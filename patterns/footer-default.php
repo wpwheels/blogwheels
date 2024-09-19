@@ -17,12 +17,19 @@ defined('ABSPATH') || exit;
 ?>
 <!-- wp:group {
 	"metadata":{"name":"<?= esc_attr__('Footer Container', 'blogwheels') ?>"},
-	"className":"is-style-site-footer",
+	"style":{
+		"spacing":{
+			"padding":{
+				"top":"var:preset|spacing|plus-6",
+				"bottom":"var:preset|spacing|plus-6",
+				"left":"var:preset|spacing|plus-3",
+				"right":"var:preset|spacing|plus-3"
+			}
+		}
+	},
 	"layout":{"type":"default"}
 } -->
-<div class="wp-block-group is-style-site-footer">
-
-	<!-- wp:pattern {"slug":"blogwheels/social-menu-outline"} /-->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--plus-6);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-6);padding-left:var(--wp--preset--spacing--plus-3)">
 
 	<!-- wp:group {
 		"metadata":{"name":"<?= esc_attr__('Footer Content', 'blogwheels') ?>"},
@@ -49,7 +56,7 @@ defined('ABSPATH') || exit;
 			"metadata":{
 				"bindings":{
 					"content":{
-						"source":"blockwheels/theme",
+						"source":"blogwheels/theme",
 						"args":{
 							"key":"superpower"
 						}
@@ -62,6 +69,8 @@ defined('ABSPATH') || exit;
 		<!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:group -->
+
+	<!-- wp:pattern {"slug":"blogwheels/social-menu-buttons-primary"} /-->
 
 </div>
 <!-- /wp:group -->

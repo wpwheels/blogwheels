@@ -6,7 +6,7 @@
  * Description:
  * Categories: banner
  * Keywords: breadcrumbs, trail
- * Block Types: blockwheels/breadcrumbs
+ * Block Types: blogwheels/breadcrumbs
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ declare(strict_types=1);
 defined('ABSPATH') || exit;
 
 ?>
-<!-- wp:blockwheels/breadcrumbs {
+<!-- wp:blogwheels/breadcrumbs {
 	"metadata":{"name":"<?= esc_attr__('Breadcrumbs', 'blogwheels') ?>"},
 	"align":"full"
 } /-->

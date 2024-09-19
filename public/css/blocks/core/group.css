@@ -9,9 +9,7 @@
   container-type: inline-size;
 }
 
-.wp-block-cover .is-style-meta,
-:is(.is-style-section-1) .is-style-meta,
-:is(.is-style-section-1) .is-style-meta a {
+.wp-block-cover .is-style-meta {
   color: inherit;
   background: transparent;
 }

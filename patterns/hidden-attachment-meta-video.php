@@ -49,7 +49,7 @@ $fields = [
 					) ?>",
 					"bindings":{
 						"content":{
-							"source":"blockwheels/media",
+							"source":"blogwheels/media",
 							"args":{
 								"key":"<?= esc_attr($key) ?>",
 								"label":"<?= esc_attr($label) ?>"

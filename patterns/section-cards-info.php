@@ -3,7 +3,7 @@
 /**
  * Title: Section: Info Cards
  * Slug: blogwheels/section-cards-info
- * Categories: blockwheels-grid
+ * Categories: blogwheels-grid
  * Keywords: card, grid
  * Viewport Width: 1376
  */
@@ -28,10 +28,10 @@ defined('ABSPATH') || exit;
 		}
 	},
 	"align":"full",
-	"className":"is-style-section-3",
+	"className":"is-style-section-1",
 	"layout":{"type":"constrained"}
 } -->
-<section class="wp-block-group alignfull is-style-section-3" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
+<section class="wp-block-group alignfull is-style-section-1" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
 
 	<!-- wp:pattern {"slug":"blogwheels/section-header"} /-->
 

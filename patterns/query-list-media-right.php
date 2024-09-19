@@ -139,7 +139,7 @@ $content_size = wp_get_global_settings([ 'layout', 'contentSize' ]);
 			"metadata":{
 				"bindings":{
 					"content":{
-						"source":"blockwheels/theme",
+						"source":"blogwheels/theme",
 						"args":{
 							"key":"paginationLabel"
 						}

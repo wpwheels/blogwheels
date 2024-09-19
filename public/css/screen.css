@@ -3,8 +3,10 @@
   \***************************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
 body {
-  --wp--preset--color--black: #000000;
-  --wp--preset--color--white: #ffffff;
+  --wp--preset--color--black: #000;
+  --wp--preset--color--white: #fff;
+  --wp--preset--color--base: var(--wp--custom--color--surface--level-0, #fff);
+  --wp--preset--color--contrast: var(--wp--custom--color--text--default, #000);
   --wp--preset--font-size--small: var(--wp--preset--font-size--xs);
   --wp--preset--font-size--medium: var(--wp--preset--font-size--md);
   --wp--preset--font-size--large: var(--wp--preset--font-size--2-xl);
@@ -18,18 +20,96 @@ body {
   --wp--preset--spacing--80: var(--wp--preset--spacing--plus-6);
 }
 
+:root :where(.is-style-section-1) {
+  --wp--custom--color--surface--level-0: var(--wp--custom--section-1--color--surface--level-0);
+  --wp--custom--color--surface--level-1: var(--wp--custom--section-1--color--surface--level-1);
+  --wp--custom--color--surface--level-2: var(--wp--custom--section-1--color--surface--level-2);
+  --wp--custom--color--surface--primary: var(--wp--custom--section-1--color--surface--primary);
+  --wp--custom--color--surface--button--primary--default: var(--wp--custom--section-1--color--surface--button--primary--default);
+  --wp--custom--color--surface--button--primary--hover: var(--wp--custom--section-1--color--surface--button--primary--hover);
+  --wp--custom--color--text--default: var(--wp--custom--section-1--color--text--default);
+  --wp--custom--color--text--muted: var(--wp--custom--section-1--color--text--muted);
+  --wp--custom--color--text--primary: var(--wp--custom--section-1--color--text--primary);
+  --wp--custom--color--text--on-primary: var(--wp--custom--section-1--color--text--on-primary);
+  --wp--custom--color--text--button--primary--default: var(--wp--custom--section-1--color--text--button--primary--default);
+  --wp--custom--color--text--button--primary--hover: var(--wp--custom--section-1--color--text--button--primary--hover);
+  --wp--custom--color--text--link--primary--default: var(--wp--custom--section-1--color--text--link--primary--default);
+  --wp--custom--color--text--link--primary--hover: var(--wp--custom--section-1--color--text--link--primary--hover);
+  --wp--custom--color--text--link--secondary--default: var(--wp--custom--section-1--color--text--link--secondary--default);
+  --wp--custom--color--text--link--secondary--hover: var(--wp--custom--section-1--color--text--link--secondary--hover);
+  --wp--custom--color--icon--default: var(--wp--custom--section-1--color--icon--default);
+  --wp--custom--color--icon--muted: var(--wp--custom--section-1--color--icon--muted);
+  --wp--custom--color--icon--primary: var(--wp--custom--section-1--color--icon--primary);
+}
+:root :where(.is-style-section-1) > * {
+  --wp--custom--color--icon--default: var(--wp--custom--section-1--color--border--default, currentColor);
+  --wp--custom--global--border--color: var(--wp--custom--section-1--color--border--default, currentColor);
+}
+
+:root :where(.is-style-section-2) {
+  --wp--custom--color--surface--level-0: var(--wp--custom--section-2--color--surface--level-0);
+  --wp--custom--color--surface--level-1: var(--wp--custom--section-2--color--surface--level-1);
+  --wp--custom--color--surface--level-2: var(--wp--custom--section-2--color--surface--level-2);
+  --wp--custom--color--surface--primary: var(--wp--custom--section-2--color--surface--primary);
+  --wp--custom--color--surface--button--primary--default: var(--wp--custom--section-2--color--surface--button--primary--default);
+  --wp--custom--color--surface--button--primary--hover: var(--wp--custom--section-2--color--surface--button--primary--hover);
+  --wp--custom--color--text--default: var(--wp--custom--section-2--color--text--default);
+  --wp--custom--color--text--muted: var(--wp--custom--section-2--color--text--muted);
+  --wp--custom--color--text--primary: var(--wp--custom--section-2--color--text--primary);
+  --wp--custom--color--text--on-primary: var(--wp--custom--section-2--color--text--on-primary);
+  --wp--custom--color--text--button--primary--default: var(--wp--custom--section-2--color--text--button--primary--default);
+  --wp--custom--color--text--button--primary--hover: var(--wp--custom--section-2--color--text--button--primary--hover);
+  --wp--custom--color--text--link--primary--default: var(--wp--custom--section-2--color--text--link--primary--default);
+  --wp--custom--color--text--link--primary--hover: var(--wp--custom--section-2--color--text--link--primary--hover);
+  --wp--custom--color--text--link--secondary--default: var(--wp--custom--section-2--color--text--link--secondary--default);
+  --wp--custom--color--text--link--secondary--hover: var(--wp--custom--section-2--color--text--link--secondary--hover);
+  --wp--custom--color--icon--default: var(--wp--custom--section-2--color--icon--default);
+  --wp--custom--color--icon--muted: var(--wp--custom--section-2--color--icon--muted);
+  --wp--custom--color--icon--primary: var(--wp--custom--section-2--color--icon--primary);
+}
+:root :where(.is-style-section-2) > * {
+  --wp--custom--color--icon--default: var(--wp--custom--section-2--color--border--default, currentColor);
+  --wp--custom--global--border--color: var(--wp--custom--section-2--color--border--default, currentColor);
+}
+
+:root :where(.is-style-section-3) {
+  --wp--custom--color--surface--level-0: var(--wp--custom--section-3--color--surface--level-0);
+  --wp--custom--color--surface--level-1: var(--wp--custom--section-3--color--surface--level-1);
+  --wp--custom--color--surface--level-2: var(--wp--custom--section-3--color--surface--level-2);
+  --wp--custom--color--surface--primary: var(--wp--custom--section-3--color--surface--primary);
+  --wp--custom--color--surface--button--primary--default: var(--wp--custom--section-3--color--surface--button--primary--default);
+  --wp--custom--color--surface--button--primary--hover: var(--wp--custom--section-3--color--surface--button--primary--hover);
+  --wp--custom--color--text--default: var(--wp--custom--section-3--color--text--default);
+  --wp--custom--color--text--muted: var(--wp--custom--section-3--color--text--muted);
+  --wp--custom--color--text--primary: var(--wp--custom--section-3--color--text--primary);
+  --wp--custom--color--text--on-primary: var(--wp--custom--section-3--color--text--on-primary);
+  --wp--custom--color--text--button--primary--default: var(--wp--custom--section-3--color--text--button--primary--default);
+  --wp--custom--color--text--button--primary--hover: var(--wp--custom--section-3--color--text--button--primary--hover);
+  --wp--custom--color--text--link--primary--default: var(--wp--custom--section-3--color--text--link--primary--default);
+  --wp--custom--color--text--link--primary--hover: var(--wp--custom--section-3--color--text--link--primary--hover);
+  --wp--custom--color--text--link--secondary--default: var(--wp--custom--section-3--color--text--link--secondary--default);
+  --wp--custom--color--text--link--secondary--hover: var(--wp--custom--section-3--color--text--link--secondary--hover);
+  --wp--custom--color--icon--default: var(--wp--custom--section-3--color--icon--default);
+  --wp--custom--color--icon--muted: var(--wp--custom--section-3--color--icon--muted);
+  --wp--custom--color--icon--primary: var(--wp--custom--section-3--color--icon--primary);
+}
+:root :where(.is-style-section-3) > * {
+  --wp--custom--color--icon--default: var(--wp--custom--section-3--color--border--default, currentColor);
+  --wp--custom--global--border--color: var(--wp--custom--section-3--color--border--default, currentColor);
+}
+
 :root {
   color-scheme: var(--wp--custom--color-scheme, "normal");
 }
 
 ::-moz-selection {
-  color: var(--wp--custom--elements--selection--color);
-  background: var(--wp--custom--elements--selection--background);
+  background: var(--wp--custom--color--surface--primary);
+  color: var(--wp--custom--color--text--on-primary);
 }
 
 ::selection {
-  color: var(--wp--custom--elements--selection--color);
-  background: var(--wp--custom--elements--selection--background);
+  background: var(--wp--custom--color--surface--primary);
+  color: var(--wp--custom--color--text--on-primary);
 }
 
 .wp-site-blocks,
@@ -50,6 +130,8 @@ body {
 }
 
 a:where(:not(:focus)),
+button,
+input[type=reset],
 input[type=submit],
 input:focus,
 textarea:focus {
@@ -65,7 +147,7 @@ a img {
   transition: box-shadow 0.5s ease-in-out;
 }
 a:hover img:where(:not(.avatar)) {
-  box-shadow: var(--wp--preset--shadow--enlarge);
+  box-shadow: var(--wp--custom--shadow--primary--hover);
 }
 .is-style-borderless a:focus {
   outline: none;
@@ -76,14 +158,6 @@ video {
   display: block;
 }
 
-blockquote cite::before {
-  content: "– ";
-}
-
-.wp-element-caption {
-  text-align: center;
-}
-
 abbr[title] {
   cursor: help;
   -webkit-text-decoration: currentColor underline dotted min(0.078125em, 3px);
@@ -91,27 +165,43 @@ abbr[title] {
   text-underline-offset: 0.078125em;
 }
 
+.wp-element-caption a {
+  display: inline;
+  width: initial;
+  color: var(--wp--custom--color--text--link--secondary--default);
+}
+.wp-element-caption a:hover, .wp-element-caption a:focus {
+  color: var(--wp--custom--color--text--link--secondary--hover);
+}
+
+blockquote cite::before {
+  content: "– ";
+}
+blockquote cite a {
+  color: var(--wp--custom--color--text--link--secondary--default);
+}
+blockquote cite a:hover, blockquote cite a:focus {
+  color: var(--wp--custom--color--text--link--secondary--hover);
+}
+
 :where(:not(pre) > code) {
-  padding: var(--wp--custom--elements--code--padding, 0);
-  font-family: var(--wp--custom--elements--code--font-family, monospace);
-  font-style: var(--wp--custom--elements--code--font-style, normal);
-  font-weight: var(--wp--custom--elements--code--font-weight, inherit);
-  line-height: var(--wp--custom--elements--code--line-height, inherit);
-  font-size: var(--wp--custom--elements--code--font-size, inherit);
-  color: var(--wp--custom--elements--code--color, inherit);
-  background: var(--wp--custom--elements--code--background, transparent);
-  border-color: var(--wp--custom--elements--code--border-color, transparent);
-  border-style: var(--wp--custom--elements--code--border-style, solid);
-  border-width: var(--wp--custom--elements--code--border-width, 0);
-  border-radius: var(--wp--custom--elements--code--border-radius, 0);
-  box-shadow: var(--wp--custom--elements--code--shadow, none);
+  padding: 0.125em 0.25em;
+  font-family: var(--wp--preset--font-family--mono, monospace);
+  font-size: clamp(var(--wp--preset--font-size--xs), 0.8125em, 0.8125em);
+  font-style: normal;
+  font-weight: 600;
+  line-height: inherit;
+  color: var(--wp--custom--color--text--default, inherit);
+  background: var(--wp--custom--color--surface--level-1, transparent);
+  border: none;
+  box-shadow: none;
 }
 
 del,
 s {
-  color: var(--wp--custom--elements--del--color, inherit);
-  -webkit-text-decoration: var(--wp--custom--elements--del--text-decoration, currentColor line-through solid clamp(2px, 0.125em, 0.125em));
-          text-decoration: var(--wp--custom--elements--del--text-decoration, currentColor line-through solid clamp(2px, 0.125em, 0.125em));
+  color: var(--wp--custom--color--text--muted, inherit);
+  -webkit-text-decoration: var(--wp--custom--color--text--default, currentColor) line-through solid min(0.078125em, 3px);
+          text-decoration: var(--wp--custom--color--text--default, currentColor) line-through solid min(0.078125em, 3px);
 }
 
 :where(figure) {
@@ -126,46 +216,39 @@ img:where(:not(.avatar)) {
 }
 
 ins {
-  color: var(--wp--custom--elements--ins--color, inherit);
-  -webkit-text-decoration: var(--wp--custom--elements--ins--text-decoration, currentColor underline solid max(1px, 0.0625em));
-          text-decoration: var(--wp--custom--elements--ins--text-decoration, currentColor underline solid max(1px, 0.0625em));
+  color: inherit;
+  -webkit-text-decoration: currentColor underline solid clamp(2px, 0.125em, 0.125em);
+          text-decoration: currentColor underline solid clamp(2px, 0.125em, 0.125em);
   text-underline-offset: 4px;
 }
 
 kbd {
   white-space: nowrap;
-  padding: var(--wp--custom--elements--kbd--padding, 0);
-  font-family: var(--wp--custom--elements--kbd--font-family, monospace);
-  font-style: var(--wp--custom--elements--kbd--font-style, normal);
-  font-weight: var(--wp--custom--elements--kbd--font-weight, inherit);
-  line-height: var(--wp--custom--elements--kbd--line-height, inherit);
-  font-size: var(--wp--custom--elements--kbd--font-size, inherit);
-  color: var(--wp--custom--elements--kbd--color, inherit);
-  background: var(--wp--custom--elements--kbd--background, transparent);
-  border-color: var(--wp--custom--elements--kbd--border-color, transparent);
-  border-style: var(--wp--custom--elements--kbd--border-style, solid);
-  border-width: var(--wp--custom--elements--kbd--border-width, 0);
-  border-radius: var(--wp--custom--elements--kbd--border-radius, 0);
-  box-shadow: var(--wp--custom--elements--kbd--shadow, none);
+  padding: 0.125em 0.375em;
+  font-family: var(--wp--preset--font-family--mono, monospace);
+  font-size: clamp(var(--wp--preset--font-size--xs), 0.8125em, 0.8125em);
+  font-style: normal;
+  font-weight: 500;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border-color: var(--wp--custom--color--border--default);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.25rem;
+  box-shadow: var(--wp--preset--shadow--sm, none);
+}
+
+li::marker {
+  color: var(--wp--custom--color--text--muted, currentColor);
 }
 
 mark {
-  padding: var(--wp--custom--elements--mark--padding, 0);
+  padding: 0.125em 0.25em;
 }
-
 mark:where(:not(.has-inline-color):not([style])) {
-  font-family: var(--wp--custom--elements--mark--font-family, inherit);
-  font-style: var(--wp--custom--elements--mark--font-style, inherit);
-  font-weight: var(--wp--custom--elements--mark--font-weight, inherit);
-  line-height: var(--wp--custom--elements--mark--line-height, inherit);
-  font-size: var(--wp--custom--elements--mark--font-size, inherit);
-  color: var(--wp--custom--elements--mark--color, currentColor);
-  background: var(--wp--custom--elements--mark--background, transparent);
-  border-color: var(--wp--custom--elements--mark--border-color, transparent);
-  border-style: var(--wp--custom--elements--mark--border-style, solid);
-  border-width: var(--wp--custom--elements--mark--border-width, 0);
-  border-radius: var(--wp--custom--elements--mark--border-radius, 0);
-  box-shadow: var(--wp--custom--elements--mark--shadow, none);
+  color: var(--wp--custom--color--text--on-primary, currentColor);
+  background: var(--wp--custom--color--surface--primary, transparent);
 }
 
 :where(h1, h2, h3, h4, h5 h6) > mark {
@@ -184,17 +267,8 @@ sub a {
   outline: none;
 }
 
-:is([class*=is-style-section-]) :where(del, s, ins, kbd) {
-  color: currentColor;
-  text-decoration-color: currentColor;
-}
-:is([class*=is-style-section-]) kbd {
-  border-color: currentColor;
-  background: transparent;
-}
-
 label {
-  color: var(--wp--custom--elements--label--color, var(--wp--custom--color--muted, inherit));
+  color: var(--wp--custom--color--text--muted, inherit);
   font-family: var(--wp--custom--elements--label--font-family, inherit);
   font-size: var(--wp--custom--elements--label--font-size, inherit);
   font-style: var(--wp--custom--elements--label--font-style, inherit);
@@ -212,22 +286,23 @@ label:has(+ input:focus,
 input:focus,
 textarea:focus,
 select:focus) {
-  color: var(--wp--custom--elements--label--focus-color, var(--wp--custom--color--action, inherit));
+  color: var(--wp--custom--color--text--primary, inherit);
 }
-input[type=checkbox] + label, input[type=radio] + label, label:has(input[type=checkbox], input[type=radio]) {
-  color: var(--wp--custom--elements--label--check-color, inherit);
-  font-family: var(--wp--custom--elements--label--check-font-family, inherit);
-  font-size: var(--wp--custom--elements--label--check-font-size, inherit);
-  font-style: var(--wp--custom--elements--label--check-font-style, inherit);
-  font-weight: var(--wp--custom--elements--label--check-font-weight, inherit);
+input[type=checkbox] + label, input[type=radio] + label, label:has(input[type=checkbox],
+input[type=radio]) {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
 }
 
 ::-moz-placeholder {
-  color: var(--wp--custom--elements--placeholder--color, inherit);
+  color: var(--wp--custom--color--text--muted, inherit);
 }
 
 ::placeholder {
-  color: var(--wp--custom--elements--placeholder--color, inherit);
+  color: var(--wp--custom--color--text--muted, inherit);
 }
 
 input:where(:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=reset])),
@@ -237,23 +312,23 @@ textarea {
      -moz-appearance: none;
           appearance: none;
   padding: var(--wp--preset--spacing--minus-3) var(--wp--preset--spacing--minus-1);
-  color: var(--wp--custom--elements--input--color, inherit);
-  background: var(--wp--custom--elements--input--background, transparent);
-  font-family: var(--wp--custom--elements--input--font-family, inherit);
-  font-size: var(--wp--custom--elements--input--font-size, inherit);
-  font-style: var(--wp--custom--elements--input--font-style, inherit);
-  font-weight: var(--wp--custom--elements--input--font-weight, inherit);
-  line-height: var(--wp--custom--elements--input--line-height, inherit);
-  border-color: var(--wp--custom--elements--input--border-color, none);
-  border-style: var(--wp--custom--elements--input--border-style, solid);
-  border-width: var(--wp--custom--elements--input--border-width, 1px);
-  border-radius: var(--wp--custom--elements--input--border-radius, none);
-  box-shadow: var(--wp--custom--elements--input--shadow, none);
+  color: var(--wp--custom--color--text--default, inherit);
+  background: var(--wp--custom--color--surface--level-1, transparent);
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  border-color: var(--wp--custom--global--border--color, none);
+  border-style: var(--wp--custom--global--border--style, solid);
+  border-width: var(--wp--custom--global--border--width, 1px);
+  border-radius: var(--wp--custom--global--border--radius, none);
+  box-shadow: var(--wp--custom--shadow--primary--secondary, none);
 }
 input:where(:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=reset])):focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid var(--wp--custom--elements--input-accent-color, var(--wp--custom--color--action, var(--wp--preset--color--primary-700)));
+  outline: 2px solid var(--wp--custom--color--text--primary, inherit);
   outline-offset: 2px;
 }
 
@@ -268,7 +343,7 @@ select {
 
 input[type=checkbox],
 input[type=radio] {
-  accent-color: var(--wp--custom--elements--input-accent-color, var(--wp--custom--color--action, var(--wp--preset--color--primary-700)));
+  accent-color: var(--wp--custom--color--icon--primary, inherit);
   padding: 0;
   border: none;
   box-shadow: none;
@@ -288,7 +363,7 @@ input[type=submit] {
   border-style: var(--wp--custom--global--border--style, solid);
   border-width: var(--wp--custom--global--border--width, 0);
   border-radius: var(--wp--custom--global--border--radius, 0);
-  box-shadow: var(--wp--custom--global--shadow, none);
+  box-shadow: var(--wp--custom--shadow--primary--default, none);
 }
 
 :where(:not(.has-global-padding)) > [class*=wp-block].alignfull,
@@ -313,7 +388,7 @@ svg.wp-smiley {
 }
 
 .wp-lightbox-overlay {
-  background: var(--wp--custom--lightbox--overlay--background, var(--wp--preset--color--contrast));
+  background: var(--wp--custom--color--dark, #000);
 }
 .wp-lightbox-overlay .scrim {
   background: none !important;
@@ -321,7 +396,7 @@ svg.wp-smiley {
 .wp-lightbox-overlay .close-button {
   right: calc(env(safe-area-inset-right) + var(--wp--preset--spacing--plus-3));
   top: calc(env(safe-area-inset-top) + var(--wp--preset--spacing--base));
-  fill: var(--wp--custom--lightbox--overlay--color, var(--wp--preset--color--base)) !important;
+  fill: var(--wp--custom--color--light, #fff) !important;
 }
 .wp-lightbox-overlay .close-button svg {
   width: 24px;
@@ -383,7 +458,9 @@ ol.has-marker-none > li,
   padding-right: 0;
 }
 
-:where(:where(ul, ol, .wp-block-archives)[class*=has-marker-] :where(ul, ol)) {
+:where(:where(ul,
+ol,
+.wp-block-archives)[class*=has-marker-] :where(ul, ol)) {
   list-style-type: inherit;
 }
 

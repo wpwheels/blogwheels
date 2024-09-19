@@ -1,13 +1,13 @@
 /**
  * Common utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // WordPress dependencies.
-import TokenList from "@wordpress/token-list";
+import TokenList from '@wordpress/token-list';
 
 /**
  * Removes the previous style class and adds the new one.
@@ -26,10 +26,10 @@ import TokenList from "@wordpress/token-list";
  */
 export const updateClass = (
 	className,
-	newClass = "",
-	oldClass = "",
-	prefix = "",
-	suffix = "",
+	newClass = '',
+	oldClass = '',
+	prefix = '',
+	suffix = ''
 ) => {
 	const list = new TokenList(className);
 

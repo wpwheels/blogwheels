@@ -3,7 +3,7 @@
 /**
  * Title: Small Horizontal Profile Card
  * Slug: blogwheels/card-profile-row-small
- * Categories: team, blockwheels-card
+ * Categories: team, blogwheels-card
  * Keywords: card, grid, profile, team
  * Viewport Width: 480
  */
@@ -27,14 +27,14 @@ defined('ABSPATH') || exit;
 			"blockGap":"var:preset|spacing|base"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"layout":{
 		"type":"flex",
 		"flexWrap":"nowrap"
 	},
 	"fontSize":"sm"
 } -->
-<div class="wp-block-group has-global-border is-style-section-3 has-sm-font-size" style="padding-top:var(--wp--preset--spacing--base);padding-right:var(--wp--preset--spacing--base);padding-bottom:var(--wp--preset--spacing--base);padding-left:var(--wp--preset--spacing--base)">
+<div class="wp-block-group has-global-border is-style-section-1 has-sm-font-size" style="padding-top:var(--wp--preset--spacing--base);padding-right:var(--wp--preset--spacing--base);padding-bottom:var(--wp--preset--spacing--base);padding-left:var(--wp--preset--spacing--base)">
 
 	<!-- wp:avatar {
 		"userId":1,

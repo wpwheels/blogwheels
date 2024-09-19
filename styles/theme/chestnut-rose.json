@@ -3,44 +3,8 @@
 	"version": 3,
 	"title": "Chestnut Rose",
 	"settings": {
-		"blocks": {
-			"core/navigation": {
-				"custom": {
-					"toggle": {
-						"color": "var:preset|color|white",
-						"background": "var:preset|color|primary-700",
-						"borderRadius": "4px",
-						"hoverBackground": "var:preset|color|primary-900"
-					}
-				}
-			},
-			"core/navigation-submenu": {
-				"custom": {
-					"color": "var:preset|color|contrast",
-					"background": "var:preset|color|neutral-50"
-				}
-			},
-			"core/post-comments-form": {
-				"custom": {
-					"commentNotes": {
-						"fontSize": "var:preset|font-size|xs",
-						"lineHeight": "var:preset|line-height|xs"
-					}
-				}
-			}
-		},
 		"color": {
 			"palette": [
-				{
-					"slug": "base",
-					"color": "#f5f7f9",
-					"name": "Base"
-				},
-				{
-					"slug": "contrast",
-					"color": "#364856",
-					"name": "Contrast"
-				},
 				{
 					"slug": "primary-950",
 					"color": "#3a181f",
@@ -152,6 +116,11 @@
 					"name": "Secondary: 50"
 				},
 				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				},
+				{
 					"slug": "neutral-950",
 					"color": "#202831",
 					"name": "Neutral: 950"
@@ -210,27 +179,26 @@
 					"slug": "white",
 					"color": "#ffffff",
 					"name": "White"
-				},
-				{
-					"slug": "black",
-					"color": "#000000",
-					"name": "Black"
 				}
 			]
 		},
 		"custom": {
 			"variation": "chestnut-rose",
+			"color": {
+				"surface": {
+					"submenu": {
+						"default": "var:preset|color|neutral-50",
+						"hover": "var:preset|color|neutral-200"
+					}
+				},
+				"border": {
+					"default": "var:preset|color|neutral-50"
+				}
+			},
 			"global": {
 				"border": {
 					"width": "0",
 					"radius": "8px"
-				},
-				"shadow": "var:preset|shadow|lg",
-				"fill": {
-					"hoverBackground": "var:preset|color|primary-500"
-				},
-				"outline": {
-					"borderWidth": "1px"
 				}
 			},
 			"elements": {
@@ -317,8 +285,7 @@
 					"fontWeight": "300",
 					"fontSize": "var:preset|font-size|xs",
 					"lineHeight": "var:custom|line-height|xs"
-				},
-				"shadow": "var:preset|shadow|md"
+				}
 			},
 			"caption": {
 				"typography": {
@@ -329,9 +296,6 @@
 				}
 			},
 			"heading": {
-				"color": {
-					"text": "var:preset|color|neutral-700"
-				},
 				"typography": {
 					"fontWeight": "200",
 					"letterSpacing": "-0.02em"
@@ -353,66 +317,14 @@
 				}
 			},
 			"core/navigation-submenu": {
-				"border": {
-					"width": "1px",
-					"style": "solid",
-					"color": "var:preset|color|neutral-50",
-					"radius": "var:custom|global|border|radius"
-				},
-				"color": {
-					"text": "var:preset|color|contrast",
-					"background": "var:preset|color|neutral-50"
-				},
-				"shadow": "var:preset|shadow|lg",
 				"typography": {
 					"fontSize": "var:preset|font-size|xs"
-				},
-				"elements": {
-					"link": {
-						":focus": {
-							"color": {
-								"text": "var:preset|color|primary-700"
-							}
-						},
-						":hover": {
-							"color": {
-								"text": "var:preset|color|primary-700"
-							}
-						}
-					}
-				},
-				"css": "& .wp-block-navigation-item:hover, .wp-block-navigation-item:focus {\n\tcolor: var(--wp--preset--color--700);\n\tbackground: var(--wp--preset--color--neutral-100);\n}"
-			},
-			"core/post-terms": {
-				"variations": {
-					"fill": {
-						"typography": {
-							"fontWeight": "300"
-						},
-						"elements": {
-							"link": {
-								":focus": {
-									"color": {
-										"background": "var:preset|color|primary-500"
-									}
-								},
-								":hover": {
-									"color": {
-										"background": "var:preset|color|primary-500"
-									}
-								}
-							}
-						}
-					}
 				}
 			},
 			"core/separator": {
 				"color": {
 					"text": "var:preset|color|primary-500"
 				}
-			},
-			"core/social-link": {
-				"shadow": "var:preset|shadow|md"
 			},
 			"core/site-title": {
 				"typography": {
@@ -479,10 +391,7 @@
 					"fontWeight": "300"
 				}
 			},
-			"blockwheels/breadcrumbs": {
-				"color": {
-					"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-				},
+			"blogwheels/breadcrumbs": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|secondary",
 					"fontStyle": "italic",
@@ -493,10 +402,24 @@
 			}
 		},
 		"variations": {
+			"buttons-primary": {
+				"typography": {
+					"fontWeight": "300"
+				}
+			},
 			"meta": {
 				"typography": {
 					"fontSize": "var:preset|font-size|xs",
 					"lineHeight": "var:custom|line-height|xs"
+				}
+			},
+			"site-header": {
+				"blocks": {
+					"blogwheels/breadcrumbs": {
+						"color": {
+							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
+						}
+					}
 				}
 			}
 		}

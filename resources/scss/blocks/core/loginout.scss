@@ -1,12 +1,12 @@
 ////
 /// Login/out block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon";
-@use "../../tools/inline-icon";
+@use '../../tools/icon';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -18,7 +18,7 @@
 /// @link https://github.com/WordPress/gutenberg/issues/50466
 ///
 .wp-block-loginout form {
-	input:not([type="submit"]):not([type="checkbox"]):not([type="hidden"]) {
+	input:not([type=submit]):not([type=checkbox]):not([type=hidden]) {
 		box-sizing: border-box;
 		display: block;
 		width: 100%;
@@ -51,20 +51,21 @@
 /// The icon block style adds icons to either the link or the form elements.
 ///
 .wp-block-loginout.is-style-icon {
+
 	&:not(.has-login-form) a {
-		@include inline-icon.prefix(icon.get-url("lock"));
+		@include inline-icon.prefix(icon.get-url('lock'));
 
 		&.logged-in a::before {
-			@include inline-icon.modify(icon.get-url("lock-open"));
+			@include inline-icon.modify(icon.get-url('lock-open'));
 		}
 	}
 
 	.login-username label,
 	.login-password label {
-		@include inline-icon.prefix(icon.get-url("person"));
+		@include inline-icon.prefix(icon.get-url('person'));
 	}
 
 	.login-password label::before {
-		@include inline-icon.modify(icon.get-url("key"));
+		@include inline-icon.modify(icon.get-url('key'));
 	}
 }

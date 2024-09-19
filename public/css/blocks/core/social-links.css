@@ -34,15 +34,6 @@
   font-size: var(--wp--preset--font-size--md);
 }
 
-.wp-block-social-links.is-style-fill .wp-social-link {
-  background: var(--wp--custom--global--fill--background);
-  color: var(--wp--custom--global--fill--color);
-}
-.wp-block-social-links.is-style-fill .wp-social-link:has(a:focus, a:hover) {
-  background: var(--wp--custom--global--fill--hover-background);
-  color: var(--wp--custom--global--fill--hover-color);
-}
-
 .wp-block-social-links.is-style-monotone .wp-social-link {
   background: transparent;
   color: currentColor;

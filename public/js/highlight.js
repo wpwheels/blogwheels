@@ -3129,8 +3129,8 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Code syntax highlighter.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
@@ -3144,7 +3144,7 @@ window.Prism.manual = true;
 
 
 // Target our code blocks only.
-document.querySelectorAll(".wp-block-code.is-style-highlight").forEach(block => Prism.highlightAllUnder(block));
+document.querySelectorAll('.wp-block-code.is-style-highlight').forEach(block => Prism.highlightAllUnder(block));
 })();
 
 /******/ })()

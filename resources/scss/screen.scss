@@ -5,20 +5,20 @@
 /// easy way to differentiate it from `print`, which I'll totally add one
 /// day. I promise.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Base/Defaults.
-@use "base/var";
-@use "base/root";
-@use "base/elements";
-@use "base/forms";
+@use 'base/var';
+@use 'base/root';
+@use 'base/elements';
+@use 'base/forms';
 
 // Utilities.
-@use "utilities/helpers";
-@use "utilities/lightbox";
-@use "utilities/list-markers";
-@use "utilities/rich-text";
-@use "utilities/text-shadow";
-@use "utilities/typography";
+@use 'utilities/helpers';
+@use 'utilities/lightbox';
+@use 'utilities/list-markers';
+@use 'utilities/rich-text';
+@use 'utilities/text-shadow';
+@use 'utilities/typography';

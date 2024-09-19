@@ -3,7 +3,7 @@
 /**
  * Title: Hero: Split Code
  * Slug: blogwheels/hero-split-code
- * Categories: blockwheels-hero
+ * Categories: blogwheels-hero
  * Keywords: hero, cover, intro, about, code, software
  * Block Types: core/cover
  * Viewport Width: 1376
@@ -32,10 +32,10 @@ $image = get_theme_file_uri('public/media/svg/code.svg');
 			}
 		}
 	},
-	"className":"is-style-section-3",
+	"className":"is-style-section-1",
 	"layout":{"type":"constrained","contentSize":"80rem"}
 } -->
-<section class="wp-block-group alignfull is-style-section-3" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
+<section class="wp-block-group alignfull is-style-section-1" style="padding-top:var(--wp--preset--spacing--plus-4);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-4);padding-left:var(--wp--preset--spacing--plus-3)">
 
 	<!-- wp:group {
 		"style":{

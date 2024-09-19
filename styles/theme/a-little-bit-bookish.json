@@ -5,15 +5,19 @@
 	"settings": {
 		"custom": {
 			"variation": "a-little-bit-bookish",
+			"color": {
+				"border": {
+					"default": "var:preset|color|neutral-100"
+				}
+			},
 			"global": {
 				"border": {
-					"color": "var:preset|color|neutral-100",
 					"style": "solid",
 					"width": "1px",
 					"radius": "4px"
 				},
 				"shadow": "none",
-				"fadedGradient": "linear-gradient( 225deg, #cdb8a425, transparent 80% ), linear-gradient( 180deg, transparent -40%, var( --wp--preset--color--base ) 100% )"
+				"fadedGradient": "linear-gradient( 225deg, #cdb8a425, transparent 80% ), linear-gradient( 180deg, transparent -40%, #f5f1ea 100% )"
 			},
 			"elements": {
 				"summary": {
@@ -22,20 +26,20 @@
 			},
 			"embed": {
 				"fontFamily": "var:preset|font-family|secondary"
+			},
+			"shadow": {
+				"primary": {
+					"default": "none",
+					"hover": "var:preset|shadow|enlarge"
+				},
+				"secondary": {
+					"default": "none",
+					"hover": "none"
+				}
 			}
 		},
 		"color": {
 			"palette": [
-				{
-					"slug": "base",
-					"color": "#f5f1ea",
-					"name": "Base"
-				},
-				{
-					"slug": "contrast",
-					"color": "#000000",
-					"name": "Contrast"
-				},
 				{
 					"slug": "primary-950",
 					"color": "#3d1712",
@@ -147,6 +151,11 @@
 					"name": "Secondary: 50"
 				},
 				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				},
+				{
 					"slug": "neutral-950",
 					"color": "#2a1e1e",
 					"name": "Neutral: 950"
@@ -237,16 +246,16 @@
 					"name": "Secondary (Charter)"
 				},
 				{
-					"fontFamily": "'Dancing Script', cursive",
+					"fontFamily": "Caveat, 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive",
 					"slug": "tertiary",
-					"name": "Tertiary (Dancing Script)",
+					"name": "Tertiary (Caveat)",
 					"fontFace": [
 						{
-							"fontFamily": "Dancing Script",
+							"fontFamily": "Caveat",
 							"fontWeight": "400 700",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
-							"src": [ "file:./public/fonts/dancing-script/dancing-script.woff2" ]
+							"src": [ "file:./public/fonts/caveat/caveat.woff2" ]
 						}
 					]
 				},
@@ -260,6 +269,7 @@
 	},
 	"styles": {
 		"color": {
+			"background": "#f5f1ea",
 			"gradient": "linear-gradient( 225deg, #cdb8a425, transparent 25% ), linear-gradient( 45deg, #cdb8a425, transparent 25% )"
 		},
 		"elements": {
@@ -344,10 +354,7 @@
 					"fontStyle": "italic"
 				}
 			},
-			"blockwheels/breadcrumbs": {
-				"color": {
-					"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-				},
+			"blogwheels/breadcrumbs": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|tertiary",
 					"fontSize": "var:preset|font-size|md",
@@ -356,6 +363,15 @@
 			}
 		},
 		"variations": {
+			"site-header": {
+				"blocks": {
+					"blogwheels/breadcrumbs": {
+						"color": {
+							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
+						}
+					}
+				}
+			},
 			"site-footer": {
 				"color": {
 					"background": "transparent"

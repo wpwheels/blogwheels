@@ -4,7 +4,7 @@
  * Title: Hero: Featured
  * Slug: blogwheels/hero-featured
  * Description: Make a statement.
- * Categories: featured, blockwheels-hero
+ * Categories: featured, blogwheels-hero
  * Keywords: hero, cover, intro, about
  * Block Types: core/cover
  * Viewport Width: 1376

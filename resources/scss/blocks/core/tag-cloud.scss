@@ -1,12 +1,12 @@
 ////
 /// Tag Cloud block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon";
-@use "../../tools/inline-icon";
+@use '../../tools/icon';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -48,8 +48,9 @@
 ///
 .wp-block-tag-cloud.is-style-icon,
 .wp-block-tag-cloud.is-style-icon .wp-block-tag-cloud {
+
 	a {
-		@include inline-icon.prefix(icon.get-url("tag"));
+		@include inline-icon.prefix(icon.get-url('tag'));
 
 		&:has(.tag-link-count) {
 			text-decoration-line: none;
@@ -61,11 +62,18 @@
 	}
 
 	&.taxonomy-category a::before {
-		@include inline-icon.modify(icon.get-url("folder"));
+		@include inline-icon.modify(icon.get-url('folder'));
 	}
 }
 
-// Inherit the outline font size from the parent element if assigned a preset.
-[class*="-font-size"] .wp-block-tag-cloud.is-style-outline a {
+///
+/// Shared fill and outline block styles. Inherit the outline font size from the
+/// parent element if assigned a preset.
+///
+[class*=-font-size] .wp-block-tag-cloud:is(
+	.is-style-buttons-primary,
+	.is-style-buttons-secondary,
+	.is-style-buttons-outline
+ ) {
 	line-height: inherit;
 }

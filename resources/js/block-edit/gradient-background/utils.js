@@ -1,17 +1,17 @@
 /**
  * Utility functions.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import { updateClass } from "../../common/utils-classname";
-import { GRADIENT_PREFIX, GRADIENT_SUFFIX } from "./constants";
+import { updateClass } from '../../common/utils-classname';
+import { GRADIENT_PREFIX, GRADIENT_SUFFIX } from './constants';
 
 // WordPress dependencies.
-import TokenList from "@wordpress/token-list";
+import TokenList from '@wordpress/token-list';
 
 /**
  * Gets a gradient value if it is included in a class.
@@ -23,10 +23,10 @@ export const getGradientFromClassName = (className, gradients) => {
 	const list = new TokenList(className);
 
 	const gradient = gradients.find((option) =>
-		list.contains(GRADIENT_PREFIX + option.slug + GRADIENT_SUFFIX),
+		list.contains(GRADIENT_PREFIX + option.slug + GRADIENT_SUFFIX)
 	);
 
-	return undefined !== gradient ? gradient.slug : "";
+	return undefined !== gradient ? gradient.slug : '';
 };
 
 /**
@@ -37,11 +37,10 @@ export const getGradientFromClassName = (className, gradients) => {
  * @param {string} oldGradient
  * @returns {string}
  */
-export const updateGradientClass = (className, newGradient, oldGradient) =>
-	updateClass(
-		className,
-		newGradient,
-		oldGradient,
-		GRADIENT_PREFIX,
-		GRADIENT_SUFFIX,
-	);
+export const updateGradientClass = (className, newGradient, oldGradient) => updateClass(
+	className,
+	newGradient,
+	oldGradient,
+	GRADIENT_PREFIX,
+	GRADIENT_SUFFIX
+);

@@ -1,11 +1,11 @@
 ////
 /// List block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/list";
+@use '../../tools/list';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -30,14 +30,7 @@ ol li::marker {
 	font-size: 0.875em;
 }
 
-li::marker {
-	color: var(
-		--wp--custom--marker--color,
-		var(--wp--custom--elements--marker--color)
-	);
-}
-
-[class*="has-text-color-"] li::marker {
+[class*=has-text-color-] li::marker {
 	color: inherit;
 }
 

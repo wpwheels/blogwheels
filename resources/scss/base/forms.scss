@@ -1,38 +1,32 @@
 ////
 /// Forms.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../tools/form";
+@use '../tools/form';
 
-// -----------------------------------------------------------------------------
-// Label elements.
-// -----------------------------------------------------------------------------
-
+///
+/// `<label>` element styles.
+///
 label {
 	@include form.label();
 }
 
-// -----------------------------------------------------------------------------
-// Input placeholder text.
-// -----------------------------------------------------------------------------
-
+///
+/// Input placeholder styles.
+///
 ::placeholder {
 	@include form.placeholder();
 }
 
-// -----------------------------------------------------------------------------
-// Form elements.
-// -----------------------------------------------------------------------------
-
-// Adds form element styles, which aren't yet supported in `theme.json`.
-input:where(
-		:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not(
-				[type="reset"]
-			)
-	),
+///
+/// Adds form element styles, which aren't yet supported in `theme.json`.
+///
+/// @link https://github.com/WordPress/gutenberg/issues/34198
+///
+input:where(:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=reset])),
 select,
 textarea {
 	@include form.input();

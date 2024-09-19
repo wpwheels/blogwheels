@@ -1,12 +1,12 @@
 ////
 /// Image block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon.scss";
-@use "../../tools/inline-icon";
+@use '../../tools/icon.scss';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -52,7 +52,7 @@
 	transition: box-shadow 0.5s ease-in-out;
 
 	&:hover {
-		box-shadow: var(--wp--preset--shadow--enlarge);
+		box-shadow: var(--wp--custom--shadow--primary--hover);
 	}
 }
 
@@ -67,12 +67,8 @@
 /// style creates a faux border by placing a background on the block and giving
 /// it padding.
 ///
-figure.wp-block-image[class*="-gradient-background"] {
-	--image-padding: clamp(
-		0.5rem,
-		-0.33333333333333326rem + 2.083333333333333cqi,
-		1rem
-	);
+figure.wp-block-image[class*=-gradient-background] {
+	--image-padding: clamp(0.5rem, -0.33333333333333326rem + 2.083333333333333cqi, 1rem);
 
 	// Setting the size to zero because, in most cases, we're inheriting the
 	// background gradient on the image and hiding this. In cases where we
@@ -106,12 +102,8 @@ figure.wp-block-image[class*="-gradient-background"] {
 	// Repositions the lightbox trigger button to account for the additional
 	// padding on the image.
 	.lightbox-trigger {
-		top: calc(
-			var(--image-padding) + var(--wp--preset--spacing--minus-2)
-		) !important;
-		right: calc(
-			var(--image-padding) + var(--wp--preset--spacing--minus-2)
-		) !important;
+		top: calc(var(--image-padding) + var(--wp--preset--spacing--minus-2)) !important;
+		right: calc(var(--image-padding) + var(--wp--preset--spacing--minus-2)) !important;
 	}
 }
 
@@ -144,6 +136,7 @@ figure.wp-block-image[class*="-gradient-background"] {
 /// specific styles based on context.
 ///
 .wp-block-image.is-style-hand-drawn {
+
 	// Remove any theme/variation padding from the wrapper.
 	padding: 0;
 	background: none;
@@ -153,7 +146,7 @@ figure.wp-block-image[class*="-gradient-background"] {
 		color: inherit;
 		border: 2px solid currentColor;
 		overflow: hidden;
-		box-shadow: var(--wp--custom--global--shadow);
+		box-shadow: var(--wp--custom--shadow--primary--default);
 
 		// No `theme.json` support for this style of radius.
 		border-radius: 255px 15px 225px 15px/15px 225px 15px 255px !important;
@@ -161,7 +154,7 @@ figure.wp-block-image[class*="-gradient-background"] {
 
 	// If the block also has a gradient background, limit the padding so
 	// that the hand-drawn border still looks decent.
-	&[class*="gradient-"] img {
+	&[class*=gradient-] img {
 		padding: 2px;
 	}
 
@@ -188,9 +181,12 @@ figure.wp-block-image[class*="-gradient-background"] {
 /// An icon style that prefixes the caption with a camera icon. 📷
 ///
 .wp-block-image.is-style-icon .wp-element-caption {
-	@include inline-icon.prefix(icon.get-url("photo-camera"));
-	justify-content: center;
-	gap: 0.5rem;
+	@include inline-icon.prefix(icon.get-url('photo-camera'));
+
+	& {
+		justify-content: center;
+		gap: 0.5rem;
+	}
 }
 
 ///
@@ -202,21 +198,20 @@ figure.wp-block-image[class*="-gradient-background"] {
 /// I work).
 ///
 figure.wp-block-image.is-style-polaroid {
-	padding: var(--wp--preset--spacing--base);
-	background-color: var(--wp--preset--color--base);
+	padding:          var(--wp--preset--spacing--base);
+	background-color: var(--wp--custom--color--surface--level-0);
 	transition: all 0.5s ease-in-out;
 	overflow: visible;
 	background-size: auto !important;
 }
 
 .wp-block-image.is-style-polaroid {
+
 	// Adds an inset shadow to create the faded photo design but only when
 	// there is no gradient background for the image. For those cases, the
 	// gradient wins out.
-	&:where(:not([class*="gradient-"])) {
-		box-shadow:
-			var(--wp--custom--global--shadow),
-			0 0 8rem rgb(255, 255, 235) inset;
+	&:where(:not([class*=gradient-])) {
+		box-shadow: var(--wp--custom--shadow--primary--default), 0 0 8rem rgb(255, 255, 235) inset;
 	}
 
 	// Updates the spacing of the caption, which is different from other
@@ -224,16 +219,15 @@ figure.wp-block-image.is-style-polaroid {
 	// frame area.
 	.wp-element-caption {
 		margin-top: var(--wp--preset--spacing--base);
-		color: var(--wp--preset--color--contrast);
+		color: var(--wp--custom--color--text--default);
 	}
 
 	// Adjustments when the Image block also has a gradient background.
-	&[class*="-gradient-background"] {
+	&[class*=-gradient-background] {
+
 		// Remove the image padding so that the background appears for
 		// the photo frame and not the inner image.
-		img {
-			padding: 0;
-		}
+		img { padding: 0; }
 
 		// A general-purpose solution to make the text stand out against
 		// various gradient backgrounds. This makes the text white but
@@ -241,9 +235,7 @@ figure.wp-block-image.is-style-polaroid {
 		// sort of text border that fades out.
 		.wp-element-caption {
 			color: var(--wp--preset--color--white);
-			text-shadow:
-				1px 1px 1px #000,
-				0 0 8px rgba(0, 0, 0, 0.7);
+			text-shadow: 1px 1px 1px #000, 0 0 8px rgba(0, 0, 0, 0.7);
 		}
 	}
 }
@@ -263,9 +255,7 @@ figure.wp-block-image.is-style-polaroid {
 		display: block;
 		position: absolute;
 		background: rgba(255, 255, 235, 0.5);
-		box-shadow:
-			0 2px 5px 0 rgba(0, 0, 0, 0.3),
-			0 0 4rem rgba(255, 255, 235, 0.5) inset;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3), 0 0 4rem rgba(255, 255, 235, 0.5) inset;
 		height: var(--wp--preset--spacing--plus-3);
 		width: 7rem;
 		z-index: 1;
@@ -278,9 +268,10 @@ figure.wp-block-image.is-style-polaroid {
 
 	// Adjust the positioning when the image has a gradient background. We
 	// must account for the additional padding.
-	&[class*="gradient-"]::before {
+	&[class*=gradient-]::before {
 		top: calc(
-			-0.75 * clamp(0.5rem, -0.33333333333333326rem + 2.083333333333333cqi, 1rem)
+			-0.75 *
+			clamp(0.5rem, -0.33333333333333326rem + 2.083333333333333cqi, 1rem)
 		);
 	}
 }
@@ -313,8 +304,7 @@ figure.wp-block-image.is-style-polaroid {
 ///
 /// @todo Test to see if this is still needed.
 ///
-.wp-block-image:where([class*="is-style-polaroid"])
-	.components-resizable-box__handle {
+.wp-block-image:where([class*=is-style-polaroid]) .components-resizable-box__handle {
 	display: none;
 }
 
@@ -331,5 +321,5 @@ figure.wp-block-image.is-style-polaroid {
 	padding: 0 !important;
 	border: none !important;
 	border-radius: var(--wp--custom--global--border--radius) !important;
-	box-shadow: var(--wp--custom--global--shadow) !important;
+	box-shadow: var(--wp--custom--shadow--primary--default) !important;
 }

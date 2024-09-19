@@ -1,8 +1,8 @@
 ////
 /// Details block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -38,19 +38,19 @@
 		box-sizing: border-box;
 		padding: var(--wp--preset--spacing--base) var(--wp--style--block-gap);
 
-		background: var(--wp--custom--elements--summary--background, transparent);
-		color: var(--wp--custom--elements--summary--color, currentColor);
+		background:  transparent;
+		color:       currentColor;
 		font-family: var(--wp--custom--elements--summary--font-family, inherit);
-		font-style: var(--wp--custom--elements--summary--font-style, inherit);
+		font-style:  var(--wp--custom--elements--summary--font-style, inherit);
 		font-weight: var(--wp--custom--elements--summary--font-weight, inherit);
 		line-height: var(--wp--custom--elements--summary--line-height, inherit);
-		font-size: var(--wp--custom--elements--summary--font-size, inherit);
+		font-size:   var(--wp--custom--elements--summary--font-size, inherit);
 	}
 
 	&[open] summary,
 	summary:hover,
 	summary:focus {
-		background: var(--wp--custom--elements--summary--hover-background);
+		background: var(--wp--custom--elements--summary--background-hover);
 	}
 
 	// Disable the default browser marker and add a custom one.
@@ -60,10 +60,7 @@
 
 	summary::after {
 		content: var(--wp--custom--marker--content, "+");
-		color: var(
-			--wp--custom--marker--color,
-			var(--wp--custom--elements--marker--color)
-		);
+		color: currentColor;
 		float: right;
 		text-align: right;
 		font-style: normal;
@@ -87,10 +84,12 @@
 /// content area.
 ///
 .wp-block-details:has(
-		summary + .wp-block-code:last-child,
-		summary + .wp-block-code-wrap:last-child
-	),
-.wp-block-details:has(summary + .wp-block-code + .block-list-appender) {
+	summary + .wp-block-code:last-child,
+	summary + .wp-block-code-wrap:last-child
+),
+.wp-block-details:has(
+	summary + .wp-block-code + .block-list-appender
+) {
 	padding: 0;
 
 	.wp-block-code {
@@ -104,6 +103,19 @@
 // -----------------------------------------------------------------------------
 // Block style variations.
 // -----------------------------------------------------------------------------
+
+///
+/// Removes padding when section styles are applied.
+///
+.wp-block-details[class*=is-style-section-] {
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+
+	&:where(:not([open])) {
+		padding-bottom: 0;
+	}
+}
 
 ///
 /// The plain style removes custom styling from the block.
@@ -137,3 +149,4 @@
 		content: none;
 	}
 }
+

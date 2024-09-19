@@ -3,7 +3,7 @@
 /**
  * Title: Hero: Post Cover With Links
  * Slug: blogwheels/hero-post-cover-with-links
- * Categories: featured, blockwheels-hero
+ * Categories: featured, blogwheels-hero
  * Keywords: hero, cover
  * Viewport Width: 1152
  */

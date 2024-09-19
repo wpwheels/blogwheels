@@ -37,16 +37,16 @@ $image = get_theme_file_uri('public/media/images/mountain-road.webp');
 		<!-- wp:gallery {
 			"columns":2,
 			"linkTo":"none",
-			"sizeSlug":"blockwheels-square",
+			"sizeSlug":"blogwheels-square",
 			"style":{"layout":{"selfStretch":"fill","flexSize":null}}
 		} -->
 		<figure class="wp-block-gallery has-nested-images columns-2 is-cropped">
 
 			<!-- wp:image {
-				"sizeSlug":"blockwheels-square",
+				"sizeSlug":"blogwheels-square",
 				"linkDestination":"none"
 			} -->
-			<figure class="wp-block-image size-blockwheels-square">
+			<figure class="wp-block-image size-blogwheels-square">
 				<img src="<?= esc_url($image) ?>" alt="" />
 			</figure>
 			<!-- /wp:image -->
@@ -71,7 +71,7 @@ $image = get_theme_file_uri('public/media/images/mountain-road.webp');
 		<!-- wp:pullquote {"className":"is-style-mark-top","fontSize":"lg"} -->
 		<figure class="wp-block-pullquote is-style-mark-top has-lg-font-size">
 			<blockquote><p><?= esc_html__("I've walked miles upon miles of desert, climbed mountains, and soared through the skies. Yet, there is so much more to do—a thousand more lifetimes to live, loves to love, and journeys to trek.", 'blogwheels') ?></p>
-				<cite>WPWheels</cite>
+				<cite>Justin Tadlock</cite>
 			</blockquote>
 		</figure>
 		<!-- /wp:pullquote -->
@@ -79,7 +79,7 @@ $image = get_theme_file_uri('public/media/images/mountain-road.webp');
 		<!-- wp:gallery {
 			"columns":2,
 			"linkTo":"none",
-			"sizeSlug":"blockwheels-square",
+			"sizeSlug":"blogwheels-square",
 			"style":{"layout":{"selfStretch":"fill","flexSize":null}}
 		} -->
 		<figure class="wp-block-gallery has-nested-images columns-2 is-cropped">
@@ -87,10 +87,10 @@ $image = get_theme_file_uri('public/media/images/mountain-road.webp');
 			<?php foreach (range(1, 2) as $col) : ?>
 
 				<!-- wp:image {
-					"sizeSlug":"blockwheels-square",
+					"sizeSlug":"blogwheels-square",
 					"linkDestination":"none"
 				} -->
-				<figure class="wp-block-image size-blockwheels-square">
+				<figure class="wp-block-image size-blogwheels-square">
 					<img src="<?= esc_url($image) ?>" alt="" />
 				</figure>
 				<!-- /wp:image -->

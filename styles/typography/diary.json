@@ -172,7 +172,7 @@
 					"fontStyle": "normal"
 				}
 			},
-			"blockwheels/breadcrumbs": {
+			"blogwheels/breadcrumbs": {
 				"typography": {
 					"fontFamily": "var:preset|font-family|primary"
 				}

@@ -1,12 +1,12 @@
 ////
 /// Post Terms block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/icon.scss";
-@use "../../tools/inline-icon";
+@use '../../tools/icon.scss';
+@use '../../tools/inline-icon';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -26,9 +26,7 @@
 	gap: var(--wp--custom--gap, var(--wp--preset--spacing--minus-3));
 
 	&__separator {
-		margin-left: calc(
-			-1 * var(--wp--custom--gap, var(--wp--preset--spacing--minus-3))
-		);
+		margin-left: calc(-1 * var(--wp--custom--gap, var(--wp--preset--spacing--minus-3)));
 	}
 }
 
@@ -47,12 +45,14 @@
 ///
 /// @todo Figure out how this gap should be implemented. Is this flexbox?
 ///
-.wp-block-post-terms:is(.is-style-fill, .is-style-outline) {
+.wp-block-post-terms:is(
+	.is-style-buttons-primary,
+	.is-style-buttons-secondary,
+	.is-style-buttons-outline
+ ) {
 	--wp--custom--gap: var(--wp--preset--spacing--minus-1);
 
-	.wp-block-post-terms__separator {
-		display: none;
-	}
+	.wp-block-post-terms__separator { display: none; }
 
 	a {
 		display: inline-block;
@@ -66,11 +66,12 @@
 /// @todo Add support for other common taxonomies. Needs research.
 ///
 .wp-block-post-terms.is-style-icon {
+
 	&::before {
-		@include inline-icon.icon(icon.get-url("folder"));
+		@include inline-icon.icon(icon.get-url('folder'));
 	}
 
 	&.taxonomy-post_tag::before {
-		@include inline-icon.modify(icon.get-url("tag"));
+		@include inline-icon.modify(icon.get-url('tag'));
 	}
 }

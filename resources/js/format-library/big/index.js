@@ -1,24 +1,24 @@
 /**
  * Creates the big RichText format type.
  *
- *
- * @copyright Copyright (c) 2023-2024, WPWheels
+ * @author    Justin Tadlock <justintadlock@gmail.com>
+ * @copyright Copyright (c) 2023-2024, Justin Tadlock
  * @license   GPL-3.0-or-later
  */
 
 // Internal dependencies.
-import { textIncreaseIcon } from "../../common/utils-icon";
+import { textIncreaseIcon } from '../../common/utils-icon';
 
 // WordPress dependencies.
-import { RichTextToolbarButton } from "@wordpress/block-editor";
-import { __ } from "@wordpress/i18n";
-import { toggleFormat } from "@wordpress/rich-text";
+import { RichTextToolbarButton } from '@wordpress/block-editor';
+import { __ }                    from '@wordpress/i18n';
+import { toggleFormat }          from '@wordpress/rich-text';
 
 /**
  * Name of the format.
  * @type {string}
  */
-const name = "blockwheels/big";
+const name = 'blogwheels/big';
 
 /**
  * RichText format type definition.
@@ -26,15 +26,17 @@ const name = "blockwheels/big";
  */
 export default {
 	name,
-	title: __("Big", "blogwheels"),
-	tagName: "span",
-	className: "has-larger-text",
+	title: __('Big', 'blogwheels'),
+	tagName: 'span',
+	className: 'has-larger-text',
 	edit: ({ isActive, onChange, value }) => (
 		<RichTextToolbarButton
-			icon={textIncreaseIcon}
-			title={__("Big", "blogwheels")}
-			isActive={isActive}
-			onClick={() => onChange(toggleFormat(value, { type: name }))}
+			icon={ textIncreaseIcon }
+			title={ __('Big', 'blogwheels') }
+			isActive={ isActive }
+			onClick={ () => onChange(
+				toggleFormat(value, { type: name })
+			) }
 		/>
-	),
+	)
 };

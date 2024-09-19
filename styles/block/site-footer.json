@@ -3,21 +3,10 @@
 	"version": 3,
 	"title": "Site Footer",
 	"slug": "site-footer",
-	"blockTypes": [
-		"core/columns",
-		"core/group"
-	],
+	"blockTypes": [ "core/template-part" ],
 	"styles": {
 		"color": {
-			"background": "var:preset|color|neutral-50"
-		},
-		"spacing": {
-			"padding": {
-				"top": "var:preset|spacing|plus-6",
-				"bottom": "var:preset|spacing|plus-6",
-				"left": "var:preset|spacing|plus-3",
-				"right": "var:preset|spacing|plus-3"
-			}
+			"background": "var:custom|color|surface|level-1"
 		}
 	}
 }

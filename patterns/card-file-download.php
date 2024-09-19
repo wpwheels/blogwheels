@@ -3,7 +3,7 @@
 /**
  * Title: File Download Card
  * Slug: blogwheels/card-file-download
- * Categories: blockwheels-card
+ * Categories: blogwheels-card
  * Keywords: card, download, file, grid, media
  * Viewport Width: 480
  */
@@ -32,7 +32,7 @@ $download = get_theme_file_uri('public/media/images/mountain-road.webp');
 			"blockGap":"0"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"layout":{
 		"type":"flex",
 		"orientation":"vertical",
@@ -41,7 +41,7 @@ $download = get_theme_file_uri('public/media/images/mountain-road.webp');
 	},
 	"fontSize":"sm"
 } -->
-<div class="wp-block-group has-global-border is-style-section-3 has-sm-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
+<div class="wp-block-group has-global-border is-style-section-1 has-sm-font-size" style="padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 
 	<!-- wp:group {
 		"metadata":{"name":"<?= esc_attr__('Card Content', 'blogwheels') ?>"},

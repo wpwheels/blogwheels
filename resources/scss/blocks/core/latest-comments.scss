@@ -1,15 +1,22 @@
 ////
 /// Latest Comments block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
-@use "../../tools/list";
+@use '../../tools/list';
 
 // -----------------------------------------------------------------------------
 // Block fixes.
 // -----------------------------------------------------------------------------
+
+///
+/// `border-box` for the win! 🏆
+///
+.wp-block-latest-comments {
+	box-sizing: border-box;
+}
 
 ///
 /// WP hardcodes a font-size for comment dates and excerpt paragraphs.
@@ -27,6 +34,7 @@
 /// Improved general styling.
 ///
 .wp-block-latest-comments {
+
 	&__comment {
 		display: flex;
 		gap: var(--wp--preset--spacing--base);
@@ -38,14 +46,13 @@
 	}
 
 	// Aligns the avatar and metadata vertically when no excerpts are shown.
-	&:where(:not(.has-excerpts)):where(.has-avatars)
-		.wp-block-latest-comments__comment {
+	&:where(:not(.has-excerpts)):where(.has-avatars) .wp-block-latest-comments__comment {
 		align-items: center;
 	}
 
 	.avatar,
 	&__comment-avatar {
-		box-shadow: var(--wp--custom--global--shadow);
+		box-shadow: var(--wp--custom--shadow--secondary--default);
 		border-radius: 1.5em;
 		float: none;
 		width: 48px;
@@ -53,7 +60,10 @@
 		margin: 0;
 	}
 
-	&:where(.has-dates, .has-excerpts) .wp-block-latest-comments__comment-avatar {
+	&:where(
+		.has-dates,
+		.has-excerpts
+	) .wp-block-latest-comments__comment-avatar {
 		margin: 0.25em 0 0;
 	}
 

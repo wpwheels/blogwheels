@@ -3,7 +3,7 @@
 /**
  * Title: Icon Card
  * Slug: blogwheels/card-icon
- * Categories: blockwheels-card
+ * Categories: blogwheels-card
  * Keywords: card, grid
  * Viewport Width: 480
  */
@@ -25,13 +25,13 @@ $icon = get_theme_file_uri('public/media/svg/earthquake.svg');
 			"blockGap":"var:preset|spacing|base"
 		}
 	},
-	"className":"has-global-border is-style-section-3",
+	"className":"has-global-border is-style-section-1",
 	"fontSize":"sm",
 	"layout":{"type":"default"}
 } -->
-<div class="wp-block-group has-global-border is-style-section-3 has-sm-font-size">
+<div class="wp-block-group has-global-border is-style-section-1 has-sm-font-size">
 
-    <!-- wp:image {
+	<!-- wp:image {
 		"lightbox":{"enabled":false},
 		"width":"48px",
 		"height":"auto",
@@ -39,18 +39,18 @@ $icon = get_theme_file_uri('public/media/svg/earthquake.svg');
 		"linkDestination":"none",
 		"className":"is-style-borderless"
 	} -->
-    <figure class="wp-block-image size-full is-resized is-style-borderless">
-        <img src="<?= esc_url($icon) ?>" alt="" style="width:48px;height:auto" />
-    </figure>
-    <!-- /wp:image -->
+	<figure class="wp-block-image size-full is-resized is-style-borderless">
+		<img src="<?= esc_url($icon) ?>" alt="" style="width:48px;height:auto"/>
+	</figure>
+	<!-- /wp:image -->
 
-    <!-- wp:heading {"fontSize":"xl"} -->
-    <h2 class="wp-block-heading has-xl-font-size"><?= esc_html__('Placeholder', 'blogwheels') ?></h2>
-    <!-- /wp:heading -->
+	<!-- wp:heading {"fontSize":"xl"} -->
+	<h2 class="wp-block-heading has-xl-font-size"><?= esc_html__('Placeholder', 'blogwheels') ?></h2>
+	<!-- /wp:heading -->
 
-    <!-- wp:paragraph {"fontSize":"sm"} -->
-    <p><?= esc_html(Language::loremIpsum(8)) ?></p>
-    <!-- /wp:paragraph -->
+	<!-- wp:paragraph {"fontSize":"sm"} -->
+	<p><?= esc_html(Language::loremIpsum(8)) ?></p>
+	<!-- /wp:paragraph -->
 
 </div>
 <!-- /wp:group -->

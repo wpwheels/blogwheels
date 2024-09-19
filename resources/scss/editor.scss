@@ -2,8 +2,8 @@
 /// Editor stylesheet for block controls. This file should not be used for CSS
 /// specific to the view/front-end.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Import the WordPress variables Sass file. We'll use this to make sure we're
@@ -13,14 +13,14 @@
 //@use '~@wordpress/base-styles/variables';
 
 // Block Edit styles.
-@use "../js/block-edit/list-marker/editor" as list-marker;
+@use '../js/block-edit/list-marker/editor' as list-marker;
 
 // Editor styles.
-@use "../js/editor/editor" as editor;
+@use '../js/editor/editor' as editor;
 
 // Format library styles.
-@use "../js/format-library/abbreviation/editor" as abbreviation;
-@use "../js/format-library/span/editor" as span;
+@use '../js/format-library/abbreviation/editor' as abbreviation;
+@use '../js/format-library/span/editor' as span;
 
 .components-circular-option-picker__option {
 	color-scheme: light dark;

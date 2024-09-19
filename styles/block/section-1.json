@@ -4,21 +4,22 @@
 	"title": "Style 1",
 	"slug": "section-1",
 	"blockTypes": [
+		"core/code",
 		"core/column",
 		"core/columns",
 		"core/comment-content",
 		"core/comment-template",
 		"core/comments",
+		"core/details",
 		"core/group",
 		"core/media-text",
 		"core/post-comments-form",
 		"core/query"
 	],
 	"styles": {
-		"css": "--wp--custom--color--action: var(--wp--preset--color--primary-100);\n--wp--custom--color--muted: var(--wp--preset--color--primary-200);\n--wp--custom--global--fill--background: var(--wp--preset--color--primary-900);\n--wp--custom--global--fill--hover-background: var(--wp--preset--color--primary-950);",
 		"color": {
-			"background": "var:preset|color|primary-700",
-			"text": "var:preset|color|base"
+			"background": "var:custom|color|surface|level-0",
+			"text": "var:custom|color|text|default"
 		},
 		"spacing": {
 			"padding": {
@@ -26,57 +27,6 @@
 				"bottom": "var:preset|spacing|plus-3",
 				"left": "var:preset|spacing|plus-3",
 				"right": "var:preset|spacing|plus-3"
-			}
-		},
-		"elements": {
-			"caption": {
-				"color": {
-					"text": "currentColor"
-				}
-			},
-			"cite": {
-				"color": {
-					"text": "currentColor"
-				}
-			},
-			"heading": {
-				"color": {
-					"text": "currentColor"
-				}
-			},
-			"link": {
-				"color": {
-					"text": "var:preset|color|primary-50"
-				},
-				":focus": {
-					"color": {
-						"text": "currentColor"
-					}
-				},
-				":hover": {
-					"color": {
-						"text": "currentColor"
-					}
-				}
-			}
-		},
-		"blocks": {
-			"core/post-title": {
-				"elements": {
-					"link": {
-						"color": {
-							"text": "inherit"
-						}
-					}
-				}
-			}
-		},
-		"variations": {
-			"is-style-meta": {
-				"color": {
-					"text": "inherit",
-					"background": "transparent"
-				}
 			}
 		}
 	}

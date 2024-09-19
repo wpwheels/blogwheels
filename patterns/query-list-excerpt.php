@@ -77,7 +77,7 @@ defined('ABSPATH') || exit;
 			"metadata":{
 				"bindings":{
 					"content":{
-						"source":"blockwheels/theme",
+						"source":"blogwheels/theme",
 						"args":{
 							"key":"paginationLabel"
 						}

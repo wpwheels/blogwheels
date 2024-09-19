@@ -1,8 +1,8 @@
 ////
 /// Post Featured Image block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // -----------------------------------------------------------------------------
@@ -27,17 +27,13 @@
 ///
 /// Gradient background handling.
 ///
-figure.wp-block-post-featured-image[class*="-gradient-background"] {
+figure.wp-block-post-featured-image[class*=-gradient-background] {
 	background-size: 0 0 !important;
 
 	img {
 		background-color: inherit;
 		background-image: inherit;
-		padding: clamp(
-			0.5rem,
-			-0.33333333333333326rem + 2.083333333333333cqi,
-			1rem
-		);
+		padding: clamp(0.5rem, -0.33333333333333326rem + 2.083333333333333cqi, 1rem);
 	}
 }
 

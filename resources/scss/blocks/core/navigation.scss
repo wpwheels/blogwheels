@@ -1,13 +1,13 @@
 ////
 /// Navigation block CSS.
 ///
-/// @author WPWheels <wpwheels@wpwheels.com>
-/// @link   https://github.com/wpwheels/blogwheels
+/// @author Justin Tadlock <justintadlock@gmail.com>
+/// @link   https://github.com/blogwheels-dev/blogwheels
 ////
 
 // Use the WordPress breakpoints module.
 // @link https://github.com/WordPress/gutenberg/tree/trunk/packages/base-styles
-@use "~@wordpress/base-styles/breakpoints" as wp-breakpoints;
+@use '~@wordpress/base-styles/breakpoints' as wp-breakpoints;
 
 // -----------------------------------------------------------------------------
 // Block fixes.
@@ -17,7 +17,7 @@
 /// Gutenberg 18.1 broke `theme.json` nav link `text-decoration` styles by
 /// reducing their specificity. This re-adds the default via CSS.
 ///
-/// @link https://github.com/wpwheels/blogwheels/issues/11
+/// @link https://github.com/blogwheels-dev/blogwheels/issues/11
 /// @link https://github.com/WordPress/gutenberg/pull/60106
 /// @link https://github.com/WordPress/gutenberg/pull/59457
 ///
@@ -56,28 +56,19 @@
 	transition-property: color, background-color, border-color, outline-color;
 
 	// `theme.json`-supported styles.
-	color: var(--wp--custom--toggle--color) !important;
-	background: var(--wp--custom--toggle--background);
-	border-width: var(--wp--custom--toggle--border-width);
-	border-style: var(--wp--custom--toggle--border-style);
-	border-color: var(--wp--custom--toggle--border-color);
-	border-radius: var(--wp--custom--toggle--border-radius);
-	box-shadow: var(--wp--custom--toggle--shadow);
+	color:         var(--wp--custom--color--text--button--primary--default) !important;
+	background:    var(--wp--custom--color--surface--button--primary--default);
+	border-radius: var(--wp--custom--global--border--radius);
+	box-shadow:    var(--wp--custom--preset--shadow--sm);
 
-	padding: var(--wp--preset--spacing--minus-2)
-		var(--wp--preset--spacing--minus-1) !important;
+	padding: var(--wp--preset--spacing--minus-2) var(--wp--preset--spacing--minus-1) !important;
 
 	&:hover,
 	&:focus {
-		color: var(
-			--wp--custom--toggle--hover-color,
-			var(--wp--custom--toggle--color)
-		) !important;
-		background: var(
-			--wp--custom--toggle--hover-background,
-			var(--wp--custom--toggle--background)
-		);
+		color:      var(--wp--custom--color--text--button--primary--hover) !important;
+		background: var(--wp--custom--color--surface--button--primary--hover);
 	}
+
 	svg {
 		width: 20px;
 		height: 20px;
@@ -99,14 +90,12 @@
 	}
 
 	// Fixes mobile padding.
-	padding: var(--wp--style--block-gap);
+	& {
+		padding: var(--wp--style--block-gap);
+	}
 
 	// Fix justification when menu is initially aligned right.
-	:is(
-			.wp-block-navigation-item,
-			.wp-block-navigation__container,
-			.wp-block-page-list
-		) {
+	:is(.wp-block-navigation-item, .wp-block-navigation__container, .wp-block-page-list) {
 		--navigation-layout-justification-setting: flex-start;
 	}
 
@@ -118,8 +107,7 @@
 	// Overrides Core's spacing to match the theme.
 	.wp-block-navigation-item,
 	.wp-block-navigation__responsive-container-content,
-	.wp-block-navigation__responsive-container-content
-		.wp-block-navigation__container {
+	.wp-block-navigation__responsive-container-content .wp-block-navigation__container {
 		gap: var(--wp--preset--spacing--base);
 	}
 
@@ -132,10 +120,7 @@
 // in general, but the menu is completely above the admin bar, so we just get a
 // ton of whitespace instead.
 @media (max-width: wp-breakpoints.$break-medium) {
-	.has-modal-open
-		.admin-bar
-		.is-menu-open
-		.wp-block-navigation__responsive-dialog {
+	.has-modal-open .admin-bar .is-menu-open .wp-block-navigation__responsive-dialog {
 		margin-top: 0;
 	}
 }

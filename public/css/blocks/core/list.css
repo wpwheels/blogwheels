@@ -6,9 +6,15 @@ ul,
 ol {
   padding-inline-start: var(--wp--preset--spacing--plus-4);
 }
-.wp-block-list:where(ul, ol) :where(li + li, li > ul, li > ol),
-ul :where(li + li, li > ul, li > ol),
-ol :where(li + li, li > ul, li > ol) {
+.wp-block-list:where(ul, ol) :where(li + li,
+li > ul,
+li > ol),
+ul :where(li + li,
+li > ul,
+li > ol),
+ol :where(li + li,
+li > ul,
+li > ol) {
   margin-block-start: var(--wp--preset--spacing--minus-1);
 }
 .wp-block-list:where(ul, ol):where(ul, ol):not([class*=wp-block-]) li, .wp-block-list:where(ul, ol):where(ul, ol) li,
@@ -21,10 +27,6 @@ ol:where(ul, ol) li {
 
 ol li::marker {
   font-size: 0.875em;
-}
-
-li::marker {
-  color: var(--wp--custom--marker--color, var(--wp--custom--elements--marker--color));
 }
 
 [class*=has-text-color-] li::marker {
