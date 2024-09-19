@@ -20,6 +20,8 @@ use BLOGWHEELS\Inc\Blocks\Style_Variations;
 use BLOGWHEELS\Inc\Blocks\Variations;
 use BLOGWHEELS\Inc\Blocks\Media;
 use BLOGWHEELS\Inc\Blocks\Render;
+use BLOGWHEELS\Inc\Blocks\Comment;
+
 
 # Prevent direct access.
 defined('ABSPATH') || exit;
@@ -45,6 +47,7 @@ class Theme {
 		Style_Variations::get_instance();
 		Variations::get_instance();
 		Media::get_instance();
+		Comment::get_instance();
 
 
 		$this->setup_hooks();
