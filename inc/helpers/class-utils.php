@@ -1,6 +1,6 @@
 <?php
 /**
- * The Language class includes helper methods related to language and i18n.
+ * The Utils class includes helper methods related to language and i18n.
  *
  *
  * @copyright Copyright (c) 2022-2024, WPWheels
@@ -12,11 +12,15 @@ declare(strict_types=1);
 
 namespace BLOGWHEELS\Inc\Helpers;
 
+use BLOGWHEELS\Inc\Traits\Singleton;
+
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-class Language
+class Utils
 {
+	use Singleton;
+
 	/**
 	 * Returns lorem ipsum text for use in patterns as placeholder text.
 	 *

@@ -12,7 +12,7 @@ declare(strict_types=1);
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-use BLOGWHEELS\Inc\Helpers\Language;
+use BLOGWHEELS\Inc\Helpers\Utils;
 
 ?>
 <!-- wp:group {

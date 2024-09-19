@@ -14,7 +14,7 @@ declare(strict_types=1);
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
-use BLOGWHEELS\Inc\Helpers\Language;
+use BLOGWHEELS\Inc\Helpers\Utils;
 
 $image = get_theme_file_uri('public/media/images/mountain-road.webp');
 

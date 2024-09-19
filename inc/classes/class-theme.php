@@ -23,12 +23,19 @@ use BLOGWHEELS\Inc\Blocks\Render;
 use BLOGWHEELS\Inc\Blocks\Comment;
 
 
+use BLOGWHEELS\Inc\Helpers\Utils;
+
+
 # Prevent direct access.
 defined('ABSPATH') || exit;
 
 class Theme {
 
 	public function __construct() {
+
+
+
+		Utils::get_instance();
 
 
 		Hooks::get_instance();
