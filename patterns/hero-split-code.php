@@ -83,7 +83,7 @@ $image = get_theme_file_uri('public/media/svg/code.svg');
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p><?= esc_html(Language::loremIpsum()) ?></p>
+			<p><?= esc_html(Utils::loremIpsum()) ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons -->

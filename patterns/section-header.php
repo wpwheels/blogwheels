@@ -47,7 +47,7 @@ use BLOGWHEELS\Inc\Helpers\Utils;
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph -->
-	<p><?= esc_html(Language::loremIpsum()) ?></p>
+	<p><?= esc_html(Utils::loremIpsum()) ?></p>
 	<!-- /wp:paragraph -->
 
 </header>

@@ -98,7 +98,7 @@ use BLOGWHEELS\Inc\Helpers\Utils;
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p><?= esc_html(Language::loremIpsum(8)) ?></p>
+			<p><?= esc_html(Utils::loremIpsum(8)) ?></p>
 			<!-- /wp:paragraph -->
 
 		</div>
