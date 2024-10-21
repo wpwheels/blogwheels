@@ -23,7 +23,7 @@ defined('ABSPATH') || exit;
 } -->
 <div class="wp-block-group alignfull">
 
-	<!-- wp:group {
+    <!-- wp:group {
 		"style":{
 			"spacing":{
 				"padding":{
@@ -36,9 +36,10 @@ defined('ABSPATH') || exit;
 		},
 		"layout":{"type":"default"}
 	} -->
-	<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--base);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--base);padding-left:var(--wp--preset--spacing--plus-3)">
+    <div class="wp-block-group"
+        style="padding-top:var(--wp--preset--spacing--base);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--base);padding-left:var(--wp--preset--spacing--plus-3)">
 
-		<!-- wp:group {
+        <!-- wp:group {
 			"style":{
 				"spacing":{
 					"blockGap":"var:preset|spacing|minus-3"
@@ -49,9 +50,9 @@ defined('ABSPATH') || exit;
 				"justifyContent":"space-between"
 			}
 		} -->
-		<div class="wp-block-group">
+        <div class="wp-block-group">
 
-			<!-- wp:group {
+            <!-- wp:group {
 				"metadata":{"name":"<?= esc_attr__('Branding', 'blogwheels') ?>"},
 				"style":{
 					"spacing":{"blockGap":"var:preset|spacing|minus-1"},
@@ -59,49 +60,50 @@ defined('ABSPATH') || exit;
 				},
 				"layout":{"type":"flex","flexWrap":"nowrap"}
 			} -->
-			<div class="wp-block-group">
-				<!-- wp:site-logo /-->
-				<!-- wp:site-title /-->
-			</div>
-			<!-- /wp:group -->
+            <div class="wp-block-group">
+                <!-- wp:site-logo /-->
+                <!-- wp:site-title /-->
+            </div>
+            <!-- /wp:group -->
 
-			<!-- wp:site-tagline {"fontSize":"sm"} /-->
+            <!-- wp:site-tagline {"fontSize":"sm"} /-->
 
-		</div>
-		<!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-	</div>
-	<!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
 
-	<!-- wp:group {
+    <!-- wp:group {
 		"align":"full",
 		"layout":{"type":"default"}
 	} -->
-	<div class="wp-block-group alignfull">
+    <div class="wp-block-group alignfull">
 
-		<!-- wp:cover {
+        <!-- wp:cover {
 			"url":"http://localhost/wp/wp-content/uploads/2024/03/image-1.png",
 			"id":6660,
 			"dimRatio":0,
 			"minHeight":385
 		} -->
-		<div class="wp-block-cover" style="min-height:385px">
+        <div class="wp-block-cover" style="min-height:385px">
 
-			<span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
-			<img class="wp-block-cover__image-background wp-image-6660" alt="" src="http://localhost/wp/wp-content/uploads/2024/03/image-1.png" data-object-fit="cover"/>
+            <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
+            <img class="wp-block-cover__image-background wp-image-6660" alt=""
+                src="http://localhost/wp/wp-content/uploads/2024/03/image-1.png" data-object-fit="cover" />
 
-			<div class="wp-block-cover__inner-container">
-				<!-- wp:paragraph {"align":"center"} -->
-				<p class="has-text-align-centere"></p>
-				<!-- /wp:paragraph -->
-			</div>
-		</div>
-		<!-- /wp:cover -->
+            <div class="wp-block-cover__inner-container">
+                <!-- wp:paragraph {"align":"center"} -->
+                <p class="has-text-align-centere"></p>
+                <!-- /wp:paragraph -->
+            </div>
+        </div>
+        <!-- /wp:cover -->
 
-	</div>
-	<!-- /wp:group -->
+    </div>
+    <!-- /wp:group -->
 
-	<!-- wp:group {
+    <!-- wp:group {
 		"align":"full",
 		"className":"is-style-section-3",
 		"style":{
@@ -116,17 +118,18 @@ defined('ABSPATH') || exit;
 		},
 		"layout":{"type":"default"}
 	} -->
-	<div class="wp-block-group alignfull is-style-section-3" style="padding-top:var(--wp--preset--spacing--minus-1);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--minus-1);padding-left:var(--wp--preset--spacing--plus-3)">
+    <div class="wp-block-group alignfull is-style-section-3"
+        style="padding-top:var(--wp--preset--spacing--minus-1);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--minus-1);padding-left:var(--wp--preset--spacing--plus-3)">
 
-		<!-- wp:group {
+        <!-- wp:group {
 			"layout":{
 				"type":"flex",
 				"justifyContent":"space-between"
 			}
 		} -->
-		<div class="wp-block-group">
+        <div class="wp-block-group">
 
-			<!-- wp:navigation {
+            <!-- wp:navigation {
 				"icon":"menu",
 				"layout":{
 					"type":"flex",
@@ -135,7 +138,7 @@ defined('ABSPATH') || exit;
 				}
 			} /-->
 
-			<!-- wp:social-links {
+            <!-- wp:social-links {
 				"size":"has-small-icon-size",
 				"className":"is-style-buttons-primary",
 				"style":{
@@ -151,21 +154,19 @@ defined('ABSPATH') || exit;
 					"justifyContent":"right"
 				}
 			} -->
-			<ul class="wp-block-social-links has-small-icon-size is-style-buttons-primary">
-				<!-- wp:social-link {"url":"https://wordpress.org","service":"wordpress"} /-->
-				<!-- wp:social-link {"url":"https://github.com","service":"github"} /-->
-				<!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /-->
-				<!-- wp:social-link {"url":"https://twitch.tv","service":"twitch"} /-->
-			</ul>
-			<!-- /wp:social-links -->
+            <ul class="wp-block-social-links has-small-icon-size is-style-buttons-primary">
+                <!-- wp:social-link {"url":"https://wordpress.org","service":"wordpress"} /-->
+                <!-- wp:social-link {"url":"https://github.com","service":"github"} /-->
+                <!-- wp:social-link {"url":"https://twitter.com","service":"twitter"} /-->
+                <!-- wp:social-link {"url":"https://twitch.tv","service":"twitch"} /-->
+            </ul>
+            <!-- /wp:social-links -->
 
-		</div>
-		<!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
 
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:pattern {"slug":"blogwheels/breadcrumbs"} /-->
+    </div>
+    <!-- /wp:group -->
 
 </div>
 <!-- /wp:group -->
