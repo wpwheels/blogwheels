@@ -353,25 +353,9 @@
 				"typography": {
 					"fontStyle": "italic"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|tertiary",
-					"fontSize": "var:preset|font-size|md",
-					"lineHeight": "var:custom|line-height|md"
-				}
 			}
 		},
 		"variations": {
-			"site-header": {
-				"blocks": {
-					"blogwheels/breadcrumbs": {
-						"color": {
-							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-						}
-					}
-				}
-			},
 			"site-footer": {
 				"color": {
 					"background": "transparent"

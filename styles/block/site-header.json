@@ -7,13 +7,6 @@
 	"styles": {
 		"color": {
 			"background": "transparent"
-		},
-		"blocks": {
-			"blogwheels/breadcrumbs": {
-				"color": {
-					"background": "var:custom|color|surface|level-1"
-				}
-			}
 		}
 	}
 }

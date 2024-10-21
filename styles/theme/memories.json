@@ -464,21 +464,6 @@
 					"fontStyle": "italic",
 					"lineHeight": "var:custom|line-height|lg"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontStyle": "italic",
-					"fontSize": "var:preset|font-size|xs",
-					"lineHeight": "var:custom|line-height|xs"
-				},
-				"elements": {
-					"link": {
-						"typography": {
-							"fontStyle": "normal",
-							"fontWeight": "500"
-						}
-					}
-				}
 			}
 		},
 		"variations": {
@@ -521,22 +506,6 @@
 				},
 				"color": {
 					"background": "var:preset|color|neutral-50"
-				},
-				"blocks": {
-					"blogwheels/breadcrumbs": {
-						"border": {
-							"top": {
-								"color": "var:custom|global|border|color",
-								"style": "var:custom|global|border|style",
-								"width": "var:custom|global|border|width"
-							}
-						},
-						"color": {
-							"background": "var:preset|color|neutral-100",
-							"gradient": "none",
-							"text": "var:preset|color|neutral-500"
-						}
-					}
 				}
 			}
 		}

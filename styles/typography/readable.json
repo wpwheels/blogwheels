@@ -170,13 +170,6 @@
 					"fontSize": "var:preset|font-size|md",
 					"fontStyle": "normal"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontSize": "var:preset|font-size|xs",
-					"fontStyle": "normal"
-				}
 			}
 		},
 		"variations": {

@@ -30,17 +30,6 @@ class Patterns {
 	use Singleton;
 
 	/**
-	 * Patterns that should be conditionally removed if the block is not
-	 * registered for the install.
-	 *
-	 * @since 1.0.0
-	 */
-	protected const CONDITIONAL_PATTERNS = [
-		'core/table-of-contents' => [ 'blogwheels/card-table-of-contents' ],
-		'blockwheels/breadcrumbs' => [ 'blogwheels/breadcrumbs' ]
-	];
-
-	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -56,7 +45,6 @@ class Patterns {
 		// Register WordPress hooks in the constructor.
 		add_action('after_setup_theme', [$this, 'removeCoreBlockPatterns']);
 		add_action('init', [$this, 'registerCategories'], 5);
-		add_action('init', [$this, 'unregisterPatterns'], 100);
 	}
 
 	/**
@@ -98,26 +86,5 @@ class Patterns {
 			'label'       => __('Layout', 'blogwheels'),
 			'description' => __('Basic building blocks for arranging custom layouts.', 'blogwheels')
 		]);
-	}
-
-	/**
-	 * Unregister block patterns, specifically those that use block types
-	 * that are not in use on the site.
-	 *
-	 * @since 1.0.0
-	 * @link  https://developer.wordpress.org/reference/functions/unregister_block_pattern/
-	 */
-	public function unregisterPatterns(): void {
-		$block_registry = WP_Block_Type_Registry::get_instance();
-		$pattern_registry = WP_Block_Patterns_Registry::get_instance();
-
-		foreach (self::CONDITIONAL_PATTERNS as $block => $patterns) {
-			if (! $block_registry->is_registered($block)) {
-				array_walk(
-					$patterns,
-					fn($pattern) => $pattern_registry->unregister($pattern)
-				);
-			}
-		}
 	}
 }

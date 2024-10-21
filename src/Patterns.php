@@ -26,18 +26,6 @@ class Patterns implements Bootable
 	use Hookable;
 
 	/**
-	 * Patterns that should be conditionally removed if the block is not
-	 * registered for the install.
-	 *
-	 * @since 1.0.0
-	 * @todo  Type hint with PHP 8.3+ requirement.
-	 */
-	protected const CONDITIONAL_PATTERNS = [
-		'core/table-of-contents' => [ 'blogwheels/card-table-of-contents' ],
-		'blockwheels/breadcrumbs'       => [ 'blogwheels/breadcrumbs' ]
-	];
-
-	/**
 	 * Sets up the object state.
 	 *
 	 * @since 1.0.0
@@ -100,25 +88,5 @@ class Patterns implements Bootable
 			'label'       => __('Layout', 'blogwheels'),
 			'description' => __('Basic building blocks for arranging custom layouts.', 'blogwheels')
 		]);
-	}
-
-	/**
-	 * Unregister block patterns, specifically those that use block types
-	 * that are not in use on the site.
-	 *
-	 * @since 1.0.0
-	 * @link  https://developer.wordpress.org/reference/functions/unregister_block_pattern/
-	 */
-	#[Action('init', 'last')]
-	public function unregisterPatterns(): void
-	{
-		foreach (self::CONDITIONAL_PATTERNS as $block => $patterns) {
-			if (! $this->block_types->is_registered($block)) {
-				array_walk(
-					$patterns,
-					fn($pattern) => $this->patterns->unregister($pattern)
-				);
-			}
-		}
 	}
 }

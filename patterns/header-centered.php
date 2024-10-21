@@ -35,9 +35,10 @@ defined('ABSPATH') || exit;
 		"justifyContent":"center"
 	}
 } -->
-<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--plus-3);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-3);padding-left:var(--wp--preset--spacing--plus-3)">
+<div class="wp-block-group alignfull"
+    style="padding-top:var(--wp--preset--spacing--plus-3);padding-right:var(--wp--preset--spacing--plus-3);padding-bottom:var(--wp--preset--spacing--plus-3);padding-left:var(--wp--preset--spacing--plus-3)">
 
-	<!-- wp:group {
+    <!-- wp:group {
 		"metadata":{"name":"<?= esc_attr__('Branding', 'blogwheels') ?>"},
 		"style":{
 			"spacing":{
@@ -54,13 +55,13 @@ defined('ABSPATH') || exit;
 			"justifyContent":"center"
 		}
 	} -->
-	<div class="wp-block-group">
-		<!-- wp:site-logo /-->
-		<!-- wp:site-title /-->
-	</div>
-	<!-- /wp:group -->
+    <div class="wp-block-group">
+        <!-- wp:site-logo /-->
+        <!-- wp:site-title /-->
+    </div>
+    <!-- /wp:group -->
 
-	<!-- wp:navigation {
+    <!-- wp:navigation {
 		"icon":"menu",
 		"layout":{
 			"type":"flex",
@@ -70,5 +71,3 @@ defined('ABSPATH') || exit;
 	} /-->
 </div>
 <!-- /wp:group -->
-
-<!-- wp:pattern {"slug":"blogwheels/breadcrumbs"} /-->

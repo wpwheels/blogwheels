@@ -447,12 +447,6 @@
 				"typography": {
 					"fontFamily": "var:preset|font-family|primary"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontSize": "var:preset|font-size|xs",
-					"lineHeight": "var:custom|line-height|xs"
-				}
 			}
 		},
 		"variations": {
@@ -496,15 +490,6 @@
 				},
 				"color": {
 					"background": "var:preset|color|neutral-50"
-				}
-			},
-			"site-header": {
-				"blocks": {
-					"blogwheels/breadcrumbs": {
-						"color": {
-							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-						}
-					}
 				}
 			}
 		}

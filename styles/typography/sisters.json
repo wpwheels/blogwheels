@@ -169,13 +169,6 @@
 					"fontStyle": "normal",
 					"lineHeight": "var:custom|line-height|md"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontSize": "var:preset|font-size|xs",
-					"lineHeight": "var:custom|line-height|xs"
-				}
 			}
 		}
 	}

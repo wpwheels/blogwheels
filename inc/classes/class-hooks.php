@@ -28,18 +28,6 @@ class Hooks {
 	use Singleton;
 
 	/**
-	 * Patterns that should be conditionally removed if the block is not
-	 * registered for the install.
-	 *
-	 * @since 1.0.0
-	 * @todo  Type hint with PHP 8.3+ requirement.
-	 */
-	protected const CONDITIONAL_PATTERNS = [
-		'core/table-of-contents' 	=> [ 'blogwheels/card-table-of-contents' ],
-		'blockwheels/breadcrumbs'	=> [ 'blogwheels/breadcrumbs' ]
-	];
-
-	/**
 	 * Constructor.
 	 */
 	public function __construct() {
@@ -56,36 +44,12 @@ class Hooks {
 		/**
 		 * Filters and Actions.
 		 */
-		add_action( 'init', [ $this, 'unregister_conditional_patterns' ] );
 		add_action( 'init', [ $this, 'register_pattern_categories' ], 9 );
 		add_action( 'default_wp_template_part_areas', [ $this, 'template_part_areas' ] );
-
-
 		add_filter( 'default_template_types', [ $this, 'filter_titles' ], 10, 1 );
 		add_filter( 'default_template_types', [ $this, 'register_block_types' ] );
 		add_filter( 'single_template_hierarchy', [ $this, 'single_template_hierarchy_filter' ] );
 		add_filter( 'taxonomy_template_hierarchy', [ $this, 'taxonomy_template_hierarchy_filter' ] );
-	}
-
-	/**
-	 * Unregister block patterns, specifically those that use block types
-	 * that are not in use on the site.
-	 *
-	 * @since 1.0.0
-	 * @link  https://developer.wordpress.org/reference/functions/unregister_block_pattern/
-	 */
-	public function unregister_conditional_patterns(): void {
-		$block_registry = WP_Block_Type_Registry::get_instance();
-		$pattern_registry = WP_Block_Patterns_Registry::get_instance();
-
-		foreach (self::CONDITIONAL_PATTERNS as $block => $patterns) {
-			if (! $block_registry->is_registered($block)) {
-				array_walk(
-					$patterns,
-					fn($pattern) => $pattern_registry->unregister($pattern)
-				);
-			}
-		}
 	}
 
 	/**

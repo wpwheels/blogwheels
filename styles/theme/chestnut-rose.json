@@ -390,15 +390,6 @@
 					"fontStyle": "italic",
 					"fontWeight": "300"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontStyle": "italic",
-					"fontWeight": "300",
-					"fontSize": "var:preset|font-size|xs",
-					"lineHeight": "var:custom|line-height|xs"
-				}
 			}
 		},
 		"variations": {
@@ -411,15 +402,6 @@
 				"typography": {
 					"fontSize": "var:preset|font-size|xs",
 					"lineHeight": "var:custom|line-height|xs"
-				}
-			},
-			"site-header": {
-				"blocks": {
-					"blogwheels/breadcrumbs": {
-						"color": {
-							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-						}
-					}
 				}
 			}
 		}

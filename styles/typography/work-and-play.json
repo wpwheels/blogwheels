@@ -177,13 +177,6 @@
 					"fontFamily": "var:preset|font-family|primary",
 					"fontStyle": "italic"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontSize": "var:preset|font-size|xs",
-					"lineHeight": "var:custom|line-height|xs"
-				}
 			}
 		}
 	}

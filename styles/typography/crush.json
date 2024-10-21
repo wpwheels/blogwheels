@@ -166,12 +166,6 @@
 					"fontFamily": "var:preset|font-family|primary",
 					"fontStyle": "normal"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|secondary",
-					"fontSize": "var:preset|font-size|sm"
-				}
 			}
 		}
 	}

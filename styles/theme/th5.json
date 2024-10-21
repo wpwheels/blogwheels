@@ -416,14 +416,6 @@
 				"typography": {
 					"fontStyle": "italic"
 				}
-			},
-			"blogwheels/breadcrumbs": {
-				"typography": {
-					"fontFamily": "var:preset|font-family|primary",
-					"fontWeight": "400",
-					"fontSize": "var:preset|font-size|sm",
-					"lineHeight": "var:custom|line-height|sm"
-				}
 			}
 		},
 		"variations": {
@@ -435,15 +427,6 @@
 			"site-footer": {
 				"color": {
 					"background": "var:custom|color|surface|level-2"
-				}
-			},
-			"site-header": {
-				"blocks": {
-					"blogwheels/breadcrumbs": {
-						"color": {
-							"gradient": "var:preset|gradient|90-deg-neutral-50-transparent"
-						}
-					}
 				}
 			}
 		}
