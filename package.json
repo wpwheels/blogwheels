@@ -5,10 +5,7 @@
 	"homepage": "https://github.com/wpwheels/blogwheels",
 	"scripts": {
 		"start": "wp-scripts start --webpack-src-dir=resources --output-path=public",
-		"build": "wp-scripts build --webpack-src-dir=resources --output-path=public",
-		"lint:php": "composer lint:php",
-		"zip": "composer zip",
-		"zip:git": "git archive --format zip --output blockwheels.zip master"
+		"build": "wp-scripts build --webpack-src-dir=resources --output-path=public"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.5.0",
