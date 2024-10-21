@@ -203,10 +203,6 @@ class Style_Variations {
             'core/site-title' => [
                 'normalize' => __('Normalize', 'blogwheels')
             ],
-            'core/table-of-contents' => [
-                'chapters' => __('Chapters', 'blogwheels'),
-                'pull'     => __('Pull',     'blogwheels')
-            ],
             'core/tag-cloud' => [
                 'fill' => __('Fill', 'blogwheels'),
                 'flat' => __('Flat', 'blogwheels'),
